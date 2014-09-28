@@ -8,6 +8,8 @@ Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "智联卓聘 Highpin.cn", "
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZpConfigure", "ZpConfigure\ZpConfigure.csproj", "{BD9AE890-337E-47A6-9025-C28D2B241FFD}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZpOperations", "ZpOperations\ZpOperations.csproj", "{304264EC-7E00-456A-AE18-A6EF7DE303CC}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -18,11 +20,16 @@ Global
 		{BD9AE890-337E-47A6-9025-C28D2B241FFD}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{BD9AE890-337E-47A6-9025-C28D2B241FFD}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{BD9AE890-337E-47A6-9025-C28D2B241FFD}.Release|Any CPU.Build.0 = Release|Any CPU
+		{304264EC-7E00-456A-AE18-A6EF7DE303CC}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{304264EC-7E00-456A-AE18-A6EF7DE303CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{304264EC-7E00-456A-AE18-A6EF7DE303CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{304264EC-7E00-456A-AE18-A6EF7DE303CC}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
 	EndGlobalSection
 	GlobalSection(NestedProjects) = preSolution
 		{BD9AE890-337E-47A6-9025-C28D2B241FFD} = {99BEFA84-4F29-4068-BAE9-A3E72973FD03}
+		{304264EC-7E00-456A-AE18-A6EF7DE303CC} = {99BEFA84-4F29-4068-BAE9-A3E72973FD03}
 	EndGlobalSection
 EndGlobal
