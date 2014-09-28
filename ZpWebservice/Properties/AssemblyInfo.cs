@@ -5,7 +5,7 @@ using System.Runtime.InteropServices;
 // 有关程序集的常规信息通过以下特性集 
 // 控制。更改这些特性值可修改
 // 与程序集关联的信息。
-[assembly: AssemblyTitle("ZpWebservice")]
+[assembly: AssemblyTitle("智联卓聘网跨站查询服务接口。")]
 [assembly: AssemblyConfiguration("")]
 
 // 将 ComVisible 设置为 false 会使此程序集中的类型 

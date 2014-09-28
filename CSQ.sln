@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZpConfigure", "ZpConfigure\
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZpOperations", "ZpOperations\ZpOperations.csproj", "{304264EC-7E00-456A-AE18-A6EF7DE303CC}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZpWebservice", "ZpWebservice\ZpWebservice.csproj", "{1D582CF7-7522-4932-80EA-62B5AE09EA8B}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{304264EC-7E00-456A-AE18-A6EF7DE303CC}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{304264EC-7E00-456A-AE18-A6EF7DE303CC}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{304264EC-7E00-456A-AE18-A6EF7DE303CC}.Release|Any CPU.Build.0 = Release|Any CPU
+		{1D582CF7-7522-4932-80EA-62B5AE09EA8B}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{1D582CF7-7522-4932-80EA-62B5AE09EA8B}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{1D582CF7-7522-4932-80EA-62B5AE09EA8B}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{1D582CF7-7522-4932-80EA-62B5AE09EA8B}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
@@ -31,5 +37,6 @@ Global
 	GlobalSection(NestedProjects) = preSolution
 		{BD9AE890-337E-47A6-9025-C28D2B241FFD} = {99BEFA84-4F29-4068-BAE9-A3E72973FD03}
 		{304264EC-7E00-456A-AE18-A6EF7DE303CC} = {99BEFA84-4F29-4068-BAE9-A3E72973FD03}
+		{1D582CF7-7522-4932-80EA-62B5AE09EA8B} = {99BEFA84-4F29-4068-BAE9-A3E72973FD03}
 	EndGlobalSection
 EndGlobal

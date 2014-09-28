@@ -1,10 +1,6 @@
-﻿using System;
-using System.Collections.Generic;
-using System.Linq;
-using System.Web;
-using System.Web.Services;
+﻿using System.ComponentModel;
 using System.Web.Script.Services;
-using System.ComponentModel;
+using System.Web.Services;
 
 namespace MasterDuner.HHProjects.Csq.Highpincn.Wsi
 {
@@ -15,13 +11,18 @@ namespace MasterDuner.HHProjects.Csq.Highpincn.Wsi
     [WebServiceBinding(ConformsTo = WsiProfiles.BasicProfile1_1)]
     [ToolboxItem(false)]
     [ScriptService]
-    public class HighpinCnWsi : System.Web.Services.WebService
+    public class HighpinCnWsi : WebService
     {
-
-        [WebMethod]
-        public string HelloWorld()
+        #region RequestSessionTag
+        /// <summary>
+        /// 请求一个会话标记。
+        /// </summary>
+        /// <returns><see cref="ClientSessionTag"/>对象实例。</returns>
+        [WebMethod(Description = "请求一个会话标记。", EnableSession = true)]
+        public ClientSessionTag RequestSessionTag()
         {
-            return "Hello World";
+            return ClientSessionTag.CreateSessionTag();
         }
+        #endregion
     }
 }
