@@ -61,10 +61,11 @@ namespace MasterDuner.HHProjects.Csq.Highpincn
         public override IZpHttpResponse GetResponse()
         {
             HttpWebRequest zpRequest = base.RequestHighpinCn();
+            zpRequest.ContentType = "text/html; charset=utf-8";
             zpRequest.CookieContainer = base.GetCookieContainer();
             base.SetHttpRequestMethod(zpRequest);
             zpRequest.KeepAlive = true;
-            zpRequest.AllowAutoRedirect = true;
+            zpRequest.AllowAutoRedirect = false;
             return new ZpHttpResponseBase((ClientSessionTag)this.SessionTag) { ResponseData = (HttpWebResponse)zpRequest.GetResponse() };
         }
         #endregion

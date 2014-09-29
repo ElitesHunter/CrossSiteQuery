@@ -31,10 +31,10 @@ namespace MasterDuner.HHProjects.Csq.Highpincn.Wsi
         /// </summary>
         /// <param name="sessionTag">会话标记数据。</param>
         /// <returns>卓聘网首页HTML字符串表达式。</returns>
-        [WebMethod(Description="执行第一步，请求卓聘网的首页数据。<br />sessionTag:客户端会话标记。")]
+        [WebMethod(Description = "执行第一步，请求卓聘网的首页数据。<br />sessionTag:客户端会话标记。")]
         public string PerformFirstStep(ClientSessionTag sessionTag)
         {
-            return new ZpHomePageRequestHandler().RequestAndGetResponseData(new ZpHomePageRequest(sessionTag));
+            return new ZpHomePageRequestHandler().RequestAndGetResponseData(new ZpHomePageRequest(sessionTag) { Method = HttpMethods.Get });
         }
         #endregion
     }

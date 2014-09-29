@@ -100,8 +100,8 @@ namespace MasterDuner.HHProjects.Csq.Highpincn.Configuration
             if (!configFile.Exists) throw new FileNotFoundException("未找到配置文件!", configFile.FullName);
             VirtualDirectoryMapping virtualDirectory = new VirtualDirectoryMapping(HttpRuntime.AppDomainAppPath, false, ConfigFileName);
             WebConfigurationFileMap configFileMap = new WebConfigurationFileMap();
-            configFileMap.VirtualDirectories.Add("HighpinConfig", virtualDirectory);
-            ConfigObject obj = WebConfigurationManager.OpenMappedWebConfiguration(configFileMap, "HighpinConfig", HostingEnvironment.SiteName);
+            configFileMap.VirtualDirectories.Add("/HighpinConfig", virtualDirectory);
+            ConfigObject obj = WebConfigurationManager.OpenMappedWebConfiguration(configFileMap, "/HighpinConfig", HostingEnvironment.SiteName);
             HighpinCnQueryServiceSection config = obj.Sections["csq.highpin.cn"] as HighpinCnQueryServiceSection;
             ZpConfigurationManager.SaveIntoCache(config, configFile.FullName);
             return config;

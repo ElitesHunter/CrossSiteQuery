@@ -141,7 +141,7 @@ namespace MasterDuner.HHProjects.Csq.Highpincn
         /// <returns><see cref="HttpWebRequest"/>对象实例。</returns>
         protected virtual HttpWebRequest RequestHighpinCn()
         {
-            return (HttpWebRequest)WebRequest.Create(this.Url.Url);
+            return (HttpWebRequest)HttpWebRequest.Create(this.Url.Url);
         }
         #endregion
 
