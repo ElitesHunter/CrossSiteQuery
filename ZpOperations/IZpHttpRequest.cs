@@ -61,6 +61,13 @@ namespace MasterDuner.HHProjects.Csq.Highpincn
         /// <returns>实现了<see cref="IZpHttpResponse"/>接口的对象实例。</returns>
         IZpHttpResponse GetResponse();
         #endregion
+
+        #region Method
+        /// <summary>
+        /// 设置或获取HTTP Method变量。
+        /// </summary>
+        HttpMethods Method { get; set; }
+        #endregion
     }
 }
 
