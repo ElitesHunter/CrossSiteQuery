@@ -46,6 +46,13 @@ namespace MasterDuner.HHProjects.Csq.Highpincn
         /// </summary>
         HttpWebResponse ResponseData { get; set; }
         #endregion
+
+        #region SessionTag
+        /// <summary>
+        /// 获取绑定的会话标记。
+        /// </summary>
+        ISessionTag SessionTag { get; }
+        #endregion
     }
 }
 
