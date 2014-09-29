@@ -25,9 +25,8 @@
 #endregion
 
 using System;
-using System.Net;
 using System.IO;
-using System.Text;
+using System.Net;
 
 namespace MasterDuner.HHProjects.Csq.Highpincn
 {

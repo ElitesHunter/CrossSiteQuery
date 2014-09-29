@@ -24,10 +24,9 @@
 
 #endregion
 
-using System;
-using System.Net;
 using System.Collections;
 using System.Collections.Generic;
+using System.Net;
 
 namespace MasterDuner.HHProjects.Csq.Highpincn
 {
