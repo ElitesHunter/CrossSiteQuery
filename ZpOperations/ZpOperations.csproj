@@ -42,6 +42,7 @@
     <Reference Include="System" />
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -53,18 +54,25 @@
       <Link>Properties\AssemblyInfoCommon.cs</Link>
     </Compile>
     <Compile Include="ClientSessionTag.public.cs" />
+    <Compile Include="CookieCacheHandler.internal.cs" />
+    <Compile Include="HttpMethods.cs" />
     <Compile Include="ISessionCache.cs" />
     <Compile Include="ISessionCacheKey.cs" />
     <Compile Include="ISessionTag.cs" />
     <Compile Include="IZpCookie.cs" />
     <Compile Include="IZpHttpRequest.cs" />
+    <Compile Include="IZpHttpRequestHandler.cs" />
     <Compile Include="IZpHttpResponse.cs" />
     <Compile Include="IZpUri.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="SessionCacheCategory.cs" />
+    <Compile Include="SessionCacheHandler.internal.cs" />
     <Compile Include="SessionCacheKey.internal.cs" />
     <Compile Include="ZpCookie.sealed.cs" />
+    <Compile Include="ZpHomePageRequest.sealed.cs" />
+    <Compile Include="ZpHomePageRequestHandler.sealed.cs" />
     <Compile Include="ZpHttpRequestBase.abstract.cs" />
+    <Compile Include="ZpHttpRequestHandlerBase.abstract.cs" />
     <Compile Include="ZpHttpResponseBase.public.cs" />
     <Compile Include="ZpUri.public.cs" />
   </ItemGroup>
