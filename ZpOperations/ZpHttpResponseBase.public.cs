@@ -40,14 +40,18 @@ namespace MasterDuner.HHProjects.Csq.Highpincn
     /// </remarks>
     public class ZpHttpResponseBase : IZpHttpResponse
     {
+        private ClientSessionTag _clientSessionTag;
+
         #region Constructor
 
         /// <summary>
         /// <para>构造函数：</para>
         /// <para>初始化一个<see cref="ZpHttpResponseBase" />对象实例。</para>
         /// </summary>
-        public ZpHttpResponseBase()
+        /// <param name="sessionTag">会话标记。</param>
+        public ZpHttpResponseBase(ClientSessionTag sessionTag)
         {
+            this._clientSessionTag = sessionTag;
         }
 
         #endregion
@@ -67,6 +71,16 @@ namespace MasterDuner.HHProjects.Csq.Highpincn
             {
                 this._response = value;
             }
+        }
+        #endregion
+
+        #region SessionTag
+        /// <summary>
+        /// 获取会话标记。
+        /// </summary>
+        public virtual ISessionTag SessionTag
+        {
+            get { return this._clientSessionTag; }
         }
         #endregion
     }

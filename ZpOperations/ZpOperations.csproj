@@ -40,6 +40,7 @@
   </PropertyGroup>
   <ItemGroup>
     <Reference Include="System" />
+    <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -52,13 +53,19 @@
       <Link>Properties\AssemblyInfoCommon.cs</Link>
     </Compile>
     <Compile Include="ClientSessionTag.public.cs" />
+    <Compile Include="ISessionCache.cs" />
+    <Compile Include="ISessionCacheKey.cs" />
     <Compile Include="ISessionTag.cs" />
     <Compile Include="IZpCookie.cs" />
     <Compile Include="IZpHttpRequest.cs" />
     <Compile Include="IZpHttpResponse.cs" />
     <Compile Include="IZpUri.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="SessionCacheCategory.cs" />
+    <Compile Include="SessionCacheKey.internal.cs" />
     <Compile Include="ZpCookie.sealed.cs" />
+    <Compile Include="ZpHttpRequestBase.abstract.cs" />
+    <Compile Include="ZpHttpResponseBase.public.cs" />
     <Compile Include="ZpUri.public.cs" />
   </ItemGroup>
   <ItemGroup>
