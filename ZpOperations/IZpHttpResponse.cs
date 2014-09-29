@@ -25,6 +25,7 @@
 #endregion
 
 using System;
+using System.Net;
 
 namespace MasterDuner.HHProjects.Csq.Highpincn
 {
@@ -39,6 +40,12 @@ namespace MasterDuner.HHProjects.Csq.Highpincn
     /// </remarks>
     public interface IZpHttpResponse
     {
+        #region ResponseData
+        /// <summary>
+        /// 设置或获取相应数据。
+        /// </summary>
+        HttpWebResponse ResponseData { get; set; }
+        #endregion
     }
 }
 
