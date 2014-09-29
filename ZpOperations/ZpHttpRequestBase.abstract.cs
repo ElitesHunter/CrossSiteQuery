@@ -27,6 +27,7 @@
 using System;
 using System.Collections.Generic;
 using System.Net;
+using MasterDuner.HHProjects.Csq.Highpincn.Configuration;
 
 namespace MasterDuner.HHProjects.Csq.Highpincn
 {
@@ -170,6 +171,22 @@ namespace MasterDuner.HHProjects.Csq.Highpincn
             {
                 this._httpMethod = value;
             }
+        }
+        #endregion
+
+        #region GetCookieContainer
+        /// <summary>
+        /// 获取HTTP请求所需的<see cref="CookieContainer"/>对象实例。
+        /// </summary>
+        /// <returns><see cref="CookieContainer"/>对象实例。</returns>
+        protected virtual CookieContainer GetCookieContainer()
+        {
+            CookieContainer cookies = new CookieContainer();
+            foreach (IZpCookie item in this.Cookies)
+            {
+                cookies.Add(new Cookie(item.Name, item.Value, "/", ZpConfigurationManager.GetConfig().Resources.HomePage.Url));
+            }
+            return cookies;
         }
         #endregion
     }
