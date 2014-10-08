@@ -183,7 +183,7 @@ namespace MasterDuner.HHProjects.Csq.Highpincn
             CookieContainer cookies = new CookieContainer();
             foreach (IZpCookie item in this.Cookies)
             {
-                cookies.Add(new Cookie(item.Name, item.Value, "/", ZpConfigurationManager.GetConfig().Resources.HomePage.Url));
+                cookies.Add(new Cookie(item.Name, item.Value, "/", ZpConfigurationManager.GetConfig().Resources.DomainName));
             }
             return cookies;
         }
