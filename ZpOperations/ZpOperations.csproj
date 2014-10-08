@@ -54,6 +54,11 @@
     <Compile Include="..\Zp\AssemblyInfoCommon.cs">
       <Link>Properties\AssemblyInfoCommon.cs</Link>
     </Compile>
+    <Compile Include="Authentication\IAuthenticate.cs" />
+    <Compile Include="Authentication\ISimulateCredentials.cs" />
+    <Compile Include="Authentication\StaticUserCredentials.sealed.cs" />
+    <Compile Include="Authentication\ZpLogonHttpRequest.sealed.cs" />
+    <Compile Include="Authentication\ZpLogonHttpRequestHandler.sealed.cs" />
     <Compile Include="ClientSessionTag.public.cs" />
     <Compile Include="CookieCacheHandler.internal.cs" />
     <Compile Include="HttpMethods.cs" />
@@ -91,9 +96,7 @@
       <Name>ZpConfigure</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="Authentication\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
