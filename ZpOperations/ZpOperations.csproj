@@ -68,6 +68,10 @@
     <Compile Include="SessionCacheCategory.cs" />
     <Compile Include="SessionCacheHandler.internal.cs" />
     <Compile Include="SessionCacheKey.internal.cs" />
+    <Compile Include="ValidatingCode\IValidatingCodeImageOCR.cs" />
+    <Compile Include="ValidatingCode\TemporaryDirectoryInfo.sealed.cs" />
+    <Compile Include="ValidatingCode\ValidatingCodeImageOCR.sealed.cs" />
+    <Compile Include="ValidatingCode\ZpValidatingCodeHttpRequest.sealed.cs" />
     <Compile Include="ZpCookie.sealed.cs" />
     <Compile Include="ZpHomePageRequest.sealed.cs" />
     <Compile Include="ZpHomePageRequestHandler.sealed.cs" />
@@ -85,9 +89,7 @@
       <Name>ZpConfigure</Name>
     </ProjectReference>
   </ItemGroup>
-  <ItemGroup>
-    <Folder Include="SiteFeatures\" />
-  </ItemGroup>
+  <ItemGroup />
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
        Other similar extension points exist, see Microsoft.Common.targets.
