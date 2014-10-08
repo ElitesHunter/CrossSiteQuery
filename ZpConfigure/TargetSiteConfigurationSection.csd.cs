@@ -703,6 +703,32 @@ namespace MasterDuner.HHProjects.Csq.Highpincn.Configuration
             }
         }
         #endregion
+        
+        #region LegalValidatingCodeSequence Property
+        /// <summary>
+        /// The XML name of the <see cref="LegalValidatingCodeSequence"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        internal const string LegalValidatingCodeSequencePropertyName = "legalValidatingCodeSequence";
+        
+        /// <summary>
+        /// Gets or sets 设置或获取合法的验证码字符序列。
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.ComponentModel.DescriptionAttribute("设置或获取合法的验证码字符序列。")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.HighpinCnQueryServiceSection.LegalValidatingCodeSequencePropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.LegalCharsequenceElement LegalValidatingCodeSequence
+        {
+            get
+            {
+                return ((global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.LegalCharsequenceElement)(base[global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.HighpinCnQueryServiceSection.LegalValidatingCodeSequencePropertyName]));
+            }
+            set
+            {
+                base[global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.HighpinCnQueryServiceSection.LegalValidatingCodeSequencePropertyName] = value;
+            }
+        }
+        #endregion
     }
 }
 namespace MasterDuner.HHProjects.Csq.Highpincn.Configuration
@@ -748,6 +774,54 @@ namespace MasterDuner.HHProjects.Csq.Highpincn.Configuration
             set
             {
                 base[global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.ValidatingCodeTemporaryDirectoryElement.PathPropertyName] = value;
+            }
+        }
+        #endregion
+    }
+}
+namespace MasterDuner.HHProjects.Csq.Highpincn.Configuration
+{
+    
+    
+    /// <summary>
+    /// 合法的验证码字符序列配置。
+    /// </summary>
+    public sealed partial class LegalCharsequenceElement : global::System.Configuration.ConfigurationElement
+    {
+        
+        #region IsReadOnly override
+        /// <summary>
+        /// Gets a value indicating whether the element is read-only.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        public override bool IsReadOnly()
+        {
+            return false;
+        }
+        #endregion
+        
+        #region Chars Property
+        /// <summary>
+        /// The XML name of the <see cref="Chars"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        internal const string CharsPropertyName = "chars";
+        
+        /// <summary>
+        /// Gets or sets 设置或获取字符串序列。
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.ComponentModel.DescriptionAttribute("设置或获取字符串序列。")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.LegalCharsequenceElement.CharsPropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false)]
+        public string Chars
+        {
+            get
+            {
+                return ((string)(base[global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.LegalCharsequenceElement.CharsPropertyName]));
+            }
+            set
+            {
+                base[global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.LegalCharsequenceElement.CharsPropertyName] = value;
             }
         }
         #endregion

@@ -122,11 +122,25 @@
             <configurationElementMoniker name="/df415e00-5e0d-4f62-89b8-ec3d358d5449/ValidatingCodeTemporaryDirectoryElement" />
           </type>
         </elementProperty>
+        <elementProperty name="LegalValidatingCodeSequence" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="legalValidatingCodeSequence" isReadOnly="false" documentation="设置或获取合法的验证码字符序列。">
+          <type>
+            <configurationElementMoniker name="/df415e00-5e0d-4f62-89b8-ec3d358d5449/LegalCharsequenceElement" />
+          </type>
+        </elementProperty>
       </elementProperties>
     </configurationSection>
     <configurationElement name="ValidatingCodeTemporaryDirectoryElement" inheritanceModifier="Sealed" documentation="验证码临时目录配置。">
       <attributeProperties>
         <attributeProperty name="Path" isRequired="true" isKey="false" isDefaultCollection="false" xmlName="path" isReadOnly="false" documentation="设置或获取临时文件路径。">
+          <type>
+            <externalTypeMoniker name="/df415e00-5e0d-4f62-89b8-ec3d358d5449/String" />
+          </type>
+        </attributeProperty>
+      </attributeProperties>
+    </configurationElement>
+    <configurationElement name="LegalCharsequenceElement" inheritanceModifier="Sealed" documentation="合法的验证码字符序列配置。">
+      <attributeProperties>
+        <attributeProperty name="Chars" isRequired="true" isKey="false" isDefaultCollection="false" xmlName="chars" isReadOnly="false" documentation="设置或获取字符串序列。">
           <type>
             <externalTypeMoniker name="/df415e00-5e0d-4f62-89b8-ec3d358d5449/String" />
           </type>
