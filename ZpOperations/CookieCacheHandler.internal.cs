@@ -97,6 +97,24 @@ namespace MasterDuner.HHProjects.Csq.Highpincn
         /// <param name="cookies">Cookie数据。</param>
         internal virtual void UpdateCookiesCache(IList<IZpCookie> cookies)
         {
+            IList<IZpCookie> hisCookies = this.GetCookiesCache();
+            if (!object.ReferenceEquals(hisCookies, null))
+            {
+                bool isExist = false;
+                foreach (IZpCookie hisItem in hisCookies)
+                {
+                    isExist = false;
+                    foreach (IZpCookie item in cookies)
+                    {
+                        if (item.Name.Equals(hisItem.Name))
+                        {
+                            isExist = true;
+                            break;
+                        }
+                    }
+                    if (!isExist) cookies.Add(hisItem);
+                }
+            }
             this.UpdateCacheData(this.Key, cookies);
         }
         #endregion
