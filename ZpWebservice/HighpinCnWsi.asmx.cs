@@ -1,6 +1,7 @@
 ﻿using System.ComponentModel;
 using System.Web.Script.Services;
 using System.Web.Services;
+using MasterDuner.HHProjects.Csq.Highpincn.ValidatingCode;
 
 namespace MasterDuner.HHProjects.Csq.Highpincn.Wsi
 {
@@ -35,6 +36,19 @@ namespace MasterDuner.HHProjects.Csq.Highpincn.Wsi
         public string PerformFirstStep(ClientSessionTag sessionTag)
         {
             return new ZpHomePageRequestHandler().RequestAndGetResponseData(new ZpHomePageRequest(sessionTag) { Method = HttpMethods.Get });
+        }
+        #endregion
+
+        #region RequestValidatingCode
+        /// <summary>
+        /// 请求验证码。
+        /// </summary>
+        /// <param name="sessionTag">会话标记。</param>
+        /// <returns>验证码。</returns>
+        [WebMethod(Description = "向卓聘网申请验证码。<br />sessionTag:客户端会话标记。")]
+        public string RequestValidatingCode(ClientSessionTag sessionTag)
+        {
+            return new ValidatingCodeHttpRequestHandler().RequestAndGetResponseData(new ZpValidatingCodeHttpRequest(sessionTag) { Method = HttpMethods.Get });
         }
         #endregion
     }
