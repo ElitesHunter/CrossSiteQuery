@@ -35,6 +35,8 @@ namespace ZpDemo.WsReference {
         
         private System.Threading.SendOrPostCallback RequestValidatingCodeOperationCompleted;
         
+        private System.Threading.SendOrPostCallback TryLogonOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -81,6 +83,9 @@ namespace ZpDemo.WsReference {
         
         /// <remarks/>
         public event RequestValidatingCodeCompletedEventHandler RequestValidatingCodeCompleted;
+        
+        /// <remarks/>
+        public event TryLogonCompletedEventHandler TryLogonCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.highpin.cn/RequestSessionTag", RequestNamespace="http://www.highpin.cn", ResponseNamespace="http://www.highpin.cn", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -164,6 +169,37 @@ namespace ZpDemo.WsReference {
             if ((this.RequestValidatingCodeCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.RequestValidatingCodeCompleted(this, new RequestValidatingCodeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.highpin.cn/TryLogon", RequestNamespace="http://www.highpin.cn", ResponseNamespace="http://www.highpin.cn", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public bool TryLogon(ClientSessionTag sessionTag, string validatingCode) {
+            object[] results = this.Invoke("TryLogon", new object[] {
+                        sessionTag,
+                        validatingCode});
+            return ((bool)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void TryLogonAsync(ClientSessionTag sessionTag, string validatingCode) {
+            this.TryLogonAsync(sessionTag, validatingCode, null);
+        }
+        
+        /// <remarks/>
+        public void TryLogonAsync(ClientSessionTag sessionTag, string validatingCode, object userState) {
+            if ((this.TryLogonOperationCompleted == null)) {
+                this.TryLogonOperationCompleted = new System.Threading.SendOrPostCallback(this.OnTryLogonOperationCompleted);
+            }
+            this.InvokeAsync("TryLogon", new object[] {
+                        sessionTag,
+                        validatingCode}, this.TryLogonOperationCompleted, userState);
+        }
+        
+        private void OnTryLogonOperationCompleted(object arg) {
+            if ((this.TryLogonCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.TryLogonCompleted(this, new TryLogonCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -281,6 +317,32 @@ namespace ZpDemo.WsReference {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void TryLogonCompletedEventHandler(object sender, TryLogonCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class TryLogonCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal TryLogonCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public bool Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((bool)(this.results[0]));
             }
         }
     }

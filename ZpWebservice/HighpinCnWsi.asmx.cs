@@ -2,6 +2,7 @@
 using System.Web.Script.Services;
 using System.Web.Services;
 using MasterDuner.HHProjects.Csq.Highpincn.ValidatingCode;
+using MasterDuner.HHProjects.Csq.Highpincn.Authentication;
 
 namespace MasterDuner.HHProjects.Csq.Highpincn.Wsi
 {
@@ -49,6 +50,24 @@ namespace MasterDuner.HHProjects.Csq.Highpincn.Wsi
         public string RequestValidatingCode(ClientSessionTag sessionTag)
         {
             return new ValidatingCodeHttpRequestHandler().RequestAndGetResponseData(new ZpValidatingCodeHttpRequest(sessionTag) { Method = HttpMethods.Get });
+        }
+        #endregion
+
+        #region TryLogon
+        /// <summary>
+        /// 尝试登录卓聘网。
+        /// </summary>
+        /// <param name="sessionTag">会话标记。</param>
+        /// <param name="validatingCode">验证码。</param>
+        /// <returns>是否登录成功。</returns>
+        [WebMethod(Description = "尝试使用模拟账户登录卓聘网。<br />sessionTag:会话标记。<br />validatingCode:验证码。")]
+        public bool TryLogon(ClientSessionTag sessionTag, string validatingCode)
+        {
+            return new ZpLogonHttpRequestHandler()
+            {
+                Credentials = StaticUserCredentials.Current,
+                ValidatingCode = validatingCode
+            }.Logon(sessionTag);
         }
         #endregion
     }

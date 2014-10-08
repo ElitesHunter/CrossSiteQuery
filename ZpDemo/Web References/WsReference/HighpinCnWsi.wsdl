@@ -47,6 +47,21 @@
           </s:sequence>
         </s:complexType>
       </s:element>
+      <s:element name="TryLogon">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="sessionTag" type="tns:ClientSessionTag" />
+            <s:element minOccurs="0" maxOccurs="1" name="validatingCode" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="TryLogonResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="1" maxOccurs="1" name="TryLogonResult" type="s:boolean" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
     </s:schema>
     <s:schema elementFormDefault="qualified" targetNamespace="http://microsoft.com/wsdl/types/">
       <s:simpleType name="guid">
@@ -74,6 +89,12 @@
   <wsdl:message name="RequestValidatingCodeSoapOut">
     <wsdl:part name="parameters" element="tns:RequestValidatingCodeResponse" />
   </wsdl:message>
+  <wsdl:message name="TryLogonSoapIn">
+    <wsdl:part name="parameters" element="tns:TryLogon" />
+  </wsdl:message>
+  <wsdl:message name="TryLogonSoapOut">
+    <wsdl:part name="parameters" element="tns:TryLogonResponse" />
+  </wsdl:message>
   <wsdl:portType name="HighpinCnWsiSoap">
     <wsdl:operation name="RequestSessionTag">
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">请求一个会话标记。</wsdl:documentation>
@@ -89,6 +110,11 @@
       <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">向卓聘网申请验证码。&lt;br /&gt;sessionTag:客户端会话标记。</wsdl:documentation>
       <wsdl:input message="tns:RequestValidatingCodeSoapIn" />
       <wsdl:output message="tns:RequestValidatingCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="TryLogon">
+      <wsdl:documentation xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">尝试使用模拟账户登录卓聘网。&lt;br /&gt;sessionTag:会话标记。&lt;br /&gt;validatingCode:验证码。</wsdl:documentation>
+      <wsdl:input message="tns:TryLogonSoapIn" />
+      <wsdl:output message="tns:TryLogonSoapOut" />
     </wsdl:operation>
   </wsdl:portType>
   <wsdl:binding name="HighpinCnWsiSoap" type="tns:HighpinCnWsiSoap">
@@ -120,6 +146,15 @@
         <soap:body use="literal" />
       </wsdl:output>
     </wsdl:operation>
+    <wsdl:operation name="TryLogon">
+      <soap:operation soapAction="http://www.highpin.cn/TryLogon" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
   </wsdl:binding>
   <wsdl:binding name="HighpinCnWsiSoap12" type="tns:HighpinCnWsiSoap">
     <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
@@ -143,6 +178,15 @@
     </wsdl:operation>
     <wsdl:operation name="RequestValidatingCode">
       <soap12:operation soapAction="http://www.highpin.cn/RequestValidatingCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="TryLogon">
+      <soap12:operation soapAction="http://www.highpin.cn/TryLogon" style="document" />
       <wsdl:input>
         <soap12:body use="literal" />
       </wsdl:input>

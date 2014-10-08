@@ -51,7 +51,7 @@ namespace MasterDuner.HHProjects.Csq.Highpincn.ValidatingCode
         public ZpValidatingCodeHttpRequest(ClientSessionTag sessionTag)
             : base(sessionTag, "ValidatingCode")
         {
-            base.Url.Url = string.Format(base.Url.Url, DateTime.Now.Ticks);
+            base.Url.Url = string.Format(base.Url.Url, DateTime.Now.GetTimeJavaScript());
         }
 
         #endregion

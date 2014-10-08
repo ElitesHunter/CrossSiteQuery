@@ -105,6 +105,7 @@ namespace MasterDuner.HHProjects.Csq.Highpincn.Authentication
             base.SetHttpRequestMethod(logonRequest);
             logonRequest.KeepAlive = true;
             logonRequest.AllowAutoRedirect = true;
+            logonRequest.CookieContainer = base.GetCookieContainer();
             byte[] data = this.GetPostData();
             try
             {
@@ -126,7 +127,7 @@ namespace MasterDuner.HHProjects.Csq.Highpincn.Authentication
         /// <returns>字节数据。</returns>
         private byte[] GetPostData()
         {
-            string rawData = string.Format("username={0}&password={1}&postcode={2}&rememberme=false&userType=2");
+            string rawData = string.Format("username={0}&password={1}&postcode={2}&rememberme=false&userType=2", this.UserName, this.Password, this.ValidatingCode);
             return UTF8Encoding.UTF8.GetBytes(rawData);
         }
         #endregion

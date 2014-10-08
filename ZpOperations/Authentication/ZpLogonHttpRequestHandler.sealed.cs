@@ -26,6 +26,7 @@
 
 using System;
 using System.Net;
+using System.IO;
 
 namespace MasterDuner.HHProjects.Csq.Highpincn.Authentication
 {
@@ -105,7 +106,7 @@ namespace MasterDuner.HHProjects.Csq.Highpincn.Authentication
                 ValidatingCode = this.ValidatingCode,
                 Method = HttpMethods.Post
             });
-            return true;
+            return result.Equals("30");
         }
         #endregion
 
@@ -118,7 +119,23 @@ namespace MasterDuner.HHProjects.Csq.Highpincn.Authentication
         /// <returns>返回结果。</returns>
         protected override string BuiltResult(ClientSessionTag sessionTag, HttpWebResponse response)
         {
-            return string.Empty;
+            string responseText = string.Empty;
+            using (StreamReader reader = new StreamReader(response.GetResponseStream()))
+            {
+                try
+                {
+                    responseText = reader.ReadToEnd();
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    reader.Close();
+                }
+            }
+            return responseText;
         }
         #endregion
     }
