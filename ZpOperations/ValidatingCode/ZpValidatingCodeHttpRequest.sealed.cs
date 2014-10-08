@@ -68,7 +68,7 @@ namespace MasterDuner.HHProjects.Csq.Highpincn.ValidatingCode
             vcRequest.CookieContainer = base.GetCookieContainer();
             base.SetHttpRequestMethod(vcRequest);
             vcRequest.KeepAlive = true;
-            vcRequest.AllowAutoRedirect = false;
+            vcRequest.AllowAutoRedirect = true;
             return new ZpHttpResponseBase((ClientSessionTag)this.SessionTag) { ResponseData = (HttpWebResponse)vcRequest.GetResponse() };
         }
         #endregion

@@ -33,6 +33,8 @@ namespace ZpDemo.WsReference {
         
         private System.Threading.SendOrPostCallback PerformFirstStepOperationCompleted;
         
+        private System.Threading.SendOrPostCallback RequestValidatingCodeOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -76,6 +78,9 @@ namespace ZpDemo.WsReference {
         
         /// <remarks/>
         public event PerformFirstStepCompletedEventHandler PerformFirstStepCompleted;
+        
+        /// <remarks/>
+        public event RequestValidatingCodeCompletedEventHandler RequestValidatingCodeCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.highpin.cn/RequestSessionTag", RequestNamespace="http://www.highpin.cn", ResponseNamespace="http://www.highpin.cn", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -130,6 +135,35 @@ namespace ZpDemo.WsReference {
             if ((this.PerformFirstStepCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.PerformFirstStepCompleted(this, new PerformFirstStepCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.highpin.cn/RequestValidatingCode", RequestNamespace="http://www.highpin.cn", ResponseNamespace="http://www.highpin.cn", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public string RequestValidatingCode(ClientSessionTag sessionTag) {
+            object[] results = this.Invoke("RequestValidatingCode", new object[] {
+                        sessionTag});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void RequestValidatingCodeAsync(ClientSessionTag sessionTag) {
+            this.RequestValidatingCodeAsync(sessionTag, null);
+        }
+        
+        /// <remarks/>
+        public void RequestValidatingCodeAsync(ClientSessionTag sessionTag, object userState) {
+            if ((this.RequestValidatingCodeOperationCompleted == null)) {
+                this.RequestValidatingCodeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnRequestValidatingCodeOperationCompleted);
+            }
+            this.InvokeAsync("RequestValidatingCode", new object[] {
+                        sessionTag}, this.RequestValidatingCodeOperationCompleted, userState);
+        }
+        
+        private void OnRequestValidatingCodeOperationCompleted(object arg) {
+            if ((this.RequestValidatingCodeCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.RequestValidatingCodeCompleted(this, new RequestValidatingCodeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -212,6 +246,32 @@ namespace ZpDemo.WsReference {
         private object[] results;
         
         internal PerformFirstStepCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void RequestValidatingCodeCompletedEventHandler(object sender, RequestValidatingCodeCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class RequestValidatingCodeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal RequestValidatingCodeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
                 base(exception, cancelled, userState) {
             this.results = results;
         }

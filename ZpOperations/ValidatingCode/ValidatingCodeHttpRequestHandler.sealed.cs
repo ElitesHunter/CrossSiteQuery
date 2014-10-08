@@ -67,7 +67,7 @@ namespace MasterDuner.HHProjects.Csq.Highpincn.ValidatingCode
             string validatingCode = string.Empty;
             using (Stream responseStream = response.GetResponseStream())
             {
-                IValidatingCodeImageOCR ocr = new ValidatingCodeImageOCR();
+                IValidatingCodeImageOCR ocr = new ValidatingCodeImageOCR((int)response.ContentLength);
                 string fileName = ocr.BuiltImageName(sessionTag);
                 fileName = Path.Combine(TemporaryDirectoryInfo.Directory.Path, fileName);
                 try

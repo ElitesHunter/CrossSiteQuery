@@ -25,8 +25,11 @@
 #endregion
 
 using System;
+using System.Collections.Generic;
+using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices;
+using MasterDuner.HHProjects.Csq.Highpincn.Configuration;
 
 namespace MasterDuner.HHProjects.Csq.Highpincn.ValidatingCode
 {
@@ -42,6 +45,8 @@ namespace MasterDuner.HHProjects.Csq.Highpincn.ValidatingCode
     /// </remarks>
     public sealed class ValidatingCodeImageOCR : IValidatingCodeImageOCR
     {
+        private int _contentLength;
+
         [DllImport("AspriseOCR.dll", EntryPoint = "OCR")]
         private static extern IntPtr OCR(string file, int type);
 
@@ -54,14 +59,27 @@ namespace MasterDuner.HHProjects.Csq.Highpincn.ValidatingCode
         [DllImport("AspriseOCR.dll", EntryPoint = "OCRpartBarCodes")]
         static extern IntPtr OCRpartBarCodes(string file, int type, int startX, int startY, int width, int height);
 
+        #region ContentLength
+        /// <summary>
+        /// 获取HTTP响应流的长度。
+        /// </summary>
+        public int ContentLength
+        {
+            get { return _contentLength; }
+            private set { _contentLength = value; }
+        }
+        #endregion
+
         #region Constructor
 
         /// <summary>
         /// <para>构造函数：</para>
         /// <para>初始化一个<see cref="ValidatingCodeImageOCR" />对象实例。</para>
         /// </summary>
-        public ValidatingCodeImageOCR()
+        /// <param name="contentLength">HTTP响应流的长度。</param>
+        public ValidatingCodeImageOCR(int contentLength)
         {
+            this.ContentLength = contentLength;
         }
 
         #endregion
@@ -86,19 +104,16 @@ namespace MasterDuner.HHProjects.Csq.Highpincn.ValidatingCode
         /// <param name="fileName">文件名称。</param>
         public void SaveInPhysicalDisk(Stream imageStream, string fileName)
         {
-            using (FileStream outStream = new FileStream(fileName, FileMode.Create, FileAccess.Write, FileShare.Read))
+            using (Bitmap image = new Bitmap(imageStream))
             {
                 try
                 {
-                    byte[] buffer = new byte[imageStream.Length];
-                    imageStream.Read(buffer, 0, buffer.Length);
-                    outStream.Write(buffer, 0, buffer.Length);
+                    image.Save(fileName);
                 }
                 catch (Exception ex) { throw ex; }
                 finally
                 {
                     imageStream.Close();
-                    outStream.Close();
                 }
             }
         }
@@ -115,10 +130,29 @@ namespace MasterDuner.HHProjects.Csq.Highpincn.ValidatingCode
             string validatingCode = Marshal.PtrToStringAnsi(ValidatingCodeImageOCR.OCR(fileName, -1));
             try
             {
-                File.Delete(fileName);
+                //File.Delete(fileName);
             }
             catch { }
-            return validatingCode;
+            return this.AdjustOCRchars(validatingCode);
+        }
+        #endregion
+
+        #region AdjustOCRchars
+        /// <summary>
+        /// 矫正经过OCR获取的验证码。
+        /// </summary>
+        /// <param name="validatingCode">验证码。</param>
+        /// <returns>验证码。</returns>
+        private string AdjustOCRchars(string validatingCode)
+        {
+            string charseq = ZpConfigurationManager.GetConfig().LegalValidatingCodeSequence.Chars.ToLower();
+            char[] inArray = validatingCode.ToCharArray();
+            List<char> list = new List<char>();
+            foreach (char item in inArray)
+            {
+                if (charseq.Contains(item.ToString().ToLower())) list.Add(item);
+            }
+            return new string(list.ToArray());
         }
         #endregion
     }
