@@ -24,7 +24,6 @@
 
 #endregion
 
-using System;
 using System.IO;
 
 namespace MasterDuner.HHProjects.Csq.Highpincn.ValidatingCode
