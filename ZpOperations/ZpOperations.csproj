@@ -70,6 +70,7 @@
     <Compile Include="SessionCacheKey.internal.cs" />
     <Compile Include="ValidatingCode\IValidatingCodeImageOCR.cs" />
     <Compile Include="ValidatingCode\TemporaryDirectoryInfo.sealed.cs" />
+    <Compile Include="ValidatingCode\ValidatingCodeHttpRequestHandler.sealed.cs" />
     <Compile Include="ValidatingCode\ValidatingCodeImageOCR.sealed.cs" />
     <Compile Include="ValidatingCode\ZpValidatingCodeHttpRequest.sealed.cs" />
     <Compile Include="ZpCookie.sealed.cs" />
