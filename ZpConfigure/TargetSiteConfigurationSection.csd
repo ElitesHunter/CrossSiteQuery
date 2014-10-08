@@ -110,8 +110,22 @@
             <configurationElementMoniker name="/df415e00-5e0d-4f62-89b8-ec3d358d5449/SessionCachingElement" />
           </type>
         </elementProperty>
+        <elementProperty name="ValidatingCodeTempDir" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="validatingCodeTempDir" isReadOnly="false" documentation="设置或获取验证码临时文件目录路径。">
+          <type>
+            <configurationElementMoniker name="/df415e00-5e0d-4f62-89b8-ec3d358d5449/ValidatingCodeTemporaryDirectoryElement" />
+          </type>
+        </elementProperty>
       </elementProperties>
     </configurationSection>
+    <configurationElement name="ValidatingCodeTemporaryDirectoryElement" inheritanceModifier="Sealed" documentation="验证码临时目录配置。">
+      <attributeProperties>
+        <attributeProperty name="Path" isRequired="true" isKey="false" isDefaultCollection="false" xmlName="path" isReadOnly="false" documentation="设置或获取临时文件路径。">
+          <type>
+            <externalTypeMoniker name="/df415e00-5e0d-4f62-89b8-ec3d358d5449/String" />
+          </type>
+        </attributeProperty>
+      </attributeProperties>
+    </configurationElement>
   </configurationElements>
   <propertyValidators>
     <validators />

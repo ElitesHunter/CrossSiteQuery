@@ -651,5 +651,79 @@ namespace MasterDuner.HHProjects.Csq.Highpincn.Configuration
             }
         }
         #endregion
+        
+        #region ValidatingCodeTempDir Property
+        /// <summary>
+        /// The XML name of the <see cref="ValidatingCodeTempDir"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        internal const string ValidatingCodeTempDirPropertyName = "validatingCodeTempDir";
+        
+        /// <summary>
+        /// Gets or sets 设置或获取验证码临时文件目录路径。
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.ComponentModel.DescriptionAttribute("设置或获取验证码临时文件目录路径。")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.HighpinCnQueryServiceSection.ValidatingCodeTempDirPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.ValidatingCodeTemporaryDirectoryElement ValidatingCodeTempDir
+        {
+            get
+            {
+                return ((global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.ValidatingCodeTemporaryDirectoryElement)(base[global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.HighpinCnQueryServiceSection.ValidatingCodeTempDirPropertyName]));
+            }
+            set
+            {
+                base[global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.HighpinCnQueryServiceSection.ValidatingCodeTempDirPropertyName] = value;
+            }
+        }
+        #endregion
+    }
+}
+namespace MasterDuner.HHProjects.Csq.Highpincn.Configuration
+{
+    
+    
+    /// <summary>
+    /// 验证码临时目录配置。
+    /// </summary>
+    public sealed partial class ValidatingCodeTemporaryDirectoryElement : global::System.Configuration.ConfigurationElement
+    {
+        
+        #region IsReadOnly override
+        /// <summary>
+        /// Gets a value indicating whether the element is read-only.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        public override bool IsReadOnly()
+        {
+            return false;
+        }
+        #endregion
+        
+        #region Path Property
+        /// <summary>
+        /// The XML name of the <see cref="Path"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        internal const string PathPropertyName = "path";
+        
+        /// <summary>
+        /// Gets or sets 设置或获取临时文件路径。
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.ComponentModel.DescriptionAttribute("设置或获取临时文件路径。")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.ValidatingCodeTemporaryDirectoryElement.PathPropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false)]
+        public string Path
+        {
+            get
+            {
+                return ((string)(base[global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.ValidatingCodeTemporaryDirectoryElement.PathPropertyName]));
+            }
+            set
+            {
+                base[global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.ValidatingCodeTemporaryDirectoryElement.PathPropertyName] = value;
+            }
+        }
+        #endregion
     }
 }
