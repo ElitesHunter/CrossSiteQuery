@@ -61,6 +61,13 @@
       </itemType>
     </configurationElementCollection>
     <configurationElement name="SiteResourceElement" inheritanceModifier="Sealed" documentation="站点资源配置。">
+      <attributeProperties>
+        <attributeProperty name="DomainName" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="domainName" isReadOnly="false" documentation="设置或获取域名称。">
+          <type>
+            <externalTypeMoniker name="/df415e00-5e0d-4f62-89b8-ec3d358d5449/String" />
+          </type>
+        </attributeProperty>
+      </attributeProperties>
       <elementProperties>
         <elementProperty name="UrlResources" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="urls" isReadOnly="false">
           <type>

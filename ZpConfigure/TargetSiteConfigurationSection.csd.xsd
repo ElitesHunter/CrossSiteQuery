@@ -73,6 +73,11 @@
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
+		<xs:attribute name="domainName" use="optional" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>设置或获取域名称。</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 	</xs:complexType>
 	<xs:complexType name="MasterDuner.HHProjects.Csq.Highpincn.Configuration.SessionCachingElementCT">
 		<xs:sequence>

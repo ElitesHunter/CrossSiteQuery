@@ -375,6 +375,32 @@ namespace MasterDuner.HHProjects.Csq.Highpincn.Configuration
         }
         #endregion
         
+        #region DomainName Property
+        /// <summary>
+        /// The XML name of the <see cref="DomainName"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        internal const string DomainNamePropertyName = "domainName";
+        
+        /// <summary>
+        /// Gets or sets 设置或获取域名称。
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.ComponentModel.DescriptionAttribute("设置或获取域名称。")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.SiteResourceElement.DomainNamePropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public string DomainName
+        {
+            get
+            {
+                return ((string)(base[global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.SiteResourceElement.DomainNamePropertyName]));
+            }
+            set
+            {
+                base[global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.SiteResourceElement.DomainNamePropertyName] = value;
+            }
+        }
+        #endregion
+        
         #region UrlResources Property
         /// <summary>
         /// The XML name of the <see cref="UrlResources"/> property.
