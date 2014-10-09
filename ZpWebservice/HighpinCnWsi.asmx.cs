@@ -1,8 +1,9 @@
 ﻿using System.ComponentModel;
 using System.Web.Script.Services;
 using System.Web.Services;
-using MasterDuner.HHProjects.Csq.Highpincn.ValidatingCode;
 using MasterDuner.HHProjects.Csq.Highpincn.Authentication;
+using MasterDuner.HHProjects.Csq.Highpincn.Parameters;
+using MasterDuner.HHProjects.Csq.Highpincn.ValidatingCode;
 
 namespace MasterDuner.HHProjects.Csq.Highpincn.Wsi
 {
@@ -68,6 +69,19 @@ namespace MasterDuner.HHProjects.Csq.Highpincn.Wsi
                 Credentials = StaticUserCredentials.Current,
                 ValidatingCode = validatingCode
             }.Logon(sessionTag);
+        }
+        #endregion
+
+        #region TryGetIndustryData
+        /// <summary>
+        /// 尝试获取卓聘网的行业数据。
+        /// </summary>
+        /// <param name="sessionTag">会话标记。</param>
+        /// <returns>行业数据。</returns>
+        [WebMethod(Description = "尝试向卓聘网请求行业数据。<br />sessionTag:会话标记。")]
+        public IndustryCollection TryGetIndustryData(ClientSessionTag sessionTag)
+        {
+            return new IndustryDataHelper() { SessionTag = sessionTag }.GetData();
         }
         #endregion
     }

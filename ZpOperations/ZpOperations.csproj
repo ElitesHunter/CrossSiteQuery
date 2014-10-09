@@ -74,6 +74,9 @@
     <Compile Include="IZpUri.cs" />
     <Compile Include="Parameters\Industry.public.cs" />
     <Compile Include="Parameters\IndustryCollection.public.cs" />
+    <Compile Include="Parameters\IndustryDataHelper.sealed.cs" />
+    <Compile Include="Parameters\IndustryHttpRequest.public.cs" />
+    <Compile Include="Parameters\IndustryHttpRequestHandler.sealed.cs" />
     <Compile Include="Parameters\IParameterData.cs" />
     <Compile Include="Parameters\ParameterData.abstract.cs" />
     <Compile Include="Parameters\ParameterDataCollection.public.cs" />
