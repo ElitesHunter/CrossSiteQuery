@@ -729,6 +729,32 @@ namespace MasterDuner.HHProjects.Csq.Highpincn.Configuration
             }
         }
         #endregion
+        
+        #region TextParser Property
+        /// <summary>
+        /// The XML name of the <see cref="TextParser"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        internal const string TextParserPropertyName = "textParser";
+        
+        /// <summary>
+        /// Gets or sets 设置或获取文本解释器。
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.ComponentModel.DescriptionAttribute("设置或获取文本解释器。")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.HighpinCnQueryServiceSection.TextParserPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.TextParsingElement TextParser
+        {
+            get
+            {
+                return ((global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.TextParsingElement)(base[global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.HighpinCnQueryServiceSection.TextParserPropertyName]));
+            }
+            set
+            {
+                base[global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.HighpinCnQueryServiceSection.TextParserPropertyName] = value;
+            }
+        }
+        #endregion
     }
 }
 namespace MasterDuner.HHProjects.Csq.Highpincn.Configuration
@@ -822,6 +848,450 @@ namespace MasterDuner.HHProjects.Csq.Highpincn.Configuration
             set
             {
                 base[global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.LegalCharsequenceElement.CharsPropertyName] = value;
+            }
+        }
+        #endregion
+    }
+}
+namespace MasterDuner.HHProjects.Csq.Highpincn.Configuration
+{
+    
+    
+    /// <summary>
+    /// 正则表达式配置。
+    /// </summary>
+    public sealed partial class RegExpressionElement : global::System.Configuration.ConfigurationElement
+    {
+        
+        #region IsReadOnly override
+        /// <summary>
+        /// Gets a value indicating whether the element is read-only.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        public override bool IsReadOnly()
+        {
+            return false;
+        }
+        #endregion
+        
+        #region Name Property
+        /// <summary>
+        /// The XML name of the <see cref="Name"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        internal const string NamePropertyName = "name";
+        
+        /// <summary>
+        /// Gets or sets 设置或获取正则表达式描述名称。
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.ComponentModel.DescriptionAttribute("设置或获取正则表达式描述名称。")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionElement.NamePropertyName, IsRequired=true, IsKey=true, IsDefaultCollection=false)]
+        public string Name
+        {
+            get
+            {
+                return ((string)(base[global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionElement.NamePropertyName]));
+            }
+            set
+            {
+                base[global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionElement.NamePropertyName] = value;
+            }
+        }
+        #endregion
+        
+        #region Expression Property
+        /// <summary>
+        /// The XML name of the <see cref="Expression"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        internal const string ExpressionPropertyName = "expression";
+        
+        /// <summary>
+        /// Gets or sets 设置或获取正则表达式。
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.ComponentModel.DescriptionAttribute("设置或获取正则表达式。")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionElement.ExpressionPropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false)]
+        public string Expression
+        {
+            get
+            {
+                return ((string)(base[global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionElement.ExpressionPropertyName]));
+            }
+            set
+            {
+                base[global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionElement.ExpressionPropertyName] = value;
+            }
+        }
+        #endregion
+    }
+}
+namespace MasterDuner.HHProjects.Csq.Highpincn.Configuration
+{
+    
+    
+    /// <summary>
+    /// RegExpressionElement配置集合。
+    /// </summary>
+    [global::System.Configuration.ConfigurationCollectionAttribute(typeof(global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionElement), CollectionType=global::System.Configuration.ConfigurationElementCollectionType.BasicMap, AddItemName=global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionElementCollection.RegExpressionElementPropertyName)]
+    public sealed partial class RegExpressionElementCollection : global::System.Configuration.ConfigurationElementCollection
+    {
+        
+        #region Constants
+        /// <summary>
+        /// The XML name of the individual <see cref="global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionElement"/> instances in this collection.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        internal const string RegExpressionElementPropertyName = "add";
+        #endregion
+        
+        #region Overrides
+        /// <summary>
+        /// Gets the type of the <see cref="global::System.Configuration.ConfigurationElementCollection"/>.
+        /// </summary>
+        /// <returns>The <see cref="global::System.Configuration.ConfigurationElementCollectionType"/> of this collection.</returns>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        public override global::System.Configuration.ConfigurationElementCollectionType CollectionType
+        {
+            get
+            {
+                return global::System.Configuration.ConfigurationElementCollectionType.BasicMap;
+            }
+        }
+        
+        /// <summary>
+        /// Gets the name used to identify this collection of elements
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        protected override string ElementName
+        {
+            get
+            {
+                return global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionElementCollection.RegExpressionElementPropertyName;
+            }
+        }
+        
+        /// <summary>
+        /// Indicates whether the specified <see cref="global::System.Configuration.ConfigurationElement"/> exists in the <see cref="global::System.Configuration.ConfigurationElementCollection"/>.
+        /// </summary>
+        /// <param name="elementName">The name of the element to verify.</param>
+        /// <returns>
+        /// <see langword="true"/> if the element exists in the collection; otherwise, <see langword="false"/>.
+        /// </returns>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        protected override bool IsElementName(string elementName)
+        {
+            return (elementName == global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionElementCollection.RegExpressionElementPropertyName);
+        }
+        
+        /// <summary>
+        /// Gets the element key for the specified configuration element.
+        /// </summary>
+        /// <param name="element">The <see cref="global::System.Configuration.ConfigurationElement"/> to return the key for.</param>
+        /// <returns>
+        /// An <see cref="object"/> that acts as the key for the specified <see cref="global::System.Configuration.ConfigurationElement"/>.
+        /// </returns>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        protected override object GetElementKey(global::System.Configuration.ConfigurationElement element)
+        {
+            return ((global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionElement)(element)).Name;
+        }
+        
+        /// <summary>
+        /// Creates a new <see cref="global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionElement"/>.
+        /// </summary>
+        /// <returns>
+        /// A new <see cref="global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionElement"/>.
+        /// </returns>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        protected override global::System.Configuration.ConfigurationElement CreateNewElement()
+        {
+            return new global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionElement();
+        }
+        #endregion
+        
+        #region Indexer
+        /// <summary>
+        /// Gets the <see cref="global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionElement"/> at the specified index.
+        /// </summary>
+        /// <param name="index">The index of the <see cref="global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionElement"/> to retrieve.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        public global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionElement this[int index]
+        {
+            get
+            {
+                return ((global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionElement)(base.BaseGet(index)));
+            }
+        }
+        
+        /// <summary>
+        /// Gets the <see cref="global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionElement"/> with the specified key.
+        /// </summary>
+        /// <param name="name">The key of the <see cref="global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionElement"/> to retrieve.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        public global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionElement this[object name]
+        {
+            get
+            {
+                return ((global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionElement)(base.BaseGet(name)));
+            }
+        }
+        #endregion
+        
+        #region IsReadOnly override
+        /// <summary>
+        /// Gets a value indicating whether the element is read-only.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        public override bool IsReadOnly()
+        {
+            return false;
+        }
+        #endregion
+    }
+}
+namespace MasterDuner.HHProjects.Csq.Highpincn.Configuration
+{
+    
+    
+    /// <summary>
+    /// 正则表达式配置分组。
+    /// </summary>
+    public sealed partial class RegExpressionGroupElement : global::System.Configuration.ConfigurationElement
+    {
+        
+        #region IsReadOnly override
+        /// <summary>
+        /// Gets a value indicating whether the element is read-only.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        public override bool IsReadOnly()
+        {
+            return false;
+        }
+        #endregion
+        
+        #region Name Property
+        /// <summary>
+        /// The XML name of the <see cref="Name"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        internal const string NamePropertyName = "name";
+        
+        /// <summary>
+        /// Gets or sets 设置或获取正则表达式分组名称。
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.ComponentModel.DescriptionAttribute("设置或获取正则表达式分组名称。")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionGroupElement.NamePropertyName, IsRequired=true, IsKey=true, IsDefaultCollection=false)]
+        public string Name
+        {
+            get
+            {
+                return ((string)(base[global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionGroupElement.NamePropertyName]));
+            }
+            set
+            {
+                base[global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionGroupElement.NamePropertyName] = value;
+            }
+        }
+        #endregion
+        
+        #region Expressions Property
+        /// <summary>
+        /// The XML name of the <see cref="Expressions"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        internal const string ExpressionsPropertyName = "";
+        
+        /// <summary>
+        /// Gets or sets 设置或获取此分组中的正则表达式。
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.ComponentModel.DescriptionAttribute("设置或获取此分组中的正则表达式。")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionGroupElement.ExpressionsPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=true)]
+        public global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionElementCollection Expressions
+        {
+            get
+            {
+                return ((global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionElementCollection)(base[global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionGroupElement.ExpressionsPropertyName]));
+            }
+            set
+            {
+                base[global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionGroupElement.ExpressionsPropertyName] = value;
+            }
+        }
+        #endregion
+    }
+}
+namespace MasterDuner.HHProjects.Csq.Highpincn.Configuration
+{
+    
+    
+    /// <summary>
+    /// RegExpressionGroupElement配置集合。
+    /// </summary>
+    [global::System.Configuration.ConfigurationCollectionAttribute(typeof(global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionGroupElement), CollectionType=global::System.Configuration.ConfigurationElementCollectionType.BasicMap, AddItemName=global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionGroupElementCollection.RegExpressionGroupElementPropertyName)]
+    public sealed partial class RegExpressionGroupElementCollection : global::System.Configuration.ConfigurationElementCollection
+    {
+        
+        #region Constants
+        /// <summary>
+        /// The XML name of the individual <see cref="global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionGroupElement"/> instances in this collection.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        internal const string RegExpressionGroupElementPropertyName = "group";
+        #endregion
+        
+        #region Overrides
+        /// <summary>
+        /// Gets the type of the <see cref="global::System.Configuration.ConfigurationElementCollection"/>.
+        /// </summary>
+        /// <returns>The <see cref="global::System.Configuration.ConfigurationElementCollectionType"/> of this collection.</returns>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        public override global::System.Configuration.ConfigurationElementCollectionType CollectionType
+        {
+            get
+            {
+                return global::System.Configuration.ConfigurationElementCollectionType.BasicMap;
+            }
+        }
+        
+        /// <summary>
+        /// Gets the name used to identify this collection of elements
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        protected override string ElementName
+        {
+            get
+            {
+                return global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionGroupElementCollection.RegExpressionGroupElementPropertyName;
+            }
+        }
+        
+        /// <summary>
+        /// Indicates whether the specified <see cref="global::System.Configuration.ConfigurationElement"/> exists in the <see cref="global::System.Configuration.ConfigurationElementCollection"/>.
+        /// </summary>
+        /// <param name="elementName">The name of the element to verify.</param>
+        /// <returns>
+        /// <see langword="true"/> if the element exists in the collection; otherwise, <see langword="false"/>.
+        /// </returns>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        protected override bool IsElementName(string elementName)
+        {
+            return (elementName == global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionGroupElementCollection.RegExpressionGroupElementPropertyName);
+        }
+        
+        /// <summary>
+        /// Gets the element key for the specified configuration element.
+        /// </summary>
+        /// <param name="element">The <see cref="global::System.Configuration.ConfigurationElement"/> to return the key for.</param>
+        /// <returns>
+        /// An <see cref="object"/> that acts as the key for the specified <see cref="global::System.Configuration.ConfigurationElement"/>.
+        /// </returns>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        protected override object GetElementKey(global::System.Configuration.ConfigurationElement element)
+        {
+            return ((global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionGroupElement)(element)).Name;
+        }
+        
+        /// <summary>
+        /// Creates a new <see cref="global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionGroupElement"/>.
+        /// </summary>
+        /// <returns>
+        /// A new <see cref="global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionGroupElement"/>.
+        /// </returns>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        protected override global::System.Configuration.ConfigurationElement CreateNewElement()
+        {
+            return new global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionGroupElement();
+        }
+        #endregion
+        
+        #region Indexer
+        /// <summary>
+        /// Gets the <see cref="global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionGroupElement"/> at the specified index.
+        /// </summary>
+        /// <param name="index">The index of the <see cref="global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionGroupElement"/> to retrieve.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        public global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionGroupElement this[int index]
+        {
+            get
+            {
+                return ((global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionGroupElement)(base.BaseGet(index)));
+            }
+        }
+        
+        /// <summary>
+        /// Gets the <see cref="global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionGroupElement"/> with the specified key.
+        /// </summary>
+        /// <param name="name">The key of the <see cref="global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionGroupElement"/> to retrieve.</param>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        public global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionGroupElement this[object name]
+        {
+            get
+            {
+                return ((global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionGroupElement)(base.BaseGet(name)));
+            }
+        }
+        #endregion
+        
+        #region IsReadOnly override
+        /// <summary>
+        /// Gets a value indicating whether the element is read-only.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        public override bool IsReadOnly()
+        {
+            return false;
+        }
+        #endregion
+    }
+}
+namespace MasterDuner.HHProjects.Csq.Highpincn.Configuration
+{
+    
+    
+    /// <summary>
+    /// 文本解析配置。
+    /// </summary>
+    public sealed partial class TextParsingElement : global::System.Configuration.ConfigurationElement
+    {
+        
+        #region IsReadOnly override
+        /// <summary>
+        /// Gets a value indicating whether the element is read-only.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        public override bool IsReadOnly()
+        {
+            return false;
+        }
+        #endregion
+        
+        #region RegularExpressions Property
+        /// <summary>
+        /// The XML name of the <see cref="RegularExpressions"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        internal const string RegularExpressionsPropertyName = "regularExpressions";
+        
+        /// <summary>
+        /// Gets or sets 设置或获取正则表达式。
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.ComponentModel.DescriptionAttribute("设置或获取正则表达式。")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.TextParsingElement.RegularExpressionsPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionGroupElementCollection RegularExpressions
+        {
+            get
+            {
+                return ((global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.RegExpressionGroupElementCollection)(base[global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.TextParsingElement.RegularExpressionsPropertyName]));
+            }
+            set
+            {
+                base[global::MasterDuner.HHProjects.Csq.Highpincn.Configuration.TextParsingElement.RegularExpressionsPropertyName] = value;
             }
         }
         #endregion

@@ -127,6 +127,11 @@
             <configurationElementMoniker name="/df415e00-5e0d-4f62-89b8-ec3d358d5449/LegalCharsequenceElement" />
           </type>
         </elementProperty>
+        <elementProperty name="TextParser" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="textParser" isReadOnly="false" documentation="设置或获取文本解释器。">
+          <type>
+            <configurationElementMoniker name="/df415e00-5e0d-4f62-89b8-ec3d358d5449/TextParsingElement" />
+          </type>
+        </elementProperty>
       </elementProperties>
     </configurationSection>
     <configurationElement name="ValidatingCodeTemporaryDirectoryElement" inheritanceModifier="Sealed" documentation="验证码临时目录配置。">
@@ -146,6 +151,55 @@
           </type>
         </attributeProperty>
       </attributeProperties>
+    </configurationElement>
+    <configurationElement name="RegExpressionElement" inheritanceModifier="Sealed" documentation="正则表达式配置。">
+      <attributeProperties>
+        <attributeProperty name="Name" isRequired="true" isKey="true" isDefaultCollection="false" xmlName="name" isReadOnly="false" documentation="设置或获取正则表达式描述名称。">
+          <type>
+            <externalTypeMoniker name="/df415e00-5e0d-4f62-89b8-ec3d358d5449/String" />
+          </type>
+        </attributeProperty>
+        <attributeProperty name="Expression" isRequired="true" isKey="false" isDefaultCollection="false" xmlName="expression" isReadOnly="false" documentation="设置或获取正则表达式。">
+          <type>
+            <externalTypeMoniker name="/df415e00-5e0d-4f62-89b8-ec3d358d5449/String" />
+          </type>
+        </attributeProperty>
+      </attributeProperties>
+    </configurationElement>
+    <configurationElementCollection name="RegExpressionElementCollection" inheritanceModifier="Sealed" documentation="RegExpressionElement配置集合。" collectionType="BasicMap" xmlItemName="add" codeGenOptions="Indexer">
+      <itemType>
+        <configurationElementMoniker name="/df415e00-5e0d-4f62-89b8-ec3d358d5449/RegExpressionElement" />
+      </itemType>
+    </configurationElementCollection>
+    <configurationElement name="RegExpressionGroupElement" inheritanceModifier="Sealed" documentation="正则表达式配置分组。">
+      <attributeProperties>
+        <attributeProperty name="Name" isRequired="true" isKey="true" isDefaultCollection="false" xmlName="name" isReadOnly="false" documentation="设置或获取正则表达式分组名称。">
+          <type>
+            <externalTypeMoniker name="/df415e00-5e0d-4f62-89b8-ec3d358d5449/String" />
+          </type>
+        </attributeProperty>
+      </attributeProperties>
+      <elementProperties>
+        <elementProperty name="Expressions" isRequired="false" isKey="false" isDefaultCollection="true" xmlName="" isReadOnly="false" documentation="设置或获取此分组中的正则表达式。">
+          <type>
+            <configurationElementCollectionMoniker name="/df415e00-5e0d-4f62-89b8-ec3d358d5449/RegExpressionElementCollection" />
+          </type>
+        </elementProperty>
+      </elementProperties>
+    </configurationElement>
+    <configurationElementCollection name="RegExpressionGroupElementCollection" inheritanceModifier="Sealed" documentation="RegExpressionGroupElement配置集合。" collectionType="BasicMap" xmlItemName="group" codeGenOptions="Indexer">
+      <itemType>
+        <configurationElementMoniker name="/df415e00-5e0d-4f62-89b8-ec3d358d5449/RegExpressionGroupElement" />
+      </itemType>
+    </configurationElementCollection>
+    <configurationElement name="TextParsingElement" inheritanceModifier="Sealed" documentation="文本解析配置。">
+      <elementProperties>
+        <elementProperty name="RegularExpressions" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="regularExpressions" isReadOnly="false" documentation="设置或获取正则表达式。">
+          <type>
+            <configurationElementCollectionMoniker name="/df415e00-5e0d-4f62-89b8-ec3d358d5449/RegExpressionGroupElementCollection" />
+          </type>
+        </elementProperty>
+      </elementProperties>
     </configurationElement>
   </configurationElements>
   <propertyValidators>
