@@ -152,6 +152,19 @@ namespace MasterDuner.HHProjects.Csq.Highpincn.Parameters
             return null;
         }
         #endregion
+
+        #region CacheKey
+        /// <summary>
+        /// 获取缓存标识名称。
+        /// </summary>
+        protected override string CacheKey
+        {
+            get
+            {
+                return "CSQ_COMMONS_ZPNET_INDUSTRY";
+            }
+        }
+        #endregion
     }
 }
 
