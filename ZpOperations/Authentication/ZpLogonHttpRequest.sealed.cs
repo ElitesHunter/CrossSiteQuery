@@ -24,9 +24,9 @@
 
 #endregion
 
+using System;
 using System.Net;
 using System.Text;
-using System;
 
 namespace MasterDuner.HHProjects.Csq.Highpincn.Authentication
 {
