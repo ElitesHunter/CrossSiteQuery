@@ -75,7 +75,7 @@ namespace MasterDuner.HHProjects.Csq.Highpincn.Parameters
             data.InitializeThis();
             if (data.Count.Equals(0))
             {
-                data = new IndustryHttpRequestHandler().RequestAndGetResponseData(new IndustryHttpRequest(this.SessionTag));
+                data = new IndustryHttpRequestHandler().RequestAndGetResponseData(new IndustryHttpRequest(this.SessionTag) { Method = HttpMethods.Get });
             }
             return data;
         }

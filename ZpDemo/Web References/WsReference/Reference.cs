@@ -27,6 +27,7 @@ namespace ZpDemo.WsReference {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="HighpinCnWsiSoap", Namespace="http://www.highpin.cn")]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ParameterData))]
     public partial class HighpinCnWsi : System.Web.Services.Protocols.SoapHttpClientProtocol {
         
         private System.Threading.SendOrPostCallback RequestSessionTagOperationCompleted;
@@ -36,6 +37,8 @@ namespace ZpDemo.WsReference {
         private System.Threading.SendOrPostCallback RequestValidatingCodeOperationCompleted;
         
         private System.Threading.SendOrPostCallback TryLogonOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback TryGetIndustryDataOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -86,6 +89,9 @@ namespace ZpDemo.WsReference {
         
         /// <remarks/>
         public event TryLogonCompletedEventHandler TryLogonCompleted;
+        
+        /// <remarks/>
+        public event TryGetIndustryDataCompletedEventHandler TryGetIndustryDataCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.highpin.cn/RequestSessionTag", RequestNamespace="http://www.highpin.cn", ResponseNamespace="http://www.highpin.cn", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -204,6 +210,35 @@ namespace ZpDemo.WsReference {
         }
         
         /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("http://www.highpin.cn/TryGetIndustryData", RequestNamespace="http://www.highpin.cn", ResponseNamespace="http://www.highpin.cn", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        public Industry[] TryGetIndustryData(ClientSessionTag sessionTag) {
+            object[] results = this.Invoke("TryGetIndustryData", new object[] {
+                        sessionTag});
+            return ((Industry[])(results[0]));
+        }
+        
+        /// <remarks/>
+        public void TryGetIndustryDataAsync(ClientSessionTag sessionTag) {
+            this.TryGetIndustryDataAsync(sessionTag, null);
+        }
+        
+        /// <remarks/>
+        public void TryGetIndustryDataAsync(ClientSessionTag sessionTag, object userState) {
+            if ((this.TryGetIndustryDataOperationCompleted == null)) {
+                this.TryGetIndustryDataOperationCompleted = new System.Threading.SendOrPostCallback(this.OnTryGetIndustryDataOperationCompleted);
+            }
+            this.InvokeAsync("TryGetIndustryData", new object[] {
+                        sessionTag}, this.TryGetIndustryDataOperationCompleted, userState);
+        }
+        
+        private void OnTryGetIndustryDataOperationCompleted(object arg) {
+            if ((this.TryGetIndustryDataCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.TryGetIndustryDataCompleted(this, new TryGetIndustryDataCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
         public new void CancelAsync(object userState) {
             base.CancelAsync(userState);
         }
@@ -241,6 +276,49 @@ namespace ZpDemo.WsReference {
                 this.sessionIdField = value;
             }
         }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Industry))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.highpin.cn")]
+    public abstract partial class ParameterData {
+        
+        private string keyField;
+        
+        private string valueField;
+        
+        /// <remarks/>
+        public string Key {
+            get {
+                return this.keyField;
+            }
+            set {
+                this.keyField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="http://www.highpin.cn")]
+    public partial class Industry : ParameterData {
     }
     
     /// <remarks/>
@@ -343,6 +421,32 @@ namespace ZpDemo.WsReference {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((bool)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void TryGetIndustryDataCompletedEventHandler(object sender, TryGetIndustryDataCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class TryGetIndustryDataCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal TryGetIndustryDataCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public Industry[] Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((Industry[])(this.results[0]));
             }
         }
     }

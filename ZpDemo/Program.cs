@@ -27,6 +27,8 @@ namespace ZpDemo
 
                 Console.WriteLine("成功登录卓聘网！");
 
+                Industry[] industryData = wsi.TryGetIndustryData(sessionTag);
+
                 Console.Read();
             }
         }

@@ -88,6 +88,9 @@
     </None>
     <None Include="Web References\WsReference\HighpinCnWsi.disco" />
     <None Include="Web References\WsReference\HighpinCnWsi.wsdl" />
+    <None Include="Web References\WsReference\Industry.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
     <None Include="Web References\WsReference\Reference.map">
       <Generator>MSDiscoCodeGenerator</Generator>
       <LastGenOutput>Reference.cs</LastGenOutput>

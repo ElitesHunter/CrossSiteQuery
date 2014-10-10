@@ -146,7 +146,11 @@ namespace MasterDuner.HHProjects.Csq.Highpincn.Parameters
                 Match name = Regex.Match(match.Value, this.Expressions["IndustryName"]);
                 if (id.Success && !string.IsNullOrWhiteSpace(id.Value) && name.Success && !string.IsNullOrWhiteSpace(name.Value))
                 {
-                    return new Industry() { Key = id.Value.Replace("[", string.Empty).Replace("]", string.Empty), Value = name.Value };
+                    return new Industry()
+                    {
+                        Key = id.Value.Replace("[", string.Empty).Replace("]", string.Empty),
+                        Value = name.Value.Replace("[", string.Empty).Replace("]", string.Empty).Replace("\"", string.Empty)
+                    };
                 }
             }
             return null;
