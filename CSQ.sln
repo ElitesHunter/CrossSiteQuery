@@ -4,6 +4,7 @@ Microsoft Visual Studio Solution File, Format Version 11.00
 Project("{2150E333-8FDC-42A3-9474-1A3956D46DE8}") = "智联卓聘 Highpin.cn", "智联卓聘 Highpin.cn", "{99BEFA84-4F29-4068-BAE9-A3E72973FD03}"
 	ProjectSection(SolutionItems) = preProject
 		Zp\AssemblyInfoCommon.cs = Zp\AssemblyInfoCommon.cs
+		README.txt = README.txt
 	EndProjectSection
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "ZpConfigure", "ZpConfigure\ZpConfigure.csproj", "{BD9AE890-337E-47A6-9025-C28D2B241FFD}"
