@@ -43,7 +43,11 @@ namespace MasterDuner.Cooperations.Csq.Commons
         /// <summary>
         /// 智联卓聘网：www.highpin.cn。
         /// </summary>
-        HighpinCn = 1024
+        HighpinCn = 1024,
+        /// <summary>
+        /// 未知的搜索渠道。
+        /// </summary>
+        Unknown = 65535
     }
 }
 
