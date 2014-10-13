@@ -24,14 +24,13 @@
 
 #endregion
 
-using System;
 using System.Configuration;
+using System.IO;
 using System.Web;
-using ConfigurationObject = System.Configuration.Configuration;
+using System.Web.Caching;
 using System.Web.Configuration;
 using System.Web.Hosting;
-using System.Web.Caching;
-using System.IO;
+using ConfigurationObject = System.Configuration.Configuration;
 
 namespace MasterDuner.Cooperations.Csq.Commons.Configuration
 {

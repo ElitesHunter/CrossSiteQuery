@@ -103,9 +103,9 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
         /// <returns><see cref="FileInfo"/>对象实例。</returns>
         protected virtual FileInfo GetPrivateConfigFile(SearchChannelElement config)
         {
-            if (!config.EntryPoint.PrivateConfig.HasPrivateConfigurationFile) throw new NullReferenceException(string.Format("未找到搜索渠道{0}的私有配置文件！",config.ID));
-            FileInfo fileInfo = new FileInfo(Path.Combine(HostingEnvironment.ApplicationPhysicalPath,config.EntryPoint.PrivateConfig.PrivateConfigurationFileName));
-            if (!fileInfo.Exists) throw new FileNotFoundException(string.Format("未找到搜索渠道{0}的私有配置文件{1}！",config.ID, fileInfo.FullName));
+            if (!config.EntryPoint.PrivateConfig.HasPrivateConfigurationFile) throw new NullReferenceException(string.Format("未找到搜索渠道{0}的私有配置文件！", config.ID));
+            FileInfo fileInfo = new FileInfo(Path.Combine(HostingEnvironment.ApplicationPhysicalPath, config.EntryPoint.PrivateConfig.PrivateConfigurationFileName));
+            if (!fileInfo.Exists) throw new FileNotFoundException(string.Format("未找到搜索渠道{0}的私有配置文件{1}！", config.ID, fileInfo.FullName));
             return fileInfo;
         }
         #endregion
