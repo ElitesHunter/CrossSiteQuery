@@ -61,7 +61,7 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
             config = null;
             object data = HttpRuntime.Cache[SearchChannelConfiguration.CacheID];
             bool existCache = !object.ReferenceEquals(data, null);
-            if (existCache) config = data as SearchChannelConfiguration;
+            if (existCache) config = data as SearchChannelSection;
             return existCache;
         }
         #endregion
