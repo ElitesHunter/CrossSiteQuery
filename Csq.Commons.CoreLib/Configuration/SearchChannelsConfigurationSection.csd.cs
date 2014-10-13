@@ -280,6 +280,32 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
             }
         }
         #endregion
+        
+        #region Caching Property
+        /// <summary>
+        /// The XML name of the <see cref="Caching"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        internal const string CachingPropertyName = "caching";
+        
+        /// <summary>
+        /// Gets or sets 设置或获取缓存配置。
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.ComponentModel.DescriptionAttribute("设置或获取缓存配置。")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement.CachingPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public global::MasterDuner.Cooperations.Csq.Commons.Configuration.DataCacheElement Caching
+        {
+            get
+            {
+                return ((global::MasterDuner.Cooperations.Csq.Commons.Configuration.DataCacheElement)(base[global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement.CachingPropertyName]));
+            }
+            set
+            {
+                base[global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement.CachingPropertyName] = value;
+            }
+        }
+        #endregion
     }
 }
 namespace MasterDuner.Cooperations.Csq.Commons.Configuration
@@ -548,6 +574,80 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
             set
             {
                 base[global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelSection.ChannelsPropertyName] = value;
+            }
+        }
+        #endregion
+    }
+}
+namespace MasterDuner.Cooperations.Csq.Commons.Configuration
+{
+    
+    
+    /// <summary>
+    /// 数据缓存配置。
+    /// </summary>
+    public sealed partial class DataCacheElement : global::System.Configuration.ConfigurationElement
+    {
+        
+        #region IsReadOnly override
+        /// <summary>
+        /// Gets a value indicating whether the element is read-only.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        public override bool IsReadOnly()
+        {
+            return false;
+        }
+        #endregion
+        
+        #region CacheRequired Property
+        /// <summary>
+        /// The XML name of the <see cref="CacheRequired"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        internal const string CacheRequiredPropertyName = "cacheRequired";
+        
+        /// <summary>
+        /// Gets or sets 设置或获取是否需要缓存。
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.ComponentModel.DescriptionAttribute("设置或获取是否需要缓存。")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.DataCacheElement.CacheRequiredPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false, DefaultValue=false)]
+        public bool CacheRequired
+        {
+            get
+            {
+                return ((bool)(base[global::MasterDuner.Cooperations.Csq.Commons.Configuration.DataCacheElement.CacheRequiredPropertyName]));
+            }
+            set
+            {
+                base[global::MasterDuner.Cooperations.Csq.Commons.Configuration.DataCacheElement.CacheRequiredPropertyName] = value;
+            }
+        }
+        #endregion
+        
+        #region NamePrefix Property
+        /// <summary>
+        /// The XML name of the <see cref="NamePrefix"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        internal const string NamePrefixPropertyName = "namePrefix";
+        
+        /// <summary>
+        /// Gets or sets 设置或获取缓存标识名称前缀。
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.ComponentModel.DescriptionAttribute("设置或获取缓存标识名称前缀。")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.DataCacheElement.NamePrefixPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public string NamePrefix
+        {
+            get
+            {
+                return ((string)(base[global::MasterDuner.Cooperations.Csq.Commons.Configuration.DataCacheElement.NamePrefixPropertyName]));
+            }
+            set
+            {
+                base[global::MasterDuner.Cooperations.Csq.Commons.Configuration.DataCacheElement.NamePrefixPropertyName] = value;
             }
         }
         #endregion

@@ -65,6 +65,11 @@
             <configurationElementMoniker name="/68edb1b6-8ee7-42d8-9acc-6c9f8cfd3c78/UrlElement" />
           </type>
         </elementProperty>
+        <elementProperty name="Caching" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="caching" isReadOnly="false" documentation="设置或获取缓存配置。">
+          <type>
+            <configurationElementMoniker name="/68edb1b6-8ee7-42d8-9acc-6c9f8cfd3c78/DataCacheElement" />
+          </type>
+        </elementProperty>
       </elementProperties>
     </configurationElement>
     <configurationElement name="PrivateConfigurationElement" inheritanceModifier="Sealed" documentation="私有配置文件配置。">
@@ -95,6 +100,20 @@
         </elementProperty>
       </elementProperties>
     </configurationSection>
+    <configurationElement name="DataCacheElement" inheritanceModifier="Sealed" documentation="数据缓存配置。">
+      <attributeProperties>
+        <attributeProperty name="CacheRequired" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="cacheRequired" isReadOnly="false" documentation="设置或获取是否需要缓存。" defaultValue="false">
+          <type>
+            <externalTypeMoniker name="/68edb1b6-8ee7-42d8-9acc-6c9f8cfd3c78/Boolean" />
+          </type>
+        </attributeProperty>
+        <attributeProperty name="NamePrefix" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="namePrefix" isReadOnly="false" documentation="设置或获取缓存标识名称前缀。">
+          <type>
+            <externalTypeMoniker name="/68edb1b6-8ee7-42d8-9acc-6c9f8cfd3c78/String" />
+          </type>
+        </attributeProperty>
+      </attributeProperties>
+    </configurationElement>
   </configurationElements>
   <propertyValidators>
     <validators />

@@ -49,6 +49,11 @@
 					<xs:documentation>设置或获取首页URL配置。</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element minOccurs="0" name="caching" type="tns:MasterDuner.Cooperations.Csq.Commons.Configuration.DataCacheElementCT">
+				<xs:annotation>
+					<xs:documentation>设置或获取缓存配置。</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
 		<xs:attribute name="id" use="required" type="xs:int">
 			<xs:annotation>
@@ -92,5 +97,19 @@
 				</xs:annotation>
 			</xs:element>
 		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MasterDuner.Cooperations.Csq.Commons.Configuration.DataCacheElementCT">
+		<xs:sequence>
+		</xs:sequence>
+		<xs:attribute name="cacheRequired" use="optional" type="xs:boolean">
+			<xs:annotation>
+				<xs:documentation>设置或获取是否需要缓存。</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="namePrefix" use="optional" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>设置或获取缓存标识名称前缀。</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 	</xs:complexType>
 </xs:schema>
