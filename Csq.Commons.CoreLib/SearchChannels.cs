@@ -40,6 +40,10 @@ namespace MasterDuner.Cooperations.Csq.Commons
     [Serializable()]
     public enum SearchChannels
     {
+        /// <summary>
+        /// 智联卓聘网：www.highpin.cn。
+        /// </summary>
+        HighpinCn = 1024
     }
 }
 
