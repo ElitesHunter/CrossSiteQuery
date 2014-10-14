@@ -24,7 +24,6 @@
 
 #endregion
 
-using System;
 
 namespace MasterDuner.Cooperations.Csq.Commons
 {
@@ -40,6 +39,12 @@ namespace MasterDuner.Cooperations.Csq.Commons
     /// </remarks>
     public interface ISpecifiedID<T>
     {
+        #region UniqueID
+        /// <summary>
+        /// 设置或获取搜索渠道指定的标识名称。
+        /// </summary>
+        T UniqueID { get; set; }
+        #endregion
     }
 }
 
