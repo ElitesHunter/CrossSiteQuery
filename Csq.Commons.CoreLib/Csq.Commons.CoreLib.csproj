@@ -43,6 +43,7 @@
     <Reference Include="System.Configuration" />
     <Reference Include="System.Core" />
     <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
     <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
@@ -68,6 +69,7 @@
     <Compile Include="ExpandoRequirementObject.public.cs" />
     <Compile Include="Gender.cs" />
     <Compile Include="IdBase.public.cs" />
+    <Compile Include="IResumeSearcher.cs" />
     <Compile Include="KeywordsBase.public.cs" />
     <Compile Include="PerformStatus.cs" />
     <Compile Include="PositionBase.public.cs" />
@@ -76,6 +78,7 @@
     <Compile Include="SalaryBase.public.cs" />
     <Compile Include="SearchChannelAttribute.sealed.cs" />
     <Compile Include="SearchChannels.cs" />
+    <Compile Include="SearchResultBase.public.cs" />
     <Compile Include="WorkExperienceBase.public.cs" />
     <Compile Include="WorkLocationBase.public.cs" />
   </ItemGroup>
