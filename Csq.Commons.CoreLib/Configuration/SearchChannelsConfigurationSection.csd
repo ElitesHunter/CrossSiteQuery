@@ -18,11 +18,6 @@
             <externalTypeMoniker name="/68edb1b6-8ee7-42d8-9acc-6c9f8cfd3c78/Boolean" />
           </type>
         </attributeProperty>
-        <attributeProperty name="Type" isRequired="true" isKey="false" isDefaultCollection="false" xmlName="type" isReadOnly="false" documentation="设置或获取此入口点类型的完全限定名称。">
-          <type>
-            <externalTypeMoniker name="/68edb1b6-8ee7-42d8-9acc-6c9f8cfd3c78/String" />
-          </type>
-        </attributeProperty>
       </attributeProperties>
       <elementProperties>
         <elementProperty name="PrivateConfig" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="privateConfig" isReadOnly="false" documentation="设置或获取私有配置。">

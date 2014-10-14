@@ -22,11 +22,6 @@
 				<xs:documentation>设置或获取是否启用此入口点。</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
-		<xs:attribute name="type" use="required" type="xs:string">
-			<xs:annotation>
-				<xs:documentation>设置或获取此入口点类型的完全限定名称。</xs:documentation>
-			</xs:annotation>
-		</xs:attribute>
 	</xs:complexType>
 	<xs:complexType name="MasterDuner.Cooperations.Csq.Commons.Configuration.UrlElementCT">
 		<xs:sequence>

@@ -25,6 +25,7 @@
 #endregion
 
 using System;
+using System.Runtime.Serialization;
 
 namespace MasterDuner.Cooperations.Csq.Commons
 {
@@ -38,15 +39,18 @@ namespace MasterDuner.Cooperations.Csq.Commons
     /// <para>Target Framework Version : 4.0</para>
     /// </remarks>
     [Serializable()]
+    [DataContract]
     public enum SearchChannels
     {
         /// <summary>
         /// 智联卓聘网：www.highpin.cn。
         /// </summary>
+        [EnumMember]
         HighpinCn = 1024,
         /// <summary>
         /// 未知的搜索渠道。
         /// </summary>
+        [EnumMember]
         Unknown = 65535
     }
 }

@@ -10,14 +10,14 @@
 
 namespace MasterDuner.Cooperations.Csq.Commons.Configuration
 {
-
-
+    
+    
     /// <summary>
     /// 指定搜索渠道入口程序类型配置。
     /// </summary>
     public sealed partial class EntryPointElement : global::System.Configuration.ConfigurationElement
     {
-
+        
         #region IsReadOnly override
         /// <summary>
         /// Gets a value indicating whether the element is read-only.
@@ -28,20 +28,20 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
             return false;
         }
         #endregion
-
+        
         #region Enabled Property
         /// <summary>
         /// The XML name of the <see cref="Enabled"/> property.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
         internal const string EnabledPropertyName = "enabled";
-
+        
         /// <summary>
         /// Gets or sets 设置或获取是否启用此入口点。
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
         [global::System.ComponentModel.DescriptionAttribute("设置或获取是否启用此入口点。")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.EntryPointElement.EnabledPropertyName, IsRequired = false, IsKey = false, IsDefaultCollection = false, DefaultValue = true)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.EntryPointElement.EnabledPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false, DefaultValue=true)]
         public bool Enabled
         {
             get
@@ -54,46 +54,20 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
             }
         }
         #endregion
-
-        #region Type Property
-        /// <summary>
-        /// The XML name of the <see cref="Type"/> property.
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
-        internal const string TypePropertyName = "type";
-
-        /// <summary>
-        /// Gets or sets 设置或获取此入口点类型的完全限定名称。
-        /// </summary>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
-        [global::System.ComponentModel.DescriptionAttribute("设置或获取此入口点类型的完全限定名称。")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.EntryPointElement.TypePropertyName, IsRequired = true, IsKey = false, IsDefaultCollection = false)]
-        public string Type
-        {
-            get
-            {
-                return ((string)(base[global::MasterDuner.Cooperations.Csq.Commons.Configuration.EntryPointElement.TypePropertyName]));
-            }
-            set
-            {
-                base[global::MasterDuner.Cooperations.Csq.Commons.Configuration.EntryPointElement.TypePropertyName] = value;
-            }
-        }
-        #endregion
-
+        
         #region PrivateConfig Property
         /// <summary>
         /// The XML name of the <see cref="PrivateConfig"/> property.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
         internal const string PrivateConfigPropertyName = "privateConfig";
-
+        
         /// <summary>
         /// Gets or sets 设置或获取私有配置。
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
         [global::System.ComponentModel.DescriptionAttribute("设置或获取私有配置。")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.EntryPointElement.PrivateConfigPropertyName, IsRequired = false, IsKey = false, IsDefaultCollection = false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.EntryPointElement.PrivateConfigPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public global::MasterDuner.Cooperations.Csq.Commons.Configuration.PrivateConfigurationElement PrivateConfig
         {
             get
@@ -110,14 +84,14 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
 }
 namespace MasterDuner.Cooperations.Csq.Commons.Configuration
 {
-
-
+    
+    
     /// <summary>
     /// URL地址配置。
     /// </summary>
     public sealed partial class UrlElement : global::System.Configuration.ConfigurationElement
     {
-
+        
         #region IsReadOnly override
         /// <summary>
         /// Gets a value indicating whether the element is read-only.
@@ -128,20 +102,20 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
             return false;
         }
         #endregion
-
+        
         #region Url Property
         /// <summary>
         /// The XML name of the <see cref="Url"/> property.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
         internal const string UrlPropertyName = "url";
-
+        
         /// <summary>
         /// Gets or sets 设置或获取URL。
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
         [global::System.ComponentModel.DescriptionAttribute("设置或获取URL。")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.UrlElement.UrlPropertyName, IsRequired = true, IsKey = false, IsDefaultCollection = false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.UrlElement.UrlPropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false)]
         public string Url
         {
             get
@@ -158,14 +132,14 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
 }
 namespace MasterDuner.Cooperations.Csq.Commons.Configuration
 {
-
-
+    
+    
     /// <summary>
     /// 搜索渠道配置。
     /// </summary>
     public sealed partial class SearchChannelElement : global::System.Configuration.ConfigurationElement
     {
-
+        
         #region IsReadOnly override
         /// <summary>
         /// Gets a value indicating whether the element is read-only.
@@ -176,20 +150,20 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
             return false;
         }
         #endregion
-
+        
         #region ID Property
         /// <summary>
         /// The XML name of the <see cref="ID"/> property.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
         internal const string IDPropertyName = "id";
-
+        
         /// <summary>
         /// Gets or sets 设置或获取渠道标记值。
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
         [global::System.ComponentModel.DescriptionAttribute("设置或获取渠道标记值。")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement.IDPropertyName, IsRequired = true, IsKey = true, IsDefaultCollection = false, DefaultValue = 1024)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement.IDPropertyName, IsRequired=true, IsKey=true, IsDefaultCollection=false, DefaultValue=1024)]
         public int ID
         {
             get
@@ -202,20 +176,20 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
             }
         }
         #endregion
-
+        
         #region Description Property
         /// <summary>
         /// The XML name of the <see cref="Description"/> property.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
         internal const string DescriptionPropertyName = "description";
-
+        
         /// <summary>
         /// Gets or sets 设置或获取描述信息。
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
         [global::System.ComponentModel.DescriptionAttribute("设置或获取描述信息。")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement.DescriptionPropertyName, IsRequired = false, IsKey = false, IsDefaultCollection = false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement.DescriptionPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public string Description
         {
             get
@@ -228,20 +202,20 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
             }
         }
         #endregion
-
+        
         #region EntryPoint Property
         /// <summary>
         /// The XML name of the <see cref="EntryPoint"/> property.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
         internal const string EntryPointPropertyName = "entryPoint";
-
+        
         /// <summary>
         /// Gets or sets 设置或获取入口点配置。
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
         [global::System.ComponentModel.DescriptionAttribute("设置或获取入口点配置。")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement.EntryPointPropertyName, IsRequired = false, IsKey = false, IsDefaultCollection = false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement.EntryPointPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public global::MasterDuner.Cooperations.Csq.Commons.Configuration.EntryPointElement EntryPoint
         {
             get
@@ -254,20 +228,20 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
             }
         }
         #endregion
-
+        
         #region HomePage Property
         /// <summary>
         /// The XML name of the <see cref="HomePage"/> property.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
         internal const string HomePagePropertyName = "homePage";
-
+        
         /// <summary>
         /// Gets or sets 设置或获取首页URL配置。
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
         [global::System.ComponentModel.DescriptionAttribute("设置或获取首页URL配置。")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement.HomePagePropertyName, IsRequired = false, IsKey = false, IsDefaultCollection = false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement.HomePagePropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public global::MasterDuner.Cooperations.Csq.Commons.Configuration.UrlElement HomePage
         {
             get
@@ -280,20 +254,20 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
             }
         }
         #endregion
-
+        
         #region Caching Property
         /// <summary>
         /// The XML name of the <see cref="Caching"/> property.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
         internal const string CachingPropertyName = "caching";
-
+        
         /// <summary>
         /// Gets or sets 设置或获取缓存配置。
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
         [global::System.ComponentModel.DescriptionAttribute("设置或获取缓存配置。")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement.CachingPropertyName, IsRequired = false, IsKey = false, IsDefaultCollection = false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement.CachingPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public global::MasterDuner.Cooperations.Csq.Commons.Configuration.DataCacheElement Caching
         {
             get
@@ -310,14 +284,14 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
 }
 namespace MasterDuner.Cooperations.Csq.Commons.Configuration
 {
-
-
+    
+    
     /// <summary>
     /// 私有配置文件配置。
     /// </summary>
     public sealed partial class PrivateConfigurationElement : global::System.Configuration.ConfigurationElement
     {
-
+        
         #region IsReadOnly override
         /// <summary>
         /// Gets a value indicating whether the element is read-only.
@@ -328,20 +302,20 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
             return false;
         }
         #endregion
-
+        
         #region HasPrivateConfigurationFile Property
         /// <summary>
         /// The XML name of the <see cref="HasPrivateConfigurationFile"/> property.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
         internal const string HasPrivateConfigurationFilePropertyName = "hasPrivateConfigurationFile";
-
+        
         /// <summary>
         /// Gets or sets 设置或获取是否含有私有配置。
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
         [global::System.ComponentModel.DescriptionAttribute("设置或获取是否含有私有配置。")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.PrivateConfigurationElement.HasPrivateConfigurationFilePropertyName, IsRequired = false, IsKey = false, IsDefaultCollection = false, DefaultValue = false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.PrivateConfigurationElement.HasPrivateConfigurationFilePropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false, DefaultValue=false)]
         public bool HasPrivateConfigurationFile
         {
             get
@@ -354,20 +328,20 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
             }
         }
         #endregion
-
+        
         #region PrivateConfigurationFileName Property
         /// <summary>
         /// The XML name of the <see cref="PrivateConfigurationFileName"/> property.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
         internal const string PrivateConfigurationFileNamePropertyName = "privateConfigurationFileName";
-
+        
         /// <summary>
         /// Gets or sets 设置或获取私有配置文件名称。
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
         [global::System.ComponentModel.DescriptionAttribute("设置或获取私有配置文件名称。")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.PrivateConfigurationElement.PrivateConfigurationFileNamePropertyName, IsRequired = false, IsKey = false, IsDefaultCollection = false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.PrivateConfigurationElement.PrivateConfigurationFileNamePropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public string PrivateConfigurationFileName
         {
             get
@@ -384,15 +358,15 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
 }
 namespace MasterDuner.Cooperations.Csq.Commons.Configuration
 {
-
-
+    
+    
     /// <summary>
     /// SearchChannelElement配置集合。
     /// </summary>
-    [global::System.Configuration.ConfigurationCollectionAttribute(typeof(global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement), CollectionType = global::System.Configuration.ConfigurationElementCollectionType.BasicMap, AddItemName = global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElementCollection.SearchChannelElementPropertyName)]
+    [global::System.Configuration.ConfigurationCollectionAttribute(typeof(global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement), CollectionType=global::System.Configuration.ConfigurationElementCollectionType.BasicMap, AddItemName=global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElementCollection.SearchChannelElementPropertyName)]
     public sealed partial class SearchChannelElementCollection : global::System.Configuration.ConfigurationElementCollection
     {
-
+        
         #region Constants
         /// <summary>
         /// The XML name of the individual <see cref="global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement"/> instances in this collection.
@@ -400,7 +374,7 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
         internal const string SearchChannelElementPropertyName = "add";
         #endregion
-
+        
         #region Overrides
         /// <summary>
         /// Gets the type of the <see cref="global::System.Configuration.ConfigurationElementCollection"/>.
@@ -414,7 +388,7 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
                 return global::System.Configuration.ConfigurationElementCollectionType.BasicMap;
             }
         }
-
+        
         /// <summary>
         /// Gets the name used to identify this collection of elements
         /// </summary>
@@ -426,7 +400,7 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
                 return global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElementCollection.SearchChannelElementPropertyName;
             }
         }
-
+        
         /// <summary>
         /// Indicates whether the specified <see cref="global::System.Configuration.ConfigurationElement"/> exists in the <see cref="global::System.Configuration.ConfigurationElementCollection"/>.
         /// </summary>
@@ -439,7 +413,7 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
         {
             return (elementName == global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElementCollection.SearchChannelElementPropertyName);
         }
-
+        
         /// <summary>
         /// Gets the element key for the specified configuration element.
         /// </summary>
@@ -452,7 +426,7 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
         {
             return ((global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement)(element)).ID;
         }
-
+        
         /// <summary>
         /// Creates a new <see cref="global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement"/>.
         /// </summary>
@@ -465,7 +439,7 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
             return new global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement();
         }
         #endregion
-
+        
         #region Indexer
         /// <summary>
         /// Gets the <see cref="global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement"/> at the specified index.
@@ -479,7 +453,7 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
                 return ((global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement)(base.BaseGet(index)));
             }
         }
-
+        
         /// <summary>
         /// Gets the <see cref="global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement"/> with the specified key.
         /// </summary>
@@ -493,7 +467,7 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
             }
         }
         #endregion
-
+        
         #region IsReadOnly override
         /// <summary>
         /// Gets a value indicating whether the element is read-only.
@@ -508,21 +482,21 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
 }
 namespace MasterDuner.Cooperations.Csq.Commons.Configuration
 {
-
-
+    
+    
     /// <summary>
     /// 搜索渠道配置。
     /// </summary>
     public sealed partial class SearchChannelSection : global::System.Configuration.ConfigurationSection
     {
-
+        
         #region Xmlns Property
         /// <summary>
         /// The XML name of the <see cref="Xmlns"/> property.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
         internal const string XmlnsPropertyName = "xmlns";
-
+        
         /// <summary>
         /// Gets the XML namespace of this Configuration Section.
         /// </summary>
@@ -531,7 +505,7 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
         /// the parser doesn't throw an exception because it encounters the unknown "xmlns" attribute.
         /// </remarks>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelSection.XmlnsPropertyName, IsRequired = false, IsKey = false, IsDefaultCollection = false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelSection.XmlnsPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public string Xmlns
         {
             get
@@ -540,7 +514,7 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
             }
         }
         #endregion
-
+        
         #region IsReadOnly override
         /// <summary>
         /// Gets a value indicating whether the element is read-only.
@@ -551,20 +525,20 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
             return false;
         }
         #endregion
-
+        
         #region Channels Property
         /// <summary>
         /// The XML name of the <see cref="Channels"/> property.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
         internal const string ChannelsPropertyName = "";
-
+        
         /// <summary>
         /// Gets or sets the Channels.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
         [global::System.ComponentModel.DescriptionAttribute("The Channels.")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelSection.ChannelsPropertyName, IsRequired = false, IsKey = false, IsDefaultCollection = true)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelSection.ChannelsPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=true)]
         public global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElementCollection Channels
         {
             get
@@ -581,14 +555,14 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
 }
 namespace MasterDuner.Cooperations.Csq.Commons.Configuration
 {
-
-
+    
+    
     /// <summary>
     /// 数据缓存配置。
     /// </summary>
     public sealed partial class DataCacheElement : global::System.Configuration.ConfigurationElement
     {
-
+        
         #region IsReadOnly override
         /// <summary>
         /// Gets a value indicating whether the element is read-only.
@@ -599,20 +573,20 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
             return false;
         }
         #endregion
-
+        
         #region CacheRequired Property
         /// <summary>
         /// The XML name of the <see cref="CacheRequired"/> property.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
         internal const string CacheRequiredPropertyName = "cacheRequired";
-
+        
         /// <summary>
         /// Gets or sets 设置或获取是否需要缓存。
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
         [global::System.ComponentModel.DescriptionAttribute("设置或获取是否需要缓存。")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.DataCacheElement.CacheRequiredPropertyName, IsRequired = false, IsKey = false, IsDefaultCollection = false, DefaultValue = false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.DataCacheElement.CacheRequiredPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false, DefaultValue=false)]
         public bool CacheRequired
         {
             get
@@ -625,20 +599,20 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
             }
         }
         #endregion
-
+        
         #region NamePrefix Property
         /// <summary>
         /// The XML name of the <see cref="NamePrefix"/> property.
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
         internal const string NamePrefixPropertyName = "namePrefix";
-
+        
         /// <summary>
         /// Gets or sets 设置或获取缓存标识名称前缀。
         /// </summary>
         [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
         [global::System.ComponentModel.DescriptionAttribute("设置或获取缓存标识名称前缀。")]
-        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.DataCacheElement.NamePrefixPropertyName, IsRequired = false, IsKey = false, IsDefaultCollection = false)]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.DataCacheElement.NamePrefixPropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
         public string NamePrefix
         {
             get
