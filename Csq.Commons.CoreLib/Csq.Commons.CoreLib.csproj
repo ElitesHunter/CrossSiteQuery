@@ -65,11 +65,15 @@
     </Compile>
     <Compile Include="DegreeBase.public.cs" />
     <Compile Include="EducationalBackgroundBase.public.cs" />
+    <Compile Include="ExpandoRequirementObject.public.cs" />
     <Compile Include="Gender.cs" />
     <Compile Include="IdBase.public.cs" />
     <Compile Include="KeywordsBase.public.cs" />
+    <Compile Include="PerformStatus.cs" />
     <Compile Include="PositionBase.public.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="RequirementBase.public.cs" />
+    <Compile Include="SalaryBase.public.cs" />
     <Compile Include="SearchChannelAttribute.sealed.cs" />
     <Compile Include="SearchChannels.cs" />
     <Compile Include="WorkExperienceBase.public.cs" />
