@@ -79,7 +79,6 @@ namespace MasterDuner.Cooperations.Csq.Commons.Cookies
             HttpCookieCollection cache = HttpCookieCollection.GetFromCache(name);
             if (object.ReferenceEquals(cache, null))
             {
-                bool isExists = false;
                 foreach (HttpCookie item in cache)
                 {
                     if (!this.Contains(item.Name)) this.Add(item);

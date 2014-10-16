@@ -58,7 +58,9 @@
     <Compile Include="AgeBase.public.cs" />
     <Compile Include="AuthenticationResult.public.cs" />
     <Compile Include="Communications\CommunicationMessage.abstract.cs" />
+    <Compile Include="Communications\CommunicationMessageProcessor.public.cs" />
     <Compile Include="Communications\CommunicationMethods.cs" />
+    <Compile Include="Communications\HttpWebRequestMessage.public.cs" />
     <Compile Include="Communications\HttpWebResponseMessage.public.cs" />
     <Compile Include="Configuration\PrivateConfiguration.public.cs" />
     <Compile Include="Configuration\PrivateConfigurationFileInfo.public.cs" />

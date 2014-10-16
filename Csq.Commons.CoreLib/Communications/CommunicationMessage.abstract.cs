@@ -152,7 +152,7 @@ namespace MasterDuner.Cooperations.Csq.Commons.Communications
         /// </summary>
         protected virtual string CacheID
         {
-            get { return string; }
+            get { return string.Empty; }
         }
         #endregion
 
