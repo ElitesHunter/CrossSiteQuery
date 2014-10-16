@@ -59,7 +59,7 @@ namespace MasterDuner.Cooperations.Csq.Commons.Communications
 
         /// <summary>
         /// <para>构造函数：</para>
-        /// <para>初始化一个<see cref="CommunicationMessageProcessor" />对象实例。</para>
+        /// <para>初始化一个<see cref="CommunicationMessageProcessor{TRequest,TResponse}" />对象实例。</para>
         /// </summary>
         /// <param name="request"><typeparamref name="TRequest"/>类型的请求对象实例。</param>
         public CommunicationMessageProcessor(TRequest request)
