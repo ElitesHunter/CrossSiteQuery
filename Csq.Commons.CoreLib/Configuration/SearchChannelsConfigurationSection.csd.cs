@@ -203,6 +203,32 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
         }
         #endregion
         
+        #region Domain Property
+        /// <summary>
+        /// The XML name of the <see cref="Domain"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        internal const string DomainPropertyName = "domain";
+        
+        /// <summary>
+        /// Gets or sets 设置或获取搜索渠道的域名称。
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.ComponentModel.DescriptionAttribute("设置或获取搜索渠道的域名称。")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement.DomainPropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false)]
+        public string Domain
+        {
+            get
+            {
+                return ((string)(base[global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement.DomainPropertyName]));
+            }
+            set
+            {
+                base[global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement.DomainPropertyName] = value;
+            }
+        }
+        #endregion
+        
         #region EntryPoint Property
         /// <summary>
         /// The XML name of the <see cref="EntryPoint"/> property.

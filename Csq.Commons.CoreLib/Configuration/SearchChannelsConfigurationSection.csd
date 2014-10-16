@@ -48,6 +48,11 @@
             <externalTypeMoniker name="/68edb1b6-8ee7-42d8-9acc-6c9f8cfd3c78/String" />
           </type>
         </attributeProperty>
+        <attributeProperty name="Domain" isRequired="true" isKey="false" isDefaultCollection="false" xmlName="domain" isReadOnly="false" documentation="设置或获取搜索渠道的域名称。">
+          <type>
+            <externalTypeMoniker name="/68edb1b6-8ee7-42d8-9acc-6c9f8cfd3c78/String" />
+          </type>
+        </attributeProperty>
       </attributeProperties>
       <elementProperties>
         <elementProperty name="EntryPoint" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="entryPoint" isReadOnly="false" documentation="设置或获取入口点配置。">

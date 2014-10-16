@@ -60,6 +60,11 @@
 				<xs:documentation>设置或获取描述信息。</xs:documentation>
 			</xs:annotation>
 		</xs:attribute>
+		<xs:attribute name="domain" use="required" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>设置或获取搜索渠道的域名称。</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 	</xs:complexType>
 	<xs:complexType name="MasterDuner.Cooperations.Csq.Commons.Configuration.PrivateConfigurationElementCT">
 		<xs:sequence>

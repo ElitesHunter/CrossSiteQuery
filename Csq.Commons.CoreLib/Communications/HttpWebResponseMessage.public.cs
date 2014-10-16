@@ -62,7 +62,8 @@ namespace MasterDuner.Cooperations.Csq.Commons.Communications
         /// <para>初始化一个<see cref="HttpWebResponseMessage" />对象实例。</para>
         /// </summary>
         /// <param name="sessionID">客户端与搜索服务间的会话标记。</param>
-        public HttpWebResponseMessage(Guid sessionID)
+        /// <param name="response">HTTP响应。</param>
+        public HttpWebResponseMessage(Guid sessionID, HttpWebResponse response)
             : base(sessionID)
         {
         }
