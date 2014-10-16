@@ -24,7 +24,7 @@
     <DocumentationFile>bin\Debug\Csq.Wsi.Core.XML</DocumentationFile>
   </PropertyGroup>
   <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
-    <DebugType>pdbonly</DebugType>
+    <DebugType>none</DebugType>
     <Optimize>true</Optimize>
     <OutputPath>..\Releases\</OutputPath>
     <DefineConstants>TRACE</DefineConstants>
