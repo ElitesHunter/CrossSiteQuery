@@ -41,6 +41,9 @@
   <ItemGroup>
     <Reference Include="System" />
     <Reference Include="System.Core" />
+    <Reference Include="System.Runtime.Serialization" />
+    <Reference Include="System.ServiceModel" />
+    <Reference Include="System.Web" />
     <Reference Include="System.Xml.Linq" />
     <Reference Include="System.Data.DataSetExtensions" />
     <Reference Include="Microsoft.CSharp" />
@@ -55,6 +58,12 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Sn.snk" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Csq.Commons.CoreLib\Csq.Commons.CoreLib.csproj">
+      <Project>{1F124519-69F7-4C71-A338-88C6D10B4EB3}</Project>
+      <Name>Csq.Commons.CoreLib</Name>
+    </ProjectReference>
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
