@@ -66,6 +66,7 @@ namespace MasterDuner.Cooperations.Csq.Commons.Communications
         public HttpWebResponseMessage(Guid sessionID, HttpWebResponse response)
             : base(sessionID)
         {
+            this.Response = response;
         }
 
         #endregion

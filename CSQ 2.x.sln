@@ -10,6 +10,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csq.Commons.CoreLib", "Csq.
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csq.Channels.HighpinCn", "Csq.Channels.HighpinCn\Csq.Channels.HighpinCn.csproj", "{6CBF04C9-73A0-4A16-A407-C3103EC59776}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csq.Hosts.WebService", "Csq.Hosts.WebService\Csq.Hosts.WebService.csproj", "{730BF8E3-A200-469A-81DA-22B127ABFB3C}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -24,6 +26,10 @@ Global
 		{6CBF04C9-73A0-4A16-A407-C3103EC59776}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{6CBF04C9-73A0-4A16-A407-C3103EC59776}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{6CBF04C9-73A0-4A16-A407-C3103EC59776}.Release|Any CPU.Build.0 = Release|Any CPU
+		{730BF8E3-A200-469A-81DA-22B127ABFB3C}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{730BF8E3-A200-469A-81DA-22B127ABFB3C}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{730BF8E3-A200-469A-81DA-22B127ABFB3C}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{730BF8E3-A200-469A-81DA-22B127ABFB3C}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
