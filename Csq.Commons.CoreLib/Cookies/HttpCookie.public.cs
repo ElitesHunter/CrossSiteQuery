@@ -43,6 +43,7 @@ namespace MasterDuner.Cooperations.Csq.Commons.Cookies
     {
         private string _name;
         private string _value;
+        private string _domain;
 
         #region Name
         /// <summary>
@@ -66,6 +67,17 @@ namespace MasterDuner.Cooperations.Csq.Commons.Cookies
         }
         #endregion
 
+        #region Domain
+        /// <summary>
+        /// 设置或获取Cookie所属的域名称。
+        /// </summary>
+        public virtual string Domain
+        {
+            get { return _domain; }
+            set { _domain = value; }
+        }
+        #endregion
+
         #region Constructor
 
         /// <summary>
@@ -86,7 +98,7 @@ namespace MasterDuner.Cooperations.Csq.Commons.Cookies
         /// <returns><see cref="HttpCookie"/>对象实例。</returns>
         static public HttpCookie ConvertFrom(Cookie cookie)
         {
-            return new HttpCookie() { Name = cookie.Name, Value = cookie.Value };
+            return new HttpCookie() { Name = cookie.Name, Value = cookie.Value, Domain = cookie.Domain };
         }
         #endregion
 
@@ -97,7 +109,7 @@ namespace MasterDuner.Cooperations.Csq.Commons.Cookies
         /// <returns><see cref="Cookie"/>对象实例。</returns>
         public virtual Cookie ConvertTo()
         {
-            return new Cookie(this.Name, this.Value, "/");
+            return new Cookie(this.Name, this.Value, "/", this.Domain);
         }
         #endregion
     }

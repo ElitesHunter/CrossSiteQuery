@@ -26,6 +26,7 @@
 
 using System;
 using System.Net;
+using MasterDuner.Cooperations.Csq.Commons.Cookies;
 
 namespace MasterDuner.Cooperations.Csq.Commons.Communications
 {
@@ -38,6 +39,7 @@ namespace MasterDuner.Cooperations.Csq.Commons.Communications
     /// <remarks>
     /// <para>Target Framework Version : 4.0</para>
     /// </remarks>
+    [Serializable]
     public class HttpWebResponseMessage : CommunicationMessage
     {
         private HttpWebResponse _response;
@@ -59,7 +61,9 @@ namespace MasterDuner.Cooperations.Csq.Commons.Communications
         /// <para>构造函数：</para>
         /// <para>初始化一个<see cref="HttpWebResponseMessage" />对象实例。</para>
         /// </summary>
-        public HttpWebResponseMessage()
+        /// <param name="sessionID">客户端与搜索服务间的会话标记。</param>
+        public HttpWebResponseMessage(Guid sessionID)
+            : base(sessionID)
         {
         }
 
@@ -74,6 +78,20 @@ namespace MasterDuner.Cooperations.Csq.Commons.Communications
         public override TMessage SendAndGet<TMessage>()
         {
             throw new NotImplementedException();
+        }
+        #endregion
+
+        #region Init
+        /// <summary>
+        /// 初始化此消息。
+        /// </summary>
+        public virtual void Init()
+        {
+            this.ContentType = this.Response.ContentType;
+            this.ContentLength = (int)this.Response.ContentLength;
+            this.Method = CommunicationMethods.HttpResponse;
+            if (!object.ReferenceEquals(this.Response.Cookies, null) && this.Response.Cookies.Count > 0)
+                HttpCookieCollection.ConvertFrom(this.Response.Cookies).SaveInCache(this.CacheID);
         }
         #endregion
     }

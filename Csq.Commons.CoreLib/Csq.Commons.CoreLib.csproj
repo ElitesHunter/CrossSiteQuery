@@ -56,6 +56,10 @@
       <Link>Properties\AssemblyInfoCommon.cs</Link>
     </Compile>
     <Compile Include="AgeBase.public.cs" />
+    <Compile Include="AuthenticationResult.public.cs" />
+    <Compile Include="Communications\CommunicationMessage.abstract.cs" />
+    <Compile Include="Communications\CommunicationMethods.cs" />
+    <Compile Include="Communications\HttpWebResponseMessage.public.cs" />
     <Compile Include="Configuration\PrivateConfiguration.public.cs" />
     <Compile Include="Configuration\PrivateConfigurationFileInfo.public.cs" />
     <Compile Include="Configuration\SearchChannelConfiguration.sealed.cs" />
@@ -64,10 +68,13 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>SearchChannelsConfigurationSection.csd</DependentUpon>
     </Compile>
+    <Compile Include="Cookies\HttpCookie.public.cs" />
+    <Compile Include="Cookies\HttpCookieCollection.public.cs" />
     <Compile Include="DegreeBase.public.cs" />
     <Compile Include="EducationalBackgroundBase.public.cs" />
     <Compile Include="ExpandoRequirementObject.public.cs" />
     <Compile Include="Gender.cs" />
+    <Compile Include="IAuthenticationService.cs" />
     <Compile Include="IdBase.public.cs" />
     <Compile Include="IResumeSearcher.cs" />
     <Compile Include="KeywordsBase.public.cs" />
@@ -77,8 +84,10 @@
     <Compile Include="RequirementBase.public.cs" />
     <Compile Include="SalaryBase.public.cs" />
     <Compile Include="SearchChannelAttribute.sealed.cs" />
+    <Compile Include="SearchChannelCredentials.public.cs" />
     <Compile Include="SearchChannels.cs" />
     <Compile Include="SearchResultBase.public.cs" />
+    <Compile Include="UnknownSearchChannelException.sealed.cs" />
     <Compile Include="WorkExperienceBase.public.cs" />
     <Compile Include="WorkLocationBase.public.cs" />
   </ItemGroup>

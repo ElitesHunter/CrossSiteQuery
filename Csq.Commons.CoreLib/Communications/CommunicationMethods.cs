@@ -47,7 +47,11 @@ namespace MasterDuner.Cooperations.Csq.Commons.Communications
         /// <summary>
         /// HTTP-POST方式。
         /// </summary>
-        HttpPost = 2
+        HttpPost = 2,
+        /// <summary>
+        /// 来自搜索渠道服务器的相应。
+        /// </summary>
+        HttpResponse = 3,
     }
 }
 

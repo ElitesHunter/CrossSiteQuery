@@ -146,6 +146,16 @@ namespace MasterDuner.Cooperations.Csq.Commons.Communications
         public abstract TMessage SendAndGet<TMessage>() where TMessage : CommunicationMessage;
         #endregion
 
+        #region CacheID
+        /// <summary>
+        /// 设置或获取缓存的标记名称。
+        /// </summary>
+        protected virtual string CacheID
+        {
+            get { return string; }
+        }
+        #endregion
+
         #region Constructor
 
         /// <summary>
