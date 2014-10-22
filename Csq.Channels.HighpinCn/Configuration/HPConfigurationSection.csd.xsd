@@ -39,6 +39,25 @@
 					<xs:documentation>设置或获取智联卓聘网的URL配置。</xs:documentation>
 				</xs:annotation>
 			</xs:element>
+			<xs:element minOccurs="0" name="validatingCodeImage" type="tns:MasterDuner.Cooperations.Csq.Channels.Configuration.ValidatingCodeImageElementCT">
+				<xs:annotation>
+					<xs:documentation>设置或获取验证码图片配置。</xs:documentation>
+				</xs:annotation>
+			</xs:element>
 		</xs:sequence>
+	</xs:complexType>
+	<xs:complexType name="MasterDuner.Cooperations.Csq.Channels.Configuration.ValidatingCodeImageElementCT">
+		<xs:sequence>
+		</xs:sequence>
+		<xs:attribute name="temporaryDirectory" use="required" type="xs:string">
+			<xs:annotation>
+				<xs:documentation>设置或获取用于存放验证码图片的临时目录。</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
+		<xs:attribute name="autoDelete" use="optional" type="xs:boolean">
+			<xs:annotation>
+				<xs:documentation>设置或获取是否自动删除验证码图片。</xs:documentation>
+			</xs:annotation>
+		</xs:attribute>
 	</xs:complexType>
 </xs:schema>

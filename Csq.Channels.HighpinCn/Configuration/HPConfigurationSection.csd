@@ -37,8 +37,27 @@
             <configurationElementCollectionMoniker name="/74673cc5-848c-4d40-9cff-10412cc8a70d/HPActionUrlElementCollection" />
           </type>
         </elementProperty>
+        <elementProperty name="ValidatingCodeImage" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="validatingCodeImage" isReadOnly="false" documentation="设置或获取验证码图片配置。">
+          <type>
+            <configurationElementMoniker name="/74673cc5-848c-4d40-9cff-10412cc8a70d/ValidatingCodeImageElement" />
+          </type>
+        </elementProperty>
       </elementProperties>
     </configurationSection>
+    <configurationElement name="ValidatingCodeImageElement" inheritanceModifier="Sealed" documentation="与验证码图片相关的配置。">
+      <attributeProperties>
+        <attributeProperty name="TemporaryDirectory" isRequired="true" isKey="false" isDefaultCollection="false" xmlName="temporaryDirectory" isReadOnly="false" documentation="设置或获取用于存放验证码图片的临时目录。">
+          <type>
+            <externalTypeMoniker name="/74673cc5-848c-4d40-9cff-10412cc8a70d/String" />
+          </type>
+        </attributeProperty>
+        <attributeProperty name="AutoDelete" isRequired="false" isKey="false" isDefaultCollection="false" xmlName="autoDelete" isReadOnly="false" documentation="设置或获取是否自动删除验证码图片。" defaultValue="true">
+          <type>
+            <externalTypeMoniker name="/74673cc5-848c-4d40-9cff-10412cc8a70d/Boolean" />
+          </type>
+        </attributeProperty>
+      </attributeProperties>
+    </configurationElement>
   </configurationElements>
   <propertyValidators>
     <validators />

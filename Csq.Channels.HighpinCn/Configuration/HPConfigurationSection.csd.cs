@@ -277,5 +277,105 @@ namespace MasterDuner.Cooperations.Csq.Channels.Configuration
             }
         }
         #endregion
+        
+        #region ValidatingCodeImage Property
+        /// <summary>
+        /// The XML name of the <see cref="ValidatingCodeImage"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        internal const string ValidatingCodeImagePropertyName = "validatingCodeImage";
+        
+        /// <summary>
+        /// Gets or sets 设置或获取验证码图片配置。
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.ComponentModel.DescriptionAttribute("设置或获取验证码图片配置。")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Channels.Configuration.HPSection.ValidatingCodeImagePropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false)]
+        public global::MasterDuner.Cooperations.Csq.Channels.Configuration.ValidatingCodeImageElement ValidatingCodeImage
+        {
+            get
+            {
+                return ((global::MasterDuner.Cooperations.Csq.Channels.Configuration.ValidatingCodeImageElement)(base[global::MasterDuner.Cooperations.Csq.Channels.Configuration.HPSection.ValidatingCodeImagePropertyName]));
+            }
+            set
+            {
+                base[global::MasterDuner.Cooperations.Csq.Channels.Configuration.HPSection.ValidatingCodeImagePropertyName] = value;
+            }
+        }
+        #endregion
+    }
+}
+namespace MasterDuner.Cooperations.Csq.Channels.Configuration
+{
+    
+    
+    /// <summary>
+    /// 与验证码图片相关的配置。
+    /// </summary>
+    public sealed partial class ValidatingCodeImageElement : global::System.Configuration.ConfigurationElement
+    {
+        
+        #region IsReadOnly override
+        /// <summary>
+        /// Gets a value indicating whether the element is read-only.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        public override bool IsReadOnly()
+        {
+            return false;
+        }
+        #endregion
+        
+        #region TemporaryDirectory Property
+        /// <summary>
+        /// The XML name of the <see cref="TemporaryDirectory"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        internal const string TemporaryDirectoryPropertyName = "temporaryDirectory";
+        
+        /// <summary>
+        /// Gets or sets 设置或获取用于存放验证码图片的临时目录。
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.ComponentModel.DescriptionAttribute("设置或获取用于存放验证码图片的临时目录。")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Channels.Configuration.ValidatingCodeImageElement.TemporaryDirectoryPropertyName, IsRequired=true, IsKey=false, IsDefaultCollection=false)]
+        public string TemporaryDirectory
+        {
+            get
+            {
+                return ((string)(base[global::MasterDuner.Cooperations.Csq.Channels.Configuration.ValidatingCodeImageElement.TemporaryDirectoryPropertyName]));
+            }
+            set
+            {
+                base[global::MasterDuner.Cooperations.Csq.Channels.Configuration.ValidatingCodeImageElement.TemporaryDirectoryPropertyName] = value;
+            }
+        }
+        #endregion
+        
+        #region AutoDelete Property
+        /// <summary>
+        /// The XML name of the <see cref="AutoDelete"/> property.
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        internal const string AutoDeletePropertyName = "autoDelete";
+        
+        /// <summary>
+        /// Gets or sets 设置或获取是否自动删除验证码图片。
+        /// </summary>
+        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
+        [global::System.ComponentModel.DescriptionAttribute("设置或获取是否自动删除验证码图片。")]
+        [global::System.Configuration.ConfigurationPropertyAttribute(global::MasterDuner.Cooperations.Csq.Channels.Configuration.ValidatingCodeImageElement.AutoDeletePropertyName, IsRequired=false, IsKey=false, IsDefaultCollection=false, DefaultValue=true)]
+        public bool AutoDelete
+        {
+            get
+            {
+                return ((bool)(base[global::MasterDuner.Cooperations.Csq.Channels.Configuration.ValidatingCodeImageElement.AutoDeletePropertyName]));
+            }
+            set
+            {
+                base[global::MasterDuner.Cooperations.Csq.Channels.Configuration.ValidatingCodeImageElement.AutoDeletePropertyName] = value;
+            }
+        }
+        #endregion
     }
 }
