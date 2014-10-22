@@ -44,7 +44,7 @@ namespace MasterDuner.Cooperations.Csq.Commons.Communications
     {
         #region Url
         /// <summary>
-        /// 设置或获取请求的URL地址。
+        /// 获取请求的URL地址。
         /// </summary>
         protected virtual string Url
         {
@@ -88,6 +88,7 @@ namespace MasterDuner.Cooperations.Csq.Commons.Communications
             request.ContentLength = this.ContentLength;
             request.CookieContainer = this.CreateCookieContainer();
             request.AllowAutoRedirect = true;
+            request.KeepAlive = true;
             request.Method = this.GetCommunicationMethodStr();
             return request;
         }
