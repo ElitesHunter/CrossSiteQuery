@@ -62,7 +62,7 @@ namespace MasterDuner.Cooperations.Csq.Channels.RegExpressions
         /// </summary>
         protected override string Expression
         {
-            get { return @"^[1-9]\d*$"; }
+            get { return "(?(^2)2{1}$|(?(^1)14$|30$))"; }
         }
         #endregion
     }
