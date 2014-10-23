@@ -56,6 +56,8 @@
     <Compile Include="..\AssemblyInfoCommon.cs">
       <Link>Properties\AssemblyInfoCommon.cs</Link>
     </Compile>
+    <Compile Include="Communications\AuthenRequestMessage.cs" />
+    <Compile Include="Communications\AuthenResponseMessage.cs" />
     <Compile Include="Communications\ValidatingCodeMessageProcessor.cs" />
     <Compile Include="Communications\ValidatingCodeRequestMessage.cs" />
     <Compile Include="Communications\ValidatingCodeResponseMessage.cs" />
@@ -64,6 +66,7 @@
       <DesignTime>True</DesignTime>
       <DependentUpon>HPConfigurationSection.csd</DependentUpon>
     </Compile>
+    <Compile Include="CookieCacheName.cs" />
     <Compile Include="HPAuthenResult.cs" />
     <Compile Include="HPAuthenStatus.cs" />
     <Compile Include="HPCredentials.cs" />
