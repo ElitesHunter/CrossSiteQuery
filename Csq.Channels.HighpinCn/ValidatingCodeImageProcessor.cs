@@ -121,8 +121,27 @@ namespace MasterDuner.Cooperations.Csq.Channels
         internal string GetValidatingCode()
         {
             if (this.SaveToPhysicalDisk())
-                return Marshal.PtrToStringAnsi(OCR(Path.Combine(TemporaryDirectoryInfo.This.Path, this._temporaryName), -1));
+            {
+                string vCode = Marshal.PtrToStringAnsi(OCR(Path.Combine(TemporaryDirectoryInfo.This.Path, this._temporaryName), -1));
+                this.DeleteTemporaryImage();
+                return vCode;
+            }
             return string.Empty;
+        }
+        #endregion
+
+        #region DeleteTemporaryImage
+        /// <summary>
+        /// 删除临时文件。
+        /// </summary>
+        private void DeleteTemporaryImage()
+        {
+            try
+            {
+                if (Config.ValidatingCodeImage.AutoDelete)
+                    File.Delete(Path.Combine(TemporaryDirectoryInfo.This.Path, this._temporaryName));
+            }
+            catch { }
         }
         #endregion
     }
