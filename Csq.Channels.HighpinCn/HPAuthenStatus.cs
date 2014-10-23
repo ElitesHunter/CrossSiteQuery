@@ -58,7 +58,12 @@ namespace MasterDuner.Cooperations.Csq.Channels
         /// 成功登录。
         /// </summary>
         [EnumMember]
-        Completed = 30
+        Completed = 30,
+        /// <summary>
+        /// 未知的。
+        /// </summary>
+        [EnumMember]
+        Unknown = -1
     }
 }
 
