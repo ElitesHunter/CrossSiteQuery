@@ -50,6 +50,7 @@ namespace MasterDuner.Cooperations.Csq.Channels.Communications
     internal sealed class ValidatingCodeRequestMessage : HttpWebRequestMessage
     {
         private HPSection _config;
+        private CookieCacheName _cookieCacheName;
 
         #region Url
         /// <summary>
@@ -64,19 +65,34 @@ namespace MasterDuner.Cooperations.Csq.Channels.Communications
         }
         #endregion
 
+        #region CacheID
+        /// <summary>
+        /// 获取会话级缓存标记。
+        /// </summary>
+        protected override string CacheID
+        {
+            get
+            {
+                return this._cookieCacheName.ToString();
+            }
+        }
+        #endregion
+
         #region Constructors
 
         /// <summary>
         /// 初始化一个<see cref="ValidatingCodeRequestMessage" />对象实例。
         /// </summary>
+        /// <param name="sessionID">会话标记。</param>
         /// <remarks>
         /// 不可从此类继承。
         /// </remarks>
-        internal ValidatingCodeRequestMessage()
-            : base(Guid.Empty)
+        internal ValidatingCodeRequestMessage(Guid sessionID)
+            : base(sessionID)
         {
             _config = new PrivateConfiguration(SearchChannels.HighpinCn).GetSection<HPSection>("www.highpin.cn");
             this.Method = CommunicationMethods.HttpGet;
+            this._cookieCacheName = new CookieCacheName() { BindSession = sessionID };
         }
 
         #endregion
@@ -89,7 +105,7 @@ namespace MasterDuner.Cooperations.Csq.Channels.Communications
         private ValidatingCodeResponseMessage GetValidatingCodeResponse()
         {
             HttpWebRequest request = this.CreateHttpRequest();
-            ValidatingCodeResponseMessage message = new ValidatingCodeResponseMessage(request.GetResponse() as HttpWebResponse);
+            ValidatingCodeResponseMessage message = new ValidatingCodeResponseMessage(request.GetResponse() as HttpWebResponse, base.BindSessionID);
             message.Init();
             return message;
         }

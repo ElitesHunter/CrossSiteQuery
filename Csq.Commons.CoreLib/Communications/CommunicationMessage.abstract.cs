@@ -148,7 +148,7 @@ namespace MasterDuner.Cooperations.Csq.Commons.Communications
 
         #region CacheID
         /// <summary>
-        /// 设置或获取缓存的标记名称。
+        /// 获取缓存的标记名称。
         /// </summary>
         protected virtual string CacheID
         {

@@ -47,6 +47,7 @@ namespace MasterDuner.Cooperations.Csq.Channels.Communications
     internal sealed class ValidatingCodeResponseMessage : HttpWebResponseMessage
     {
         private string _validatingCode;
+        private CookieCacheName _cookieCacheName;
 
         #region ValidatingCode
         /// <summary>
@@ -67,9 +68,11 @@ namespace MasterDuner.Cooperations.Csq.Channels.Communications
         /// <remarks>
         /// 不可从此类继承。
         /// </remarks>
-        internal ValidatingCodeResponseMessage(HttpWebResponse response)
-            : base(Guid.Empty, response)
-        { }
+        internal ValidatingCodeResponseMessage(HttpWebResponse response, Guid sessionID)
+            : base(sessionID, response)
+        {
+            this._cookieCacheName = new CookieCacheName() { BindSession = sessionID };
+        }
 
         #endregion
 
@@ -81,6 +84,19 @@ namespace MasterDuner.Cooperations.Csq.Channels.Communications
         {
             base.Init();
             this.ValidatingCode = new ValidatingCodeImageProcessor(this.Response.GetResponseStream()).GetValidatingCode();
+        }
+        #endregion
+
+        #region CacheID
+        /// <summary>
+        /// 获取缓存标识名称。
+        /// </summary>
+        protected override string CacheID
+        {
+            get
+            {
+                return this._cookieCacheName.ToString();
+            }
         }
         #endregion
     }

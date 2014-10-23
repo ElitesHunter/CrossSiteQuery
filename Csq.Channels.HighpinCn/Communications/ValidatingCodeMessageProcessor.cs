@@ -18,6 +18,7 @@
 
 #endregion
 
+using System;
 using MasterDuner.Cooperations.Csq.Commons.Communications;
 
 namespace MasterDuner.Cooperations.Csq.Channels.Communications
@@ -49,11 +50,12 @@ namespace MasterDuner.Cooperations.Csq.Channels.Communications
         /// <summary>
         /// 初始化一个<see cref="ValidatingCodeMessageProcessor" />对象实例。
         /// </summary>
+        /// <param name="sessionID">会话标记。</param>
         /// <remarks>
         /// 不可从此类继承。
         /// </remarks>
-        internal ValidatingCodeMessageProcessor()
-            : base(new ValidatingCodeRequestMessage())
+        internal ValidatingCodeMessageProcessor(Guid sessionID)
+            : base(new ValidatingCodeRequestMessage(sessionID))
         { }
 
         #endregion
