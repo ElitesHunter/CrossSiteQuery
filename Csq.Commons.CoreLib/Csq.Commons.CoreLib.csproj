@@ -74,6 +74,7 @@
     <Compile Include="IAuthenticationService.cs" />
     <Compile Include="IdBase.public.cs" />
     <Compile Include="IResumeSearcher.cs" />
+    <Compile Include="ISessionBinding.cs" />
     <Compile Include="JavaScriptDateCompatible.cs" />
     <Compile Include="KeywordsBase.public.cs" />
     <Compile Include="PerformStatus.cs" />
