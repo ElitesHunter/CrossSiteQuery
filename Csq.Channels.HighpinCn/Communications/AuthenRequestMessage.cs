@@ -49,7 +49,7 @@ namespace MasterDuner.Cooperations.Csq.Channels.Communications
     /// </para>
     /// </remarks>
     [SearchChannel(SearchChannels.HighpinCn)]
-    internal sealed class AuthenRequestMessage : HttpWebRequestMessage
+    public sealed class AuthenRequestMessage : HttpWebRequestMessage
     {
         private CookieCacheName _cookieCacheName;
         private HPCredentials _credentials;
@@ -78,7 +78,7 @@ namespace MasterDuner.Cooperations.Csq.Channels.Communications
         /// <remarks>
         /// 不可从此类继承。
         /// </remarks>
-        internal AuthenRequestMessage(Guid sessionID, HPCredentials credentials)
+        public AuthenRequestMessage(Guid sessionID, HPCredentials credentials)
             : base(sessionID)
         {
             this._credentials = credentials;
