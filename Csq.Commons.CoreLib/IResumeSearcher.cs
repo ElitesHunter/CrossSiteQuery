@@ -47,10 +47,10 @@ namespace MasterDuner.Cooperations.Csq.Commons
         /// <param name="sessionID">客户端与搜索服务间的会话标记。</param>
         /// <param name="channel">搜索渠道标记。</param>
         /// <param name="conditions">搜索条件。</param>
-        /// <param name="pageSize">每一页的数据个数。</param>
+        /// <param name="page">每一页的数据个数。</param>
         /// <returns><see cref="SearchResultBase"/>对象实例。</returns>
         [OperationContract]
-        SearchResultBase Get(Guid sessionID, SearchChannels channel, RequirementBase conditions, int pageSize);
+        SearchResultBase Get(Guid sessionID, SearchChannels channel, RequirementBase conditions, ResultPage Page);
     }
 }
 
