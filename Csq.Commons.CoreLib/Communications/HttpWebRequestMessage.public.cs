@@ -72,7 +72,11 @@ namespace MasterDuner.Cooperations.Csq.Commons.Communications
         /// <returns><see cref="CookieContainer"/>对象实例。</returns>
         protected virtual CookieContainer CreateCookieContainer()
         {
-            return HttpCookieCollection.GetFromCache(this.CacheID).CreateCookieContainer();
+            HttpCookieCollection cookies = HttpCookieCollection.GetFromCache(this.CacheID);
+            if (!object.ReferenceEquals(cookies, null))
+                return cookies.CreateCookieContainer();
+            else
+                return new CookieContainer();
         }
         #endregion
 

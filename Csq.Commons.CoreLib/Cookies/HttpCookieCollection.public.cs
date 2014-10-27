@@ -77,7 +77,7 @@ namespace MasterDuner.Cooperations.Csq.Commons.Cookies
         public virtual void SaveInCache(string name)
         {
             HttpCookieCollection cache = HttpCookieCollection.GetFromCache(name);
-            if (object.ReferenceEquals(cache, null))
+            if (!object.ReferenceEquals(cache, null))
             {
                 foreach (HttpCookie item in cache)
                 {

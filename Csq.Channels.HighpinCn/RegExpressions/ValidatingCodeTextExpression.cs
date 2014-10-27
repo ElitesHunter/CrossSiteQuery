@@ -5,7 +5,7 @@
  * 
  * Development Tool : Microsoft Visual Studio 2010
  * 
- * Create Time : 2014-10-23 10:25:10
+ * Create Time : 2014-10-27 11:50:53
  * 
  * Machine Name : GLCHQWYCWINW7
  * 
@@ -19,13 +19,12 @@
 #endregion
 
 using System;
-using System.Text.RegularExpressions;
 
 namespace MasterDuner.Cooperations.Csq.Channels.RegExpressions
 {
     /// <summary>
     /// <para>
-    /// 类型名称：<see cref="ExpressionBase"/>
+    /// 类型名称：<see cref="ValidatingCodeTextExpression"/>
     /// </para>
     /// <para>
     /// 命名空间：<see cref="MasterDuner.Cooperations.Csq.Channels.RegExpressions"/>
@@ -34,52 +33,37 @@ namespace MasterDuner.Cooperations.Csq.Channels.RegExpressions
     /// 适用的.NET Framework版本：4.0
     /// </para>
     /// <para>
-    /// 正则表达式匹配基类。
+    /// 验证码文本匹配正则表达式。
     /// </para>
     /// </summary>
     /// <remarks>
     /// 此类型适用于4.0及其以上版本的.NET Framework。
+    /// <para>
+    /// 不可从此类继承。
+    /// </para>
     /// </remarks>
-    public abstract class ExpressionBase
+    public sealed class ValidatingCodeTextExpression : ExpressionBase
     {
-        #region Expression
-        /// <summary>
-        /// 获取正则表达式。
-        /// </summary>
-        protected abstract string Expression { get; }
-        #endregion
-
         #region Constructors
 
         /// <summary>
-        /// 初始化一个<see cref="ExpressionBase" />对象实例。
+        /// 初始化一个<see cref="ValidatingCodeTextExpression" />对象实例。
         /// </summary>
-        protected ExpressionBase()
+        /// <remarks>
+        /// 不可从此类继承。
+        /// </remarks>
+        public ValidatingCodeTextExpression()
         { }
 
         #endregion
 
-        #region IsMatch
+        #region Expression
         /// <summary>
-        /// 文本内容是否与正则表达式匹配。
+        /// 获取正则表达式。
         /// </summary>
-        /// <param name="s">需要匹配的文本内容。</param>
-        /// <returns><see cref="Boolean"/>值。</returns>
-        public virtual bool IsMatch(string s)
+        protected override string Expression
         {
-            return Regex.IsMatch(s, this.Expression);
-        }
-        #endregion
-
-        #region Match
-        /// <summary>
-        /// 从<paramref name="s"/>中获取匹配的项。
-        /// </summary>
-        /// <param name="s">文本。</param>
-        /// <returns><see cref="Match"/>对象实例。</returns>
-        public virtual Match Match(string s)
-        {
-            return Regex.Match(s, this.Expression);
+            get { return "[a-z0-9A-Z]{1,4}"; }
         }
         #endregion
     }

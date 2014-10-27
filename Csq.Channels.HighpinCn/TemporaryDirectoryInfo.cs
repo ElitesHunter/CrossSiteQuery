@@ -83,7 +83,7 @@ namespace MasterDuner.Cooperations.Csq.Channels
             get
             {
                 if (object.ReferenceEquals(_this, null))
-                    _this = null;
+                    _this = new TemporaryDirectoryInfo();
                 return _this;
             }
         }
@@ -117,7 +117,7 @@ namespace MasterDuner.Cooperations.Csq.Channels
             this.Exists = directory.Exists;
             if (!this.Exists)
                 throw new DirectoryNotFoundException(string.Format("临时目录{0}不存在！", directory.Name));
-            this.Path = directory.Name;
+            this.Path = directory.FullName;
         }
 
         #endregion

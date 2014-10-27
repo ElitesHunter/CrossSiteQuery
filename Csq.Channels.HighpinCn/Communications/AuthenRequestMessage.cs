@@ -81,6 +81,7 @@ namespace MasterDuner.Cooperations.Csq.Channels.Communications
         internal AuthenRequestMessage(Guid sessionID, HPCredentials credentials)
             : base(sessionID)
         {
+            this._cookieCacheName = new CookieCacheName() { BindSession = sessionID };
             this._credentials = credentials;
             this._config = new PrivateConfiguration(Commons.SearchChannels.HighpinCn).GetSection<HPSection>("www.highpin.cn");
             this.Method = CommunicationMethods.HttpPost;
@@ -143,6 +144,21 @@ namespace MasterDuner.Cooperations.Csq.Channels.Communications
             request.Method = base.GetCommunicationMethodStr();
             request.GetRequestStream().Write(data, 0, data.Length);
             return request;
+        }
+        #endregion
+
+        #region SendAndGet
+        /// <summary>
+        /// 发送请求并获取响应消息。
+        /// </summary>
+        /// <typeparam name="TMessage">响应消息类型。</typeparam>
+        /// <returns><typeparamref name="TMessage"/>类型的响应消息。</returns>
+        public override TMessage SendAndGet<TMessage>()
+        {
+            HttpWebRequest request = this.CreateHttpRequest();
+            AuthenResponseMessage response = new AuthenResponseMessage(request.GetResponse() as HttpWebResponse, this.BindSessionID);
+            response.Init();
+            return response as TMessage;
         }
         #endregion
     }

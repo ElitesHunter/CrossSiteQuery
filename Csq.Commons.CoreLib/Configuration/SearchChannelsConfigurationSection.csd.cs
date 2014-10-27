@@ -468,19 +468,6 @@ namespace MasterDuner.Cooperations.Csq.Commons.Configuration
         
         #region Indexer
         /// <summary>
-        /// Gets the <see cref="global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement"/> at the specified index.
-        /// </summary>
-        /// <param name="index">The index of the <see cref="global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement"/> to retrieve.</param>
-        [global::System.CodeDom.Compiler.GeneratedCodeAttribute("ConfigurationSectionDesigner.CsdFileGenerator", "2.0.0.0")]
-        public global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement this[int index]
-        {
-            get
-            {
-                return ((global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement)(base.BaseGet(index)));
-            }
-        }
-        
-        /// <summary>
         /// Gets the <see cref="global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement"/> with the specified key.
         /// </summary>
         /// <param name="id">The key of the <see cref="global::MasterDuner.Cooperations.Csq.Commons.Configuration.SearchChannelElement"/> to retrieve.</param>

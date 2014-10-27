@@ -24,6 +24,7 @@ using System.IO;
 using System.Runtime.InteropServices;
 using MasterDuner.Cooperations.Csq.Channels.Configuration;
 using MasterDuner.Cooperations.Csq.Commons.Configuration;
+using MasterDuner.Cooperations.Csq.Channels.RegExpressions;
 
 namespace MasterDuner.Cooperations.Csq.Channels
 {
@@ -100,7 +101,7 @@ namespace MasterDuner.Cooperations.Csq.Channels
                 {
                     image.Save(Path.Combine(TemporaryDirectoryInfo.This.Path, this._temporaryName));
                 }
-                catch
+                catch(Exception ex)
                 {
                     successful = false;
                 }
@@ -123,6 +124,9 @@ namespace MasterDuner.Cooperations.Csq.Channels
             if (this.SaveToPhysicalDisk())
             {
                 string vCode = Marshal.PtrToStringAnsi(OCR(Path.Combine(TemporaryDirectoryInfo.This.Path, this._temporaryName), -1));
+                ValidatingCodeTextExpression expr = new ValidatingCodeTextExpression();
+                if (expr.IsMatch(vCode))
+                    vCode = expr.Match(vCode).Value;
                 this.DeleteTemporaryImage();
                 return vCode;
             }

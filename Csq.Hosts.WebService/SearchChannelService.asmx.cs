@@ -37,10 +37,10 @@ namespace MasterDuner.Cooperations.Csq.Application.WebServices
         /// <param name="sessionID">会话标识。</param>
         /// <returns><see cref="Boolean"/>类型返回值。</returns>
         [WebMethod(EnableSession = true, MessageName = "HighpinCnLogin")]
-        public AuthenticationResult Login(HPCredentials credentials, Guid sessionID)
+        public HPAuthenResult Login(HPCredentials credentials, Guid sessionID)
         {
             IAuthenticationService authenService = new HPAuthenService(sessionID);
-            return authenService.SignIn(SearchChannels.HighpinCn, credentials);
+            return authenService.SignIn(SearchChannels.HighpinCn, credentials) as HPAuthenResult;
         }
         #endregion
     }
