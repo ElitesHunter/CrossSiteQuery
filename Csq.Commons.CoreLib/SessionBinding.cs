@@ -19,6 +19,7 @@
 #endregion
 
 using System;
+using System.ServiceModel.Activation;
 
 namespace MasterDuner.Cooperations.Csq.Commons
 {
@@ -39,6 +40,7 @@ namespace MasterDuner.Cooperations.Csq.Commons
     /// <remarks>
     /// 此类型适用于4.0及其以上版本的.NET Framework。
     /// </remarks>
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Required)]
     public class SessionBinding : ISessionBinding
     {
         #region Constructors
