@@ -47,6 +47,7 @@ namespace MasterDuner.Cooperations.Csq.Channels.Communications
     /// 不可从此类继承。
     /// </para>
     /// </remarks>
+    [SearchChannel(SearchChannels.HighpinCn)]
     internal sealed class ValidatingCodeRequestMessage : HttpWebRequestMessage
     {
         private HPSection _config;

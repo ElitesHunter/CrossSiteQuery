@@ -19,6 +19,7 @@
 #endregion
 
 using System;
+using MasterDuner.Cooperations.Csq.Commons;
 
 namespace MasterDuner.Cooperations.Csq.Channels.Communications
 {
@@ -42,6 +43,7 @@ namespace MasterDuner.Cooperations.Csq.Channels.Communications
     /// 不可从此类继承。
     /// </para>
     /// </remarks>
+    [SearchChannel(SearchChannels.HighpinCn)]
     internal sealed class AuthenMessageProcessor
         : MasterDuner.Cooperations.Csq.Commons.Communications.CommunicationMessageProcessor<AuthenRequestMessage, AuthenResponseMessage>
     {
