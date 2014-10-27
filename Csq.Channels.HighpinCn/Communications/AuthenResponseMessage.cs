@@ -48,7 +48,7 @@ namespace MasterDuner.Cooperations.Csq.Channels.Communications
     /// </para>
     /// </remarks>
     [SearchChannel(SearchChannels.HighpinCn)]
-    public sealed class AuthenResponseMessage : HttpWebResponseMessage
+    internal sealed class AuthenResponseMessage : HttpWebResponseMessage
     {
         private CookieCacheName _cookieCacheName;
         private int _status;
@@ -61,7 +61,7 @@ namespace MasterDuner.Cooperations.Csq.Channels.Communications
         /// <remarks>
         /// 不可从此类继承。
         /// </remarks>
-        public AuthenResponseMessage(HttpWebResponse response, Guid sessionID)
+        internal AuthenResponseMessage(HttpWebResponse response, Guid sessionID)
             : base(sessionID, response)
         {
             this._cookieCacheName = new CookieCacheName() { BindSession = sessionID };

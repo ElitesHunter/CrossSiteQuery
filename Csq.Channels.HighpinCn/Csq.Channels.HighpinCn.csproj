@@ -69,6 +69,7 @@
     </Compile>
     <Compile Include="CookieCacheName.cs" />
     <Compile Include="HPAuthenResult.cs" />
+    <Compile Include="HPAuthenService.cs" />
     <Compile Include="HPAuthenStatus.cs" />
     <Compile Include="HPCredentials.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

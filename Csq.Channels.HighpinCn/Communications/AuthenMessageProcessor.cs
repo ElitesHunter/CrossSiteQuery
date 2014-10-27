@@ -44,7 +44,7 @@ namespace MasterDuner.Cooperations.Csq.Channels.Communications
     /// </para>
     /// </remarks>
     [SearchChannel(SearchChannels.HighpinCn)]
-    public sealed class AuthenMessageProcessor
+    internal sealed class AuthenMessageProcessor
         : MasterDuner.Cooperations.Csq.Commons.Communications.CommunicationMessageProcessor<AuthenRequestMessage, AuthenResponseMessage>
     {
         #region Constructors
@@ -57,7 +57,7 @@ namespace MasterDuner.Cooperations.Csq.Channels.Communications
         /// <remarks>
         /// 不可从此类继承。
         /// </remarks>
-        public AuthenMessageProcessor(Guid sessionID, HPCredentials credentials)
+        internal AuthenMessageProcessor(Guid sessionID, HPCredentials credentials)
             : base(new AuthenRequestMessage(sessionID, credentials))
         { }
 
