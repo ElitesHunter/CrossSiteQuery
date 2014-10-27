@@ -73,6 +73,16 @@
   <ItemGroup>
     <Content Include="highpin.cn.config" />
   </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Csq.Channels.HighpinCn\Csq.Channels.HighpinCn.csproj">
+      <Project>{6CBF04C9-73A0-4A16-A407-C3103EC59776}</Project>
+      <Name>Csq.Channels.HighpinCn</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Csq.Commons.CoreLib\Csq.Commons.CoreLib.csproj">
+      <Project>{1F124519-69F7-4C71-A338-88C6D10B4EB3}</Project>
+      <Name>Csq.Commons.CoreLib</Name>
+    </ProjectReference>
+  </ItemGroup>
   <Import Project="$(MSBuildBinPath)\Microsoft.CSharp.targets" />
   <Import Project="$(MSBuildExtensionsPath32)\Microsoft\VisualStudio\v10.0\WebApplications\Microsoft.WebApplication.targets" />
   <ProjectExtensions>
