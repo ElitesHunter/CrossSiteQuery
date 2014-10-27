@@ -86,6 +86,7 @@
     <Compile Include="SearchChannelCredentials.public.cs" />
     <Compile Include="SearchChannels.cs" />
     <Compile Include="SearchResultBase.public.cs" />
+    <Compile Include="SessionBinding.cs" />
     <Compile Include="UnknownSearchChannelException.sealed.cs" />
     <Compile Include="WorkExperienceBase.public.cs" />
     <Compile Include="WorkLocationBase.public.cs" />
