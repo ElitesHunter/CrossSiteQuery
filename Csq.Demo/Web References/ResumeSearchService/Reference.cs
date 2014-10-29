@@ -27,6 +27,9 @@ namespace MasterDuner.Cooperations.Csq.TestProjects.ResumeSearchService {
     [System.Diagnostics.DebuggerStepThroughAttribute()]
     [System.ComponentModel.DesignerCategoryAttribute("code")]
     [System.Web.Services.WebServiceBindingAttribute(Name="SearchChannelServiceSoap", Namespace="urn:MasterDuner@Yeah.net")]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(SearchResultBase))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(IdBase))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(RequirementBase))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(AuthenticationResult))]
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(SearchChannelCredentials))]
     public partial class SearchChannelService : System.Web.Services.Protocols.SoapHttpClientProtocol {
@@ -34,6 +37,8 @@ namespace MasterDuner.Cooperations.Csq.TestProjects.ResumeSearchService {
         private System.Threading.SendOrPostCallback CreateSessionOperationCompleted;
         
         private System.Threading.SendOrPostCallback LoginOperationCompleted;
+        
+        private System.Threading.SendOrPostCallback SearchOperationCompleted;
         
         private bool useDefaultCredentialsSetExplicitly;
         
@@ -78,6 +83,9 @@ namespace MasterDuner.Cooperations.Csq.TestProjects.ResumeSearchService {
         
         /// <remarks/>
         public event LoginCompletedEventHandler LoginCompleted;
+        
+        /// <remarks/>
+        public event SearchCompletedEventHandler SearchCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:MasterDuner@Yeah.net/CreateSession", RequestNamespace="urn:MasterDuner@Yeah.net", ResponseNamespace="urn:MasterDuner@Yeah.net", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -135,6 +143,40 @@ namespace MasterDuner.Cooperations.Csq.TestProjects.ResumeSearchService {
             if ((this.LoginCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.LoginCompleted(this, new LoginCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:MasterDuner@Yeah.net/HighpinCnSearch", RequestElementName="HighpinCnSearch", RequestNamespace="urn:MasterDuner@Yeah.net", ResponseElementName="HighpinCnSearchResponse", ResponseNamespace="urn:MasterDuner@Yeah.net", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("HighpinCnSearchResult")]
+        public HPSearchResult Search(System.Guid sessionID, HPRequirement searchParams, ResultPage paging) {
+            object[] results = this.Invoke("Search", new object[] {
+                        sessionID,
+                        searchParams,
+                        paging});
+            return ((HPSearchResult)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void SearchAsync(System.Guid sessionID, HPRequirement searchParams, ResultPage paging) {
+            this.SearchAsync(sessionID, searchParams, paging, null);
+        }
+        
+        /// <remarks/>
+        public void SearchAsync(System.Guid sessionID, HPRequirement searchParams, ResultPage paging, object userState) {
+            if ((this.SearchOperationCompleted == null)) {
+                this.SearchOperationCompleted = new System.Threading.SendOrPostCallback(this.OnSearchOperationCompleted);
+            }
+            this.InvokeAsync("Search", new object[] {
+                        sessionID,
+                        searchParams,
+                        paging}, this.SearchOperationCompleted, userState);
+        }
+        
+        private void OnSearchOperationCompleted(object arg) {
+            if ((this.SearchCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.SearchCompleted(this, new SearchCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -201,6 +243,788 @@ namespace MasterDuner.Cooperations.Csq.TestProjects.ResumeSearchService {
     }
     
     /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HPSearchResult))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:MasterDuner@Yeah.net")]
+    public partial class SearchResultBase {
+        
+        private bool isSuccessfulField;
+        
+        private PerformStatus statusField;
+        
+        private string dataExpressionField;
+        
+        /// <remarks/>
+        public bool IsSuccessful {
+            get {
+                return this.isSuccessfulField;
+            }
+            set {
+                this.isSuccessfulField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public PerformStatus Status {
+            get {
+                return this.statusField;
+            }
+            set {
+                this.statusField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string DataExpression {
+            get {
+                return this.dataExpressionField;
+            }
+            set {
+                this.dataExpressionField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:MasterDuner@Yeah.net")]
+    public enum PerformStatus {
+        
+        /// <remarks/>
+        Completed,
+        
+        /// <remarks/>
+        HttpError,
+        
+        /// <remarks/>
+        FailedValidatingCode,
+        
+        /// <remarks/>
+        FailedCredentials,
+        
+        /// <remarks/>
+        FailedSearchArguments,
+        
+        /// <remarks/>
+        UnknownError,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:MasterDuner@Yeah.net")]
+    public partial class HPSearchResult : SearchResultBase {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:MasterDuner@Yeah.net")]
+    public partial class ResultPage {
+        
+        private int sizeField;
+        
+        private int indexField;
+        
+        /// <remarks/>
+        public int Size {
+            get {
+                return this.sizeField;
+            }
+            set {
+                this.sizeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Index {
+            get {
+                return this.indexField;
+            }
+            set {
+                this.indexField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HPExpandoRequirementObject))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:MasterDuner@Yeah.net")]
+    public partial class ExpandoRequirementObject {
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:MasterDuner@Yeah.net")]
+    public partial class HPExpandoRequirementObject : ExpandoRequirementObject {
+        
+        private string snOfResumeField;
+        
+        private OverseasWorkingExperienceRequired overseasWorkingExperienceRequiredField;
+        
+        private LanguageAbility[] languageAbilitiesField;
+        
+        private string professionNameField;
+        
+        private string schoolNameField;
+        
+        private ResidenceLocation[] residencesField;
+        
+        private Industry[] industriesField;
+        
+        private string corporationField;
+        
+        private bool lastestField;
+        
+        private WorkingStatus workingStatusField;
+        
+        /// <remarks/>
+        public string SnOfResume {
+            get {
+                return this.snOfResumeField;
+            }
+            set {
+                this.snOfResumeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public OverseasWorkingExperienceRequired OverseasWorkingExperienceRequired {
+            get {
+                return this.overseasWorkingExperienceRequiredField;
+            }
+            set {
+                this.overseasWorkingExperienceRequiredField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public LanguageAbility[] LanguageAbilities {
+            get {
+                return this.languageAbilitiesField;
+            }
+            set {
+                this.languageAbilitiesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string ProfessionName {
+            get {
+                return this.professionNameField;
+            }
+            set {
+                this.professionNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string SchoolName {
+            get {
+                return this.schoolNameField;
+            }
+            set {
+                this.schoolNameField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public ResidenceLocation[] Residences {
+            get {
+                return this.residencesField;
+            }
+            set {
+                this.residencesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public Industry[] Industries {
+            get {
+                return this.industriesField;
+            }
+            set {
+                this.industriesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Corporation {
+            get {
+                return this.corporationField;
+            }
+            set {
+                this.corporationField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public bool Lastest {
+            get {
+                return this.lastestField;
+            }
+            set {
+                this.lastestField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public WorkingStatus WorkingStatus {
+            get {
+                return this.workingStatusField;
+            }
+            set {
+                this.workingStatusField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:MasterDuner@Yeah.net")]
+    public enum OverseasWorkingExperienceRequired {
+        
+        /// <remarks/>
+        All,
+        
+        /// <remarks/>
+        Necessary,
+        
+        /// <remarks/>
+        Unnecessary,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:MasterDuner@Yeah.net")]
+    public partial class LanguageAbility : IdBase {
+        
+        private LanguageAbilityDescription valueField;
+        
+        private string languageField;
+        
+        /// <remarks/>
+        public LanguageAbilityDescription Value {
+            get {
+                return this.valueField;
+            }
+            set {
+                this.valueField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public string Language {
+            get {
+                return this.languageField;
+            }
+            set {
+                this.languageField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:MasterDuner@Yeah.net")]
+    public enum LanguageAbilityDescription {
+        
+        /// <remarks/>
+        All,
+        
+        /// <remarks/>
+        Ordinary,
+        
+        /// <remarks/>
+        Well,
+        
+        /// <remarks/>
+        Proficient,
+        
+        /// <remarks/>
+        Versed,
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(PositionBase))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(DegreeBase))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(LanguageAbility))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(ResidenceLocation))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(Industry))]
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(WorkLocationBase))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:MasterDuner@Yeah.net")]
+    public partial class IdBase {
+        
+        private string innerIdField;
+        
+        /// <remarks/>
+        public string InnerId {
+            get {
+                return this.innerIdField;
+            }
+            set {
+                this.innerIdField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:MasterDuner@Yeah.net")]
+    public partial class PositionBase : IdBase {
+        
+        private string nameField;
+        
+        /// <remarks/>
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:MasterDuner@Yeah.net")]
+    public partial class DegreeBase : IdBase {
+        
+        private string nameField;
+        
+        /// <remarks/>
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:MasterDuner@Yeah.net")]
+    public partial class ResidenceLocation : IdBase {
+        
+        private string nameField;
+        
+        /// <remarks/>
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:MasterDuner@Yeah.net")]
+    public partial class Industry : IdBase {
+        
+        private string nameField;
+        
+        /// <remarks/>
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:MasterDuner@Yeah.net")]
+    public partial class WorkLocationBase : IdBase {
+        
+        private string nameField;
+        
+        /// <remarks/>
+        public string Name {
+            get {
+                return this.nameField;
+            }
+            set {
+                this.nameField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:MasterDuner@Yeah.net")]
+    public enum WorkingStatus {
+        
+        /// <remarks/>
+        All,
+        
+        /// <remarks/>
+        OnJob,
+        
+        /// <remarks/>
+        Left,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:MasterDuner@Yeah.net")]
+    public partial class EducationalBackgroundBase {
+        
+        private DegreeBase juniorDegreeField;
+        
+        private DegreeBase seniorDegreeField;
+        
+        /// <remarks/>
+        public DegreeBase JuniorDegree {
+            get {
+                return this.juniorDegreeField;
+            }
+            set {
+                this.juniorDegreeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public DegreeBase SeniorDegree {
+            get {
+                return this.seniorDegreeField;
+            }
+            set {
+                this.seniorDegreeField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:MasterDuner@Yeah.net")]
+    public partial class SalaryBase {
+        
+        private decimal minField;
+        
+        private decimal maxField;
+        
+        /// <remarks/>
+        public decimal Min {
+            get {
+                return this.minField;
+            }
+            set {
+                this.minField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public decimal Max {
+            get {
+                return this.maxField;
+            }
+            set {
+                this.maxField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:MasterDuner@Yeah.net")]
+    public partial class WorkExperienceBase {
+        
+        private int upperField;
+        
+        private int lowerField;
+        
+        /// <remarks/>
+        public int Upper {
+            get {
+                return this.upperField;
+            }
+            set {
+                this.upperField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Lower {
+            get {
+                return this.lowerField;
+            }
+            set {
+                this.lowerField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:MasterDuner@Yeah.net")]
+    public partial class AgeBase {
+        
+        private int upperField;
+        
+        private int lowerField;
+        
+        /// <remarks/>
+        public int Upper {
+            get {
+                return this.upperField;
+            }
+            set {
+                this.upperField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public int Lower {
+            get {
+                return this.lowerField;
+            }
+            set {
+                this.lowerField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:MasterDuner@Yeah.net")]
+    public partial class KeywordsBase {
+        
+        private string keywordsField;
+        
+        /// <remarks/>
+        public string Keywords {
+            get {
+                return this.keywordsField;
+            }
+            set {
+                this.keywordsField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.Xml.Serialization.XmlIncludeAttribute(typeof(HPRequirement))]
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:MasterDuner@Yeah.net")]
+    public partial class RequirementBase {
+        
+        private KeywordsBase keywordsField;
+        
+        private WorkLocationBase[] workLocationsField;
+        
+        private PositionBase[] positionsField;
+        
+        private Gender genderField;
+        
+        private AgeBase agesField;
+        
+        private WorkExperienceBase workExperiencesField;
+        
+        private SalaryBase salaryField;
+        
+        private EducationalBackgroundBase degreeField;
+        
+        private ExpandoRequirementObject otherField;
+        
+        /// <remarks/>
+        public KeywordsBase Keywords {
+            get {
+                return this.keywordsField;
+            }
+            set {
+                this.keywordsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public WorkLocationBase[] WorkLocations {
+            get {
+                return this.workLocationsField;
+            }
+            set {
+                this.workLocationsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public PositionBase[] Positions {
+            get {
+                return this.positionsField;
+            }
+            set {
+                this.positionsField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public Gender Gender {
+            get {
+                return this.genderField;
+            }
+            set {
+                this.genderField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public AgeBase Ages {
+            get {
+                return this.agesField;
+            }
+            set {
+                this.agesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public WorkExperienceBase WorkExperiences {
+            get {
+                return this.workExperiencesField;
+            }
+            set {
+                this.workExperiencesField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public SalaryBase Salary {
+            get {
+                return this.salaryField;
+            }
+            set {
+                this.salaryField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public EducationalBackgroundBase Degree {
+            get {
+                return this.degreeField;
+            }
+            set {
+                this.degreeField = value;
+            }
+        }
+        
+        /// <remarks/>
+        public ExpandoRequirementObject Other {
+            get {
+                return this.otherField;
+            }
+            set {
+                this.otherField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:MasterDuner@Yeah.net")]
+    public enum Gender {
+        
+        /// <remarks/>
+        Man,
+        
+        /// <remarks/>
+        Woman,
+        
+        /// <remarks/>
+        All,
+        
+        /// <remarks/>
+        Unknown,
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
+    [System.SerializableAttribute()]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:MasterDuner@Yeah.net")]
+    public partial class HPRequirement : RequirementBase {
+        
+        private HPExpandoRequirementObject privateField;
+        
+        /// <remarks/>
+        public HPExpandoRequirementObject Private {
+            get {
+                return this.privateField;
+            }
+            set {
+                this.privateField = value;
+            }
+        }
+    }
+    
+    /// <remarks/>
     [System.Xml.Serialization.XmlIncludeAttribute(typeof(HPAuthenResult))]
     [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
     [System.SerializableAttribute()]
@@ -244,31 +1068,6 @@ namespace MasterDuner.Cooperations.Csq.TestProjects.ResumeSearchService {
                 this.bindSessionIDField = value;
             }
         }
-    }
-    
-    /// <remarks/>
-    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Xml", "4.0.30319.34234")]
-    [System.SerializableAttribute()]
-    [System.Xml.Serialization.XmlTypeAttribute(Namespace="urn:MasterDuner@Yeah.net")]
-    public enum PerformStatus {
-        
-        /// <remarks/>
-        Completed,
-        
-        /// <remarks/>
-        HttpError,
-        
-        /// <remarks/>
-        FailedValidatingCode,
-        
-        /// <remarks/>
-        FailedCredentials,
-        
-        /// <remarks/>
-        FailedSearchArguments,
-        
-        /// <remarks/>
-        UnknownError,
     }
     
     /// <remarks/>
@@ -359,6 +1158,32 @@ namespace MasterDuner.Cooperations.Csq.TestProjects.ResumeSearchService {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((HPAuthenResult)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void SearchCompletedEventHandler(object sender, SearchCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class SearchCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal SearchCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public HPSearchResult Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((HPSearchResult)(this.results[0]));
             }
         }
     }

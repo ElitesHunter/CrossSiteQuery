@@ -26,5 +26,5 @@ using System.Runtime.InteropServices;
 //
 // 您可以指定所有这些值，也可以使用“修订号”和“内部版本号”的默认值， 
 // 方法是按如下所示使用“*”:
-[assembly: AssemblyVersion("2.0.5413.51389")]
-[assembly: AssemblyFileVersion("2.0.5413.51389")]
+[assembly: AssemblyVersion("2.0.5415.60653")]
+[assembly: AssemblyFileVersion("2.0.5415.60653")]

@@ -58,7 +58,7 @@ namespace MasterDuner.Cooperations.Csq.Channels.Communications
         /// 不可从此类继承。
         /// </remarks>
         internal ResumeSearchMessageProcessor(Guid sessionID, HPRequirement searchParameter, ResultPage paging)
-            : base(new ResumeSearchRequestMessage(sessionID) { SearchParameter = searchParameter, Paging = paging })
+            : base(new ResumeSearchRequestMessage(sessionID) { SearchParameter = searchParameter, Paging = paging, Method = CommunicationMethods.HttpPost })
         { }
 
         #endregion

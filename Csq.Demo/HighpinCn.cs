@@ -21,6 +21,8 @@
 using System;
 using MasterDuner.Cooperations.Csq.TestProjects.ResumeSearchService;
 using System.Diagnostics;
+using System.IO;
+using System.Text;
 
 namespace MasterDuner.Cooperations.Csq.TestProjects
 {
@@ -121,6 +123,14 @@ namespace MasterDuner.Cooperations.Csq.TestProjects
                 string password = Console.ReadLine();
                 this.Authenticate(userName, password);
             }
+
+            Trace.Write("尝试进行简历搜索。");
+            using (SearchChannelService service = new SearchChannelService())
+            {
+                string html = service.Search(this.SessionID, this.CreateSearchParameter(), new ResultPage() { Index = 1, Size = 30 }).DataExpression;
+                this.SaveHtmlResultToDisk(html);
+            }
+            Trace.Write("搜索完毕！");
         }
         #endregion
 
@@ -135,6 +145,57 @@ namespace MasterDuner.Cooperations.Csq.TestProjects
             using (SearchChannelService service = new SearchChannelService())
             {
                 AuthenticationResult result = service.Login(new HPCredentials() { UserName = userName, Password = password }, this.SessionID);
+            }
+        }
+        #endregion
+
+        #region CreateSearchParameter
+        /// <summary>
+        /// 创建智联卓聘网的搜索参数。
+        /// </summary>
+        /// <returns></returns>
+        private HPRequirement CreateSearchParameter()
+        {
+            return new HPRequirement()
+            {
+                Gender = Gender.All,
+                Private = new HPExpandoRequirementObject()
+                {
+                    Corporation = "百度",
+                    Lastest = false,
+                    OverseasWorkingExperienceRequired = OverseasWorkingExperienceRequired.All,
+                    ProfessionName = "计算机",
+                    WorkingStatus = WorkingStatus.Left
+                }
+            };
+        }
+        #endregion
+
+        #region SaveHtmlResultToDisk
+        /// <summary>
+        /// 保存HTML到硬盘中。
+        /// </summary>
+        /// <param name="html"></param>
+        private void SaveHtmlResultToDisk(string html)
+        {
+            FileInfo file = new FileInfo(Path.Combine(AppDomain.CurrentDomain.BaseDirectory, string.Format(@"{0}-{1}.htm", Guid.NewGuid(), DateTime.Now.Ticks)));
+            byte[] bytes = Encoding.UTF8.GetBytes(html);
+            using (FileStream stream = new FileStream(file.FullName, FileMode.OpenOrCreate, FileAccess.Write))
+            {
+                try
+                {
+                    Trace.Write(string.Format("尝试将搜索结果保存到文件{0}中！", file.FullName));
+                    stream.Write(bytes, 0, bytes.Length);
+                    Trace.Write("写入完毕");
+                }
+                catch (Exception ex)
+                {
+                    throw ex;
+                }
+                finally
+                {
+                    stream.Close();
+                }
             }
         }
         #endregion

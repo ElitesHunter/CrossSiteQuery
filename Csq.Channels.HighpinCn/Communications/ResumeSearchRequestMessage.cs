@@ -91,7 +91,7 @@ namespace MasterDuner.Cooperations.Csq.Channels.Communications
             : base(sessionID)
         {
             this._cookieCacheName = new CookieCacheName() { BindSession = sessionID };
-            this._config = new PrivateConfiguration().GetSection<HPSection>("www.highpin.cn");
+            this._config = new PrivateConfiguration(SearchChannels.HighpinCn).GetSection<HPSection>("www.highpin.cn");
         }
 
         #endregion

@@ -106,7 +106,7 @@ namespace MasterDuner.Cooperations.Csq.Channels
         /// <returns><see cref="AgeBase"/>对象实例。</returns>
         internal AgeBase GetAgeSegment()
         {
-            return object.ReferenceEquals(this.Ages, null) ? this.Ages : new AgeBase() { Lower = -1, Upper = -1 };
+            return !object.ReferenceEquals(this.Ages, null) ? this.Ages : new AgeBase() { Lower = -1, Upper = -1 };
         }
         #endregion
 
@@ -117,7 +117,7 @@ namespace MasterDuner.Cooperations.Csq.Channels
         /// <returns><see cref="WorkExperienceBase"/>对象实例。</returns>
         internal WorkExperienceBase GetWorkExperienceSegment()
         {
-            return object.ReferenceEquals(this.WorkExperiences, null) ? this.WorkExperiences : new WorkExperienceBase() { Lower = -1, Upper = -1 };
+            return !object.ReferenceEquals(this.WorkExperiences, null) ? this.WorkExperiences : new WorkExperienceBase() { Lower = -1, Upper = -1 };
         }
         #endregion
 
@@ -256,7 +256,7 @@ namespace MasterDuner.Cooperations.Csq.Channels
         /// <returns>专业名称。</returns>
         internal string GetProfessionName()
         {
-            return object.ReferenceEquals(this.Private, null) ? string.Empty : this.Private.ProfessionName;
+            return object.ReferenceEquals(this.Private, null) || string.IsNullOrWhiteSpace(this.Private.ProfessionName) ? string.Empty : this.Private.ProfessionName;
         }
         #endregion
 
@@ -267,7 +267,7 @@ namespace MasterDuner.Cooperations.Csq.Channels
         /// <returns>学校名称。</returns>
         internal string GetSchoolName()
         {
-            return object.ReferenceEquals(this.Private, null) ? string.Empty : this.Private.SchoolName;
+            return object.ReferenceEquals(this.Private, null) || string.IsNullOrWhiteSpace(this.Private.SchoolName) ? string.Empty : this.Private.SchoolName;
         }
         #endregion
 
@@ -324,7 +324,7 @@ namespace MasterDuner.Cooperations.Csq.Channels
         /// <returns>公司名称。</returns>
         internal string GetCorporationName()
         {
-            return object.ReferenceEquals(this.Private, null) ? string.Empty : this.Private.Corporation;
+            return object.ReferenceEquals(this.Private, null) || string.IsNullOrWhiteSpace(this.Private.Corporation) ? string.Empty : this.Private.Corporation;
         }
         #endregion
 
