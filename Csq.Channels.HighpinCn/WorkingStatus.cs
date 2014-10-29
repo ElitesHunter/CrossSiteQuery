@@ -5,7 +5,7 @@
  * 
  * Development Tool : Microsoft Visual Studio 2010
  * 
- * Create Time : 2014-10-27 15:04:54
+ * Create Time : 2014-10-29 11:06:41
  * 
  * Machine Name : GLCHQWYCWINW7
  * 
@@ -20,13 +20,12 @@
 
 using System;
 using System.Runtime.Serialization;
-using MasterDuner.Cooperations.Csq.Commons;
 
 namespace MasterDuner.Cooperations.Csq.Channels
 {
     /// <summary>
     /// <para>
-    /// 类型名称：<see cref="LanguageAbility"/>
+    /// 类型名称：<see cref="WorkingStatus"/>
     /// </para>
     /// <para>
     /// 命名空间：<see cref="MasterDuner.Cooperations.Csq.Channels"/>
@@ -35,58 +34,31 @@ namespace MasterDuner.Cooperations.Csq.Channels
     /// 适用的.NET Framework版本：4.0
     /// </para>
     /// <para>
-    /// 智联卓聘网语言能力要求。
+    /// 用于标记是否在职的枚举类型。
     /// </para>
     /// </summary>
     /// <remarks>
     /// 此类型适用于4.0及其以上版本的.NET Framework。
-    /// <para>
-    /// 不可从此类继承。
-    /// </para>
     /// </remarks>
     [Serializable]
     [DataContract]
-    public sealed class LanguageAbility : IdBase
+    public enum WorkingStatus
     {
-        private LanguageAbilityDescription _value = LanguageAbilityDescription.All;
-        private string _language;
-
-        #region Value
         /// <summary>
-        /// 设置或获取语言能力描述。
+        /// 不区分是否离职。
         /// </summary>
-        [DataMember]
-        public LanguageAbilityDescription Value
-        {
-            get { return _value; }
-            set { _value = value; }
-        }
-        #endregion
-
-        #region Language
+        [EnumMember]
+        All = -1,
         /// <summary>
-        /// 设置或获取语言名称。
+        /// 在职的。
         /// </summary>
-        [DataMember]
-        public string Language
-        {
-            get { return _language; }
-            set { _language = value; }
-        }
-        #endregion
-
-        #region Constructors
-
+        [EnumMember]
+        OnJob = 1,
         /// <summary>
-        /// 初始化一个<see cref="LanguageAbility" />对象实例。
+        /// 已经离职的。
         /// </summary>
-        /// <remarks>
-        /// 不可从此类继承。
-        /// </remarks>
-        public LanguageAbility()
-        { }
-
-        #endregion
+        [EnumMember]
+        Left = 2
     }
 }
 

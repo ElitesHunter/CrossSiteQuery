@@ -5,7 +5,7 @@
  * 
  * Development Tool : Microsoft Visual Studio 2010
  * 
- * Create Time : 2014-10-27 15:04:54
+ * Create Time : 2014-10-29 10:48:01
  * 
  * Machine Name : GLCHQWYCWINW7
  * 
@@ -19,23 +19,21 @@
 #endregion
 
 using System;
-using System.Runtime.Serialization;
-using MasterDuner.Cooperations.Csq.Commons;
 
-namespace MasterDuner.Cooperations.Csq.Channels
+namespace MasterDuner.Cooperations.Csq.Channels.RegExpressions
 {
     /// <summary>
     /// <para>
-    /// 类型名称：<see cref="LanguageAbility"/>
+    /// 类型名称：<see cref="NumberExpression"/>
     /// </para>
     /// <para>
-    /// 命名空间：<see cref="MasterDuner.Cooperations.Csq.Channels"/>
+    /// 命名空间：<see cref="MasterDuner.Cooperations.Csq.Channels.RegExpressions"/>
     /// </para>
     /// <para>
     /// 适用的.NET Framework版本：4.0
     /// </para>
     /// <para>
-    /// 智联卓聘网语言能力要求。
+    /// 用于验证是否为有符号的数字的正则表达式。
     /// </para>
     /// </summary>
     /// <remarks>
@@ -44,48 +42,29 @@ namespace MasterDuner.Cooperations.Csq.Channels
     /// 不可从此类继承。
     /// </para>
     /// </remarks>
-    [Serializable]
-    [DataContract]
-    public sealed class LanguageAbility : IdBase
+    public sealed class NumberExpression : ExpressionBase
     {
-        private LanguageAbilityDescription _value = LanguageAbilityDescription.All;
-        private string _language;
-
-        #region Value
-        /// <summary>
-        /// 设置或获取语言能力描述。
-        /// </summary>
-        [DataMember]
-        public LanguageAbilityDescription Value
-        {
-            get { return _value; }
-            set { _value = value; }
-        }
-        #endregion
-
-        #region Language
-        /// <summary>
-        /// 设置或获取语言名称。
-        /// </summary>
-        [DataMember]
-        public string Language
-        {
-            get { return _language; }
-            set { _language = value; }
-        }
-        #endregion
-
         #region Constructors
 
         /// <summary>
-        /// 初始化一个<see cref="LanguageAbility" />对象实例。
+        /// 初始化一个<see cref="NumberExpression" />对象实例。
         /// </summary>
         /// <remarks>
         /// 不可从此类继承。
         /// </remarks>
-        public LanguageAbility()
+        public NumberExpression()
         { }
 
+        #endregion
+
+        #region Expression
+        /// <summary>
+        /// 获取正则表达式。
+        /// </summary>
+        protected override string Expression
+        {
+            get { return @"^-?\d$"; }
+        }
         #endregion
     }
 }

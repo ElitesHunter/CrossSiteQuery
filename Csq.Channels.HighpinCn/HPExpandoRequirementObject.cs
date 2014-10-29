@@ -56,6 +56,7 @@ namespace MasterDuner.Cooperations.Csq.Channels
         private List<Industry> _industries;
         private string _corporation;
         private bool _lastest = false;
+        private WorkingStatus _workingStatus = WorkingStatus.All;
 
         #region SnOfResume
         /// <summary>
@@ -161,6 +162,18 @@ namespace MasterDuner.Cooperations.Csq.Channels
         {
             get { return _lastest; }
             set { _lastest = value; }
+        }
+        #endregion
+
+        #region WorkingStatus
+        /// <summary>
+        /// 设置或获取工作状态。
+        /// </summary>
+        [DataMember]
+        public WorkingStatus WorkingStatus
+        {
+            get { return _workingStatus; }
+            set { _workingStatus = value; }
         }
         #endregion
 
