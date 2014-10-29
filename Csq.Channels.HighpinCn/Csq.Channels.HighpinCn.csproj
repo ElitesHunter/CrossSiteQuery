@@ -59,6 +59,8 @@
     <Compile Include="Communications\AuthenMessageProcessor.cs" />
     <Compile Include="Communications\AuthenRequestMessage.cs" />
     <Compile Include="Communications\AuthenResponseMessage.cs" />
+    <Compile Include="Communications\ResumeSearchRequestMessage.cs" />
+    <Compile Include="Communications\ResumeSearchResponseMessage.cs" />
     <Compile Include="Communications\ValidatingCodeMessageProcessor.cs" />
     <Compile Include="Communications\ValidatingCodeRequestMessage.cs" />
     <Compile Include="Communications\ValidatingCodeResponseMessage.cs" />
