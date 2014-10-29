@@ -121,12 +121,12 @@ namespace MasterDuner.Cooperations.Csq.Channels
         }
         #endregion
 
-        #region GetMinArgeeID
+        #region GetMinDegreeID
         /// <summary>
         /// 获取最低学历标识值。
         /// </summary>
         /// <returns>最低序列标识。</returns>
-        internal int GetMinArgeeID()
+        internal int GetMinDegreeID()
         {
             return
                 object.ReferenceEquals(this.Degree, null)
@@ -138,12 +138,12 @@ namespace MasterDuner.Cooperations.Csq.Channels
         }
         #endregion
 
-        #region GetMaxAgreeID
+        #region GetMaxDegreeID
         /// <summary>
         /// 获取最高序列标识。
         /// </summary>
         /// <returns>最高序列标识值。</returns>
-        internal int GetMaxAgreeID()
+        internal int GetMaxDegreeID()
         {
             return
                 object.ReferenceEquals(this.Degree, null)
@@ -217,7 +217,7 @@ namespace MasterDuner.Cooperations.Csq.Channels
         /// <returns>是否包含标记。</returns>
         internal int GetWhetherIncludeOverseasMark()
         {
-            return object.ReferenceEquals(this.Private, null) ? -1 : (int)this.Private.OverseasWorkingExperienceRequired;
+            return object.ReferenceEquals(this.Private, null) ? 0 : (int)this.Private.OverseasWorkingExperienceRequired;
         }
         #endregion
 
