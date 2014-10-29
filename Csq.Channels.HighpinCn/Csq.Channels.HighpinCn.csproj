@@ -59,6 +59,7 @@
     <Compile Include="Communications\AuthenMessageProcessor.cs" />
     <Compile Include="Communications\AuthenRequestMessage.cs" />
     <Compile Include="Communications\AuthenResponseMessage.cs" />
+    <Compile Include="Communications\ResumeSearchMessageProcessor.cs" />
     <Compile Include="Communications\ResumeSearchRequestMessage.cs" />
     <Compile Include="Communications\ResumeSearchResponseMessage.cs" />
     <Compile Include="Communications\ValidatingCodeMessageProcessor.cs" />
@@ -81,6 +82,8 @@
     <Compile Include="HPCredentials.cs" />
     <Compile Include="HPExpandoRequirementObject.cs" />
     <Compile Include="HPRequirement.cs" />
+    <Compile Include="HPResumeSearcher.cs" />
+    <Compile Include="HPSearchResult.cs" />
     <Compile Include="Industry.cs" />
     <Compile Include="LanguageAbility.cs" />
     <Compile Include="LanguageAbilityDescription.cs" />
