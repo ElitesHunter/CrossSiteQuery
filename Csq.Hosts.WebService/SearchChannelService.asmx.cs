@@ -43,5 +43,21 @@ namespace MasterDuner.Cooperations.Csq.Application.WebServices
             return authenService.SignIn(SearchChannels.HighpinCn, credentials) as HPAuthenResult;
         }
         #endregion
+
+        #region Search
+        /// <summary>
+        /// 搜索智联卓聘网的简历。
+        /// </summary>
+        /// <param name="sessionID">会话标记。</param>
+        /// <param name="searchParams">搜索参数。</param>
+        /// <param name="paging">分页信息。</param>
+        /// <returns>搜索结果。</returns>
+        [WebMethod(EnableSession = true, MessageName = "HighpinCnSearch")]
+        public HPSearchResult Search(Guid sessionID, HPRequirement searchParams, ResultPage paging)
+        {
+            IResumeSearcher service = new HPResumeSearcher();
+            return service.Get(sessionID, SearchChannels.HighpinCn, searchParams, paging) as HPSearchResult;
+        }
+        #endregion
     }
 }
