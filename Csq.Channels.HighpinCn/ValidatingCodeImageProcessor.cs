@@ -101,7 +101,7 @@ namespace MasterDuner.Cooperations.Csq.Channels
                 {
                     image.Save(Path.Combine(TemporaryDirectoryInfo.This.Path, this._temporaryName));
                 }
-                catch(Exception ex)
+                catch
                 {
                     successful = false;
                 }
