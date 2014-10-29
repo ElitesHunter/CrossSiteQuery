@@ -81,6 +81,7 @@
     <Compile Include="PositionBase.public.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="RequirementBase.public.cs" />
+    <Compile Include="ResultPage.cs" />
     <Compile Include="SalaryBase.public.cs" />
     <Compile Include="SearchChannelAttribute.sealed.cs" />
     <Compile Include="SearchChannelCredentials.public.cs" />
