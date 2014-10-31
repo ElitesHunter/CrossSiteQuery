@@ -82,6 +82,18 @@ namespace MasterDuner.Cooperations.Csq.Channels.RegExpressions
             return Regex.Match(s, this.Expression);
         }
         #endregion
+
+        #region Split
+        /// <summary>
+        /// 将字符串<paramref name="s"/>分割成字符串数组。
+        /// </summary>
+        /// <param name="s">需要分割的字符串。</param>
+        /// <returns>字符串数组。</returns>
+        public virtual string[] Split(string s)
+        {
+            return Regex.Split(s, this.Expression, RegexOptions.IgnoreCase);
+        }
+        #endregion
     }
 }
 
