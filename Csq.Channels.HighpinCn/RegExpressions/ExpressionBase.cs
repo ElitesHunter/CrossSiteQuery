@@ -64,10 +64,11 @@ namespace MasterDuner.Cooperations.Csq.Channels.RegExpressions
         /// 文本内容是否与正则表达式匹配。
         /// </summary>
         /// <param name="s">需要匹配的文本内容。</param>
+        /// <param name="options">匹配选项。</param>
         /// <returns><see cref="Boolean"/>值。</returns>
-        public virtual bool IsMatch(string s)
+        public virtual bool IsMatch(string s, RegexOptions options = RegexOptions.None)
         {
-            return Regex.IsMatch(s, this.Expression);
+            return Regex.IsMatch(s, this.Expression, options);
         }
         #endregion
 
@@ -76,10 +77,11 @@ namespace MasterDuner.Cooperations.Csq.Channels.RegExpressions
         /// 从<paramref name="s"/>中获取匹配的项。
         /// </summary>
         /// <param name="s">文本。</param>
+        /// <param name="options">匹配选项。</param>
         /// <returns><see cref="Match"/>对象实例。</returns>
-        public virtual Match Match(string s)
+        public virtual Match Match(string s, RegexOptions options = RegexOptions.None)
         {
-            return Regex.Match(s, this.Expression);
+            return Regex.Match(s, this.Expression, options);
         }
         #endregion
 
@@ -88,10 +90,11 @@ namespace MasterDuner.Cooperations.Csq.Channels.RegExpressions
         /// 将字符串<paramref name="s"/>分割成字符串数组。
         /// </summary>
         /// <param name="s">需要分割的字符串。</param>
+        /// <param name="options">匹配选项。</param>
         /// <returns>字符串数组。</returns>
-        public virtual string[] Split(string s)
+        public virtual string[] Split(string s, RegexOptions options = RegexOptions.None)
         {
-            return Regex.Split(s, this.Expression, RegexOptions.IgnoreCase);
+            return Regex.Split(s, this.Expression, options);
         }
         #endregion
     }
