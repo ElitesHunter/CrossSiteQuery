@@ -97,6 +97,18 @@ namespace MasterDuner.Cooperations.Csq.Channels.RegExpressions
             return Regex.Split(s, this.Expression, options);
         }
         #endregion
+
+        #region Matches
+        /// <summary>
+        /// 获取匹配集合。
+        /// </summary>
+        /// <param name="s">需要匹配的字符串。</param>
+        /// <returns><see cref="MatchCollection"/>对象实例。</returns>
+        public virtual MatchCollection Matches(string s)
+        {
+            return Regex.Matches(s, this.Expression);
+        }
+        #endregion
     }
 }
 

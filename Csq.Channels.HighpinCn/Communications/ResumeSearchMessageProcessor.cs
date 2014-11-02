@@ -19,8 +19,8 @@
 #endregion
 
 using System;
-using MasterDuner.Cooperations.Csq.Commons.Communications;
 using MasterDuner.Cooperations.Csq.Commons;
+using MasterDuner.Cooperations.Csq.Commons.Communications;
 
 namespace MasterDuner.Cooperations.Csq.Channels.Communications
 {

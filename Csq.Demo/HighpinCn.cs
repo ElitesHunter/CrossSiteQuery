@@ -19,10 +19,10 @@
 #endregion
 
 using System;
-using MasterDuner.Cooperations.Csq.TestProjects.ResumeSearchService;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using MasterDuner.Cooperations.Csq.TestProjects.ResumeSearchService;
 
 namespace MasterDuner.Cooperations.Csq.TestProjects
 {

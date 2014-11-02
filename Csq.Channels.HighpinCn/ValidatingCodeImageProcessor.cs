@@ -23,8 +23,8 @@ using System.Drawing;
 using System.IO;
 using System.Runtime.InteropServices;
 using MasterDuner.Cooperations.Csq.Channels.Configuration;
-using MasterDuner.Cooperations.Csq.Commons.Configuration;
 using MasterDuner.Cooperations.Csq.Channels.RegExpressions;
+using MasterDuner.Cooperations.Csq.Commons.Configuration;
 
 namespace MasterDuner.Cooperations.Csq.Channels
 {

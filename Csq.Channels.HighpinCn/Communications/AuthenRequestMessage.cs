@@ -22,9 +22,9 @@ using System;
 using System.Net;
 using System.Text;
 using MasterDuner.Cooperations.Csq.Channels.Configuration;
+using MasterDuner.Cooperations.Csq.Commons;
 using MasterDuner.Cooperations.Csq.Commons.Communications;
 using MasterDuner.Cooperations.Csq.Commons.Configuration;
-using MasterDuner.Cooperations.Csq.Commons;
 
 namespace MasterDuner.Cooperations.Csq.Channels.Communications
 {

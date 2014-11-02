@@ -19,10 +19,10 @@
 #endregion
 
 using System;
-using System.Runtime.Serialization;
 using System.Collections.Generic;
-using MasterDuner.Cooperations.Csq.Channels.RegExpressions;
+using System.Runtime.Serialization;
 using System.Text.RegularExpressions;
+using MasterDuner.Cooperations.Csq.Channels.RegExpressions;
 
 namespace MasterDuner.Cooperations.Csq.Channels
 {
@@ -229,6 +229,13 @@ namespace MasterDuner.Cooperations.Csq.Channels
             this.IsMatch = new IsSearchResultExpression().IsMatch(src);
         }
 
+        /// <summary>
+        /// 初始化一个<see cref="SearchResultObject" />对象实例。
+        /// </summary>
+        public SearchResultObject()
+        {
+        }
+
         #endregion
 
         #region ParsePositionAndUrl
@@ -365,6 +372,139 @@ namespace MasterDuner.Cooperations.Csq.Channels
                         this.EducationalBackground = match.Groups["EducationalBackground"].Value;
                 }
             }
+        }
+        #endregion
+
+        #region ParseWorkingExperience
+        /// <summary>
+        /// 用于解析工作经历。
+        /// </summary>
+        protected virtual void ParseWorkingExperience()
+        {
+            WorkingExperienceExpression regexpr = new WorkingExperienceExpression();
+            string serviceCycle = string.Empty;
+            string corpration = string.Empty;
+            string position = string.Empty;
+            string salary = string.Empty;
+            if (regexpr.IsMatch(this.SourceHtml))
+            {
+                Match match = regexpr.Match(this.SourceHtml, RegexOptions.IgnoreCase);
+                if (!object.ReferenceEquals(match.Groups, null) && match.Groups.Count > 0)
+                {
+                    if (!object.ReferenceEquals(match.Groups["ServiceCycle"], null) && match.Groups["ServiceCycle"].Success)
+                        serviceCycle = match.Groups["ServiceCycle"].Value.Trim().Replace("&nbsp;", string.Empty).Replace("|", string.Empty);
+                    if (!object.ReferenceEquals(match.Groups["CompanyName"], null) && match.Groups["CompanyName"].Success)
+                        corpration = match.Groups["CompanyName"].Value;
+                    if (!object.ReferenceEquals(match.Groups["Position"], null) && match.Groups["Position"].Success)
+                        position = match.Groups["Position"].Value;
+                    if (!object.ReferenceEquals(match.Groups["Sarlary"], null) && match.Groups["Sarlary"].Success)
+                        salary = match.Groups["Sarlary"].Value;
+                }
+                this.WorkingExperience = string.Format("公司：{0} | 职位：{1} | 工作年限：{2} | 薪资：{3}元/月");
+            }
+        }
+        #endregion
+
+        #region ParseResumeTags
+        /// <summary>
+        /// 解析简历标签。
+        /// </summary>
+        protected virtual void ParseResumeTags()
+        {
+            ResumeTagExpression exp1 = new ResumeTagExpression();
+            ResumeTag2Expression exp2 = new ResumeTag2Expression();
+            if (exp1.IsMatch(this.SourceHtml, RegexOptions.IgnoreCase))
+            {
+                string tags = exp1.Match(this.SourceHtml, RegexOptions.IgnoreCase).Value;
+                if (!string.IsNullOrWhiteSpace(tags))
+                {
+                    MatchCollection matches = exp2.Matches(tags);
+                    if (!object.ReferenceEquals(matches, null))
+                    {
+                        this.ResumeTags = new List<string>();
+                        foreach (Match item in matches)
+                        {
+                            if (item.Success && !object.ReferenceEquals(item.Groups, null) && !object.ReferenceEquals(item.Groups["Tag"], null))
+                            {
+                                this.ResumeTags.Add(item.Groups["Tag"].Value);
+                            }
+                        }
+                    }
+                }
+            }
+        }
+        #endregion
+
+        #region ParseUserPictureUrl
+        /// <summary>
+        /// 解析用户头像URL。
+        /// </summary>
+        protected virtual void ParseUserPictureUrl()
+        {
+            UserPictureExpression regexpr = new UserPictureExpression();
+            if (regexpr.IsMatch(this.SourceHtml))
+            {
+                Match match = regexpr.Match(this.SourceHtml, RegexOptions.IgnoreCase);
+                if (!object.ReferenceEquals(match.Groups, null) && match.Groups.Count > 0)
+                {
+                    if (!object.ReferenceEquals(match.Groups["PictureUrl"], null) && match.Groups["PictureUrl"].Success)
+                        this.PictureUrl = match.Groups["PictureUrl"].Value;
+                }
+            }
+        }
+        #endregion
+
+        #region Parse
+        /// <summary>
+        /// 执行解析。
+        /// </summary>
+        public virtual void Parse()
+        {
+            this.ParsePositionAndUrl();
+            this.ParseCorporation();
+            this.ParseAge();
+            this.ParseDegree();
+            this.ParseEducationalBackground();
+            this.ParseGender();
+            this.ParseResidence();
+            this.ParseResumeTags();
+            this.ParseUserPictureUrl();
+            this.ParseWorkingExperience();
+        }
+        #endregion
+
+        #region Split
+        /// <summary>
+        /// 按照指定的格式分割HTML搜索结果，以便解析片段。
+        /// </summary>
+        /// <param name="html">需要分割的HTML搜索结果。</param>
+        /// <returns>字符串数组。</returns>
+        static public string[] Split(string html)
+        {
+            return new SplitSearchResultExpression().Split(html, RegexOptions.IgnoreCase);
+        }
+        #endregion
+
+        #region Parse
+        /// <summary>
+        /// 解析搜索结果HTML，获取结构化的搜索结果。
+        /// </summary>
+        /// <param name="html">搜索结果HTML文本内容。</param>
+        /// <returns><see cref="SearchResultObject"/>对象实例集合。</returns>
+        static public List<SearchResultObject> Parse(string html)
+        {
+            string[] input = SearchResultObject.Split(html);
+            List<SearchResultObject> result = new List<SearchResultObject>();
+            foreach (string item in input)
+            {
+                SearchResultObject obj = new SearchResultObject(item);
+                if (obj.IsMatch)
+                {
+                    obj.Parse();
+                    result.Add(obj);
+                }
+            }
+            return result;
         }
         #endregion
     }

@@ -5,7 +5,7 @@
  * 
  * Development Tool : Microsoft Visual Studio 2010
  * 
- * Create Time : 2014-10-31 11:31:23
+ * Create Time : 2014-11-02 13:39:55
  * 
  * Machine Name : GLCHQWYCWINW7
  * 
@@ -18,21 +18,23 @@
 
 #endregion
 
+using System.Collections.Generic;
+using System.ServiceModel.Activation;
 
-namespace MasterDuner.Cooperations.Csq.Channels.RegExpressions
+namespace MasterDuner.Cooperations.Csq.Channels
 {
     /// <summary>
     /// <para>
-    /// 类型名称：<see cref="SplitSearchResultExpression"/>
+    /// 类型名称：<see cref="HPResultHtmlParser"/>
     /// </para>
     /// <para>
-    /// 命名空间：<see cref="MasterDuner.Cooperations.Csq.Channels.RegExpressions"/>
+    /// 命名空间：<see cref="MasterDuner.Cooperations.Csq.Channels"/>
     /// </para>
     /// <para>
     /// 适用的.NET Framework版本：4.0
     /// </para>
     /// <para>
-    /// 用于分割搜索结果的正则表达式。
+    /// 用于解析智联卓聘网的搜索结果HTML文本内容。
     /// </para>
     /// </summary>
     /// <remarks>
@@ -41,28 +43,31 @@ namespace MasterDuner.Cooperations.Csq.Channels.RegExpressions
     /// 不可从此类继承。
     /// </para>
     /// </remarks>
-    public sealed class SplitSearchResultExpression : ExpressionBase
+    [AspNetCompatibilityRequirements(RequirementsMode = AspNetCompatibilityRequirementsMode.Required)]
+    public sealed class HPResultHtmlParser : IHtmlParser
     {
         #region Constructors
 
         /// <summary>
-        /// 初始化一个<see cref="SplitSearchResultExpression" />对象实例。
+        /// 初始化一个<see cref="HPResultHtmlParser" />对象实例。
         /// </summary>
         /// <remarks>
         /// 不可从此类继承。
         /// </remarks>
-        public SplitSearchResultExpression()
+        public HPResultHtmlParser()
         { }
 
         #endregion
 
-        #region Expression
+        #region ParseHtml
         /// <summary>
-        /// 获取正则表达式。
+        /// 解析搜索结果HTML文本内容。
         /// </summary>
-        protected override string Expression
+        /// <param name="html">HTML文本内容。</param>
+        /// <returns><see cref="SearchResultObject"/>对象实例集合。</returns>
+        public List<SearchResultObject> ParseHtml(string html)
         {
-            get { return @"<div\sclass=\""clearfix\sbor-bottom\"">"; }
+            return SearchResultObject.Parse(html);
         }
         #endregion
     }

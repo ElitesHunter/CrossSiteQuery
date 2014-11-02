@@ -19,9 +19,9 @@
 #endregion
 
 using System;
-using MasterDuner.Cooperations.Csq.Commons;
-using System.Runtime.Serialization;
 using System.Collections.Generic;
+using System.Runtime.Serialization;
+using MasterDuner.Cooperations.Csq.Commons;
 
 namespace MasterDuner.Cooperations.Csq.Channels
 {

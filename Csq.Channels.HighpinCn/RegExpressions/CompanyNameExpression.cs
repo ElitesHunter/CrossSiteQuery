@@ -18,7 +18,6 @@
 
 #endregion
 
-using System;
 
 namespace MasterDuner.Cooperations.Csq.Channels.RegExpressions
 {

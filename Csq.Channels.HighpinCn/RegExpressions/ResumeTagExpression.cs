@@ -5,7 +5,7 @@
  * 
  * Development Tool : Microsoft Visual Studio 2010
  * 
- * Create Time : 2014-10-31 11:31:23
+ * Create Time : 2014-11-02 11:07:22
  * 
  * Machine Name : GLCHQWYCWINW7
  * 
@@ -23,7 +23,7 @@ namespace MasterDuner.Cooperations.Csq.Channels.RegExpressions
 {
     /// <summary>
     /// <para>
-    /// 类型名称：<see cref="SplitSearchResultExpression"/>
+    /// 类型名称：<see cref="ResumeTagExpression"/>
     /// </para>
     /// <para>
     /// 命名空间：<see cref="MasterDuner.Cooperations.Csq.Channels.RegExpressions"/>
@@ -32,7 +32,7 @@ namespace MasterDuner.Cooperations.Csq.Channels.RegExpressions
     /// 适用的.NET Framework版本：4.0
     /// </para>
     /// <para>
-    /// 用于分割搜索结果的正则表达式。
+    /// 用于初步解析简历标签的正则表达式。
     /// </para>
     /// </summary>
     /// <remarks>
@@ -41,17 +41,17 @@ namespace MasterDuner.Cooperations.Csq.Channels.RegExpressions
     /// 不可从此类继承。
     /// </para>
     /// </remarks>
-    public sealed class SplitSearchResultExpression : ExpressionBase
+    public sealed class ResumeTagExpression : ExpressionBase
     {
         #region Constructors
 
         /// <summary>
-        /// 初始化一个<see cref="SplitSearchResultExpression" />对象实例。
+        /// 初始化一个<see cref="ResumeTagExpression" />对象实例。
         /// </summary>
         /// <remarks>
         /// 不可从此类继承。
         /// </remarks>
-        public SplitSearchResultExpression()
+        public ResumeTagExpression()
         { }
 
         #endregion
@@ -62,7 +62,7 @@ namespace MasterDuner.Cooperations.Csq.Channels.RegExpressions
         /// </summary>
         protected override string Expression
         {
-            get { return @"<div\sclass=\""clearfix\sbor-bottom\"">"; }
+            get { return @"<span\sclass=\""fl\spadding-r16\"">\cM*\s*<b>简历标签</b>\cM*\s*</span>\cM*\s*<p\sclass=\""fl\sabstractMark\shl-t\"">(\cM*\s*<span>[\u0000-\u003B\u003D-\u00FF\u0100-\uFFFF]*</span>)*"; }
         }
         #endregion
     }

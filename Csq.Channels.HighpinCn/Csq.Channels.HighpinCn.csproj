@@ -82,8 +82,10 @@
     <Compile Include="HPCredentials.cs" />
     <Compile Include="HPExpandoRequirementObject.cs" />
     <Compile Include="HPRequirement.cs" />
+    <Compile Include="HPResultHtmlParser.cs" />
     <Compile Include="HPResumeSearcher.cs" />
     <Compile Include="HPSearchResult.cs" />
+    <Compile Include="IHtmlParser.cs" />
     <Compile Include="Industry.cs" />
     <Compile Include="LanguageAbility.cs" />
     <Compile Include="LanguageAbilityDescription.cs" />
@@ -101,6 +103,9 @@
     <Compile Include="RegExpressions\IsSearchResultExpression.cs" />
     <Compile Include="RegExpressions\JobTitleAndUrlExpression.cs" />
     <Compile Include="RegExpressions\NumberExpression.cs" />
+    <Compile Include="RegExpressions\ResumeTag2Expression.cs" />
+    <Compile Include="RegExpressions\ResumeTagExpression.cs" />
+    <Compile Include="RegExpressions\UserPictureExpression.cs" />
     <Compile Include="RegExpressions\WorkingExperienceExpression.cs" />
     <Compile Include="RegExpressions\ResidenceExpression.cs" />
     <Compile Include="RegExpressions\SplitSearchResultExpression.cs" />

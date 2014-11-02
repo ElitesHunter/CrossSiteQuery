@@ -9,7 +9,6 @@
 // ------------------------------------------------------------------------------
 namespace MasterDuner.Cooperations.Csq.Channels.Generators
 {
-    using System;
     using MasterDuner.Cooperations.Csq.Commons;
     
     

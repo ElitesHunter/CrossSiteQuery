@@ -19,13 +19,13 @@
 #endregion
 
 using System;
+using System.Net;
+using System.Text;
 using MasterDuner.Cooperations.Csq.Channels.Configuration;
+using MasterDuner.Cooperations.Csq.Channels.Generators;
 using MasterDuner.Cooperations.Csq.Commons;
 using MasterDuner.Cooperations.Csq.Commons.Communications;
 using MasterDuner.Cooperations.Csq.Commons.Configuration;
-using MasterDuner.Cooperations.Csq.Channels.Generators;
-using System.Text;
-using System.Net;
 
 namespace MasterDuner.Cooperations.Csq.Channels.Communications
 {

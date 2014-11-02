@@ -5,7 +5,7 @@
  * 
  * Development Tool : Microsoft Visual Studio 2010
  * 
- * Create Time : 2014-10-31 11:31:23
+ * Create Time : 2014-11-02 13:37:18
  * 
  * Machine Name : GLCHQWYCWINW7
  * 
@@ -18,52 +18,39 @@
 
 #endregion
 
+using System.Collections.Generic;
+using System.ServiceModel;
 
-namespace MasterDuner.Cooperations.Csq.Channels.RegExpressions
+namespace MasterDuner.Cooperations.Csq.Channels
 {
     /// <summary>
     /// <para>
-    /// 类型名称：<see cref="SplitSearchResultExpression"/>
+    /// 类型名称：<see cref="IHtmlParser"/>
     /// </para>
     /// <para>
-    /// 命名空间：<see cref="MasterDuner.Cooperations.Csq.Channels.RegExpressions"/>
+    /// 命名空间：<see cref="MasterDuner.Cooperations.Csq.Channels"/>
     /// </para>
     /// <para>
     /// 适用的.NET Framework版本：4.0
     /// </para>
     /// <para>
-    /// 用于分割搜索结果的正则表达式。
+    /// 定义了解析HTML搜索结果的方法。
     /// </para>
     /// </summary>
     /// <remarks>
     /// 此类型适用于4.0及其以上版本的.NET Framework。
-    /// <para>
-    /// 不可从此类继承。
-    /// </para>
     /// </remarks>
-    public sealed class SplitSearchResultExpression : ExpressionBase
+    [ServiceContract(SessionMode = SessionMode.Required)]
+    public interface IHtmlParser
     {
-        #region Constructors
-
+        #region ParseHtml
         /// <summary>
-        /// 初始化一个<see cref="SplitSearchResultExpression" />对象实例。
+        /// 解析HTML搜索结果。
         /// </summary>
-        /// <remarks>
-        /// 不可从此类继承。
-        /// </remarks>
-        public SplitSearchResultExpression()
-        { }
-
-        #endregion
-
-        #region Expression
-        /// <summary>
-        /// 获取正则表达式。
-        /// </summary>
-        protected override string Expression
-        {
-            get { return @"<div\sclass=\""clearfix\sbor-bottom\"">"; }
-        }
+        /// <param name="html">HTML搜索结果文本内容。</param>
+        /// <returns><see cref="SearchResultObject"/>对象实例集合。</returns>
+        [OperationContract]
+        List<SearchResultObject> ParseHtml(string html);
         #endregion
     }
 }
