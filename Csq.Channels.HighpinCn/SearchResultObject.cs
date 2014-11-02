@@ -400,7 +400,7 @@ namespace MasterDuner.Cooperations.Csq.Channels
                     if (!object.ReferenceEquals(match.Groups["Sarlary"], null) && match.Groups["Sarlary"].Success)
                         salary = match.Groups["Sarlary"].Value;
                 }
-                this.WorkingExperience = string.Format("公司：{0} | 职位：{1} | 工作年限：{2} | 薪资：{3}元/月");
+                this.WorkingExperience = string.Format("公司：{0} | 职位：{1} | 工作年限：{2} | 薪资：{3}元/月", corpration, position, serviceCycle, salary);
             }
         }
         #endregion

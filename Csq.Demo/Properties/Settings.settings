@@ -1,9 +1,12 @@
 ﻿<?xml version='1.0' encoding='utf-8'?>
-<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="Csq.Demo.Properties" GeneratedClassName="Settings">
+<SettingsFile xmlns="http://schemas.microsoft.com/VisualStudio/2004/01/settings" CurrentProfile="(Default)" GeneratedClassNamespace="MasterDuner.Cooperations.Csq.TestProjects.Properties" GeneratedClassName="Settings">
   <Profiles />
   <Settings>
     <Setting Name="Csq_Demo_ResumeSearchService_SearchChannelService" Type="(Web Service URL)" Scope="Application">
       <Value Profile="(Default)">http://localhost:81/Wsi/SearchChannelService.asmx</Value>
+    </Setting>
+    <Setting Name="demo_HPParserService_HPPrivateService" Type="(Web Service URL)" Scope="Application">
+      <Value Profile="(Default)">http://localhost:81/Wsi/HPPrivateService.asmx</Value>
     </Setting>
   </Settings>
 </SettingsFile>

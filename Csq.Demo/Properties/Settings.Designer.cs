@@ -32,5 +32,15 @@ namespace MasterDuner.Cooperations.Csq.TestProjects.Properties {
                 return ((string)(this["Csq_Demo_ResumeSearchService_SearchChannelService"]));
             }
         }
+        
+        [global::System.Configuration.ApplicationScopedSettingAttribute()]
+        [global::System.Diagnostics.DebuggerNonUserCodeAttribute()]
+        [global::System.Configuration.SpecialSettingAttribute(global::System.Configuration.SpecialSetting.WebServiceUrl)]
+        [global::System.Configuration.DefaultSettingValueAttribute("http://localhost:81/Wsi/HPPrivateService.asmx")]
+        public string demo_HPParserService_HPPrivateService {
+            get {
+                return ((string)(this["demo_HPParserService_HPPrivateService"]));
+            }
+        }
     }
 }

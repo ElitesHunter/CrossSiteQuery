@@ -1,0 +1,91 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="urn:MasterDuner@Yeah.net" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="urn:MasterDuner@Yeah.net" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="urn:MasterDuner@Yeah.net">
+      <s:element name="ParseTheSearchResultHtml">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="html" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ParseTheSearchResultHtmlResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ParseTheSearchResultHtmlResult" type="tns:ArrayOfSearchResultObject" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfSearchResultObject">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="SearchResultObject" nillable="true" type="tns:SearchResultObject" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="SearchResultObject">
+        <s:sequence>
+          <s:element minOccurs="1" maxOccurs="1" name="IsMatch" type="s:boolean" />
+          <s:element minOccurs="0" maxOccurs="1" name="PositionName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResumeDetailsUrl" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="CorporationName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Gender" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="Age" type="s:int" />
+          <s:element minOccurs="0" maxOccurs="1" name="DegreeName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Residence" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="EducationalBackground" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="WorkingExperience" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="ResumeTags" type="tns:ArrayOfString" />
+          <s:element minOccurs="0" maxOccurs="1" name="PictureUrl" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="ArrayOfString">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="string" nillable="true" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="ParseTheSearchResultHtmlSoapIn">
+    <wsdl:part name="parameters" element="tns:ParseTheSearchResultHtml" />
+  </wsdl:message>
+  <wsdl:message name="ParseTheSearchResultHtmlSoapOut">
+    <wsdl:part name="parameters" element="tns:ParseTheSearchResultHtmlResponse" />
+  </wsdl:message>
+  <wsdl:portType name="HPPrivateServiceSoap">
+    <wsdl:operation name="ParseTheSearchResultHtml">
+      <wsdl:input message="tns:ParseTheSearchResultHtmlSoapIn" />
+      <wsdl:output message="tns:ParseTheSearchResultHtmlSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="HPPrivateServiceSoap" type="tns:HPPrivateServiceSoap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ParseTheSearchResultHtml">
+      <soap:operation soapAction="urn:MasterDuner@Yeah.net/ParseTheSearchResultHtml" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="HPPrivateServiceSoap12" type="tns:HPPrivateServiceSoap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="ParseTheSearchResultHtml">
+      <soap12:operation soapAction="urn:MasterDuner@Yeah.net/ParseTheSearchResultHtml" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="HPPrivateService">
+    <wsdl:port name="HPPrivateServiceSoap" binding="tns:HPPrivateServiceSoap">
+      <soap:address location="http://localhost:81/Wsi/HPPrivateService.asmx" />
+    </wsdl:port>
+    <wsdl:port name="HPPrivateServiceSoap12" binding="tns:HPPrivateServiceSoap12">
+      <soap12:address location="http://localhost:81/Wsi/HPPrivateService.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

@@ -22,6 +22,7 @@ using System;
 using System.Diagnostics;
 using System.IO;
 using System.Text;
+using MasterDuner.Cooperations.Csq.TestProjects.HPParserService;
 using MasterDuner.Cooperations.Csq.TestProjects.ResumeSearchService;
 
 namespace MasterDuner.Cooperations.Csq.TestProjects
@@ -125,12 +126,14 @@ namespace MasterDuner.Cooperations.Csq.TestProjects
             }
 
             Trace.Write("尝试进行简历搜索。");
+            string html = string.Empty;
             using (SearchChannelService service = new SearchChannelService())
             {
-                string html = service.Search(this.SessionID, this.CreateSearchParameter(), new ResultPage() { Index = 1, Size = 30 }).DataExpression;
+                html = service.Search(this.SessionID, this.CreateSearchParameter(), new ResultPage() { Index = 1, Size = 30 }).DataExpression;
                 this.SaveHtmlResultToDisk(html);
             }
             Trace.Write("搜索完毕！");
+            this.ParseHtml(html);
         }
         #endregion
 
@@ -196,6 +199,22 @@ namespace MasterDuner.Cooperations.Csq.TestProjects
                 {
                     stream.Close();
                 }
+            }
+        }
+        #endregion
+
+        #region ParseHtml
+        /// <summary>
+        /// 解析HTML搜索结果文本内容。
+        /// </summary>
+        /// <param name="html">HTML搜索结果内容文本。</param>
+        private void ParseHtml(string html)
+        {
+            Trace.Write("开始解析HTML内容文本，并将搜索结果结构化！");
+            using (HPPrivateService service = new HPPrivateService())
+            {
+                SearchResultObject[] parsedResult = service.ParseTheSearchResultHtml(html);
+                Trace.Write("解析完毕！");
             }
         }
         #endregion

@@ -53,6 +53,11 @@
       <DesignTimeSharedInput>True</DesignTimeSharedInput>
       <DependentUpon>Settings.settings</DependentUpon>
     </Compile>
+    <Compile Include="Web References\HPParserService\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
     <Compile Include="Web References\ResumeSearchService\Reference.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -63,6 +68,17 @@
     <WebReferences Include="Web References\" />
   </ItemGroup>
   <ItemGroup>
+    <WebReferenceUrl Include="http://localhost:81/Wsi/HPPrivateService.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\HPParserService\</RelPath>
+      <UpdateFromURL>http://localhost:81/Wsi/HPPrivateService.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>demo_HPParserService_HPPrivateService</CachedSettingsPropName>
+    </WebReferenceUrl>
     <WebReferenceUrl Include="http://localhost:81/Wsi/SearchChannelService.asmx">
       <UrlBehavior>Dynamic</UrlBehavior>
       <RelPath>Web References\ResumeSearchService\</RelPath>
@@ -81,6 +97,14 @@
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>
     </None>
+    <None Include="Web References\HPParserService\HPPrivateService.wsdl" />
+    <None Include="Web References\HPParserService\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\HPParserService\SearchResultObject.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
     <None Include="Web References\ResumeSearchService\HPAuthenResult.datasource">
       <DependentUpon>Reference.map</DependentUpon>
     </None>
@@ -95,6 +119,9 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="Web References\ResumeSearchService\SearchChannelService.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\HPParserService\HPPrivateService.disco" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
   <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
