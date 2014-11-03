@@ -1,0 +1,67 @@
+﻿<!DOCTYPE html>
+<html>
+<head>
+    <title>CSQ服务测试程序</title>
+    <link type="text/css" rel="Stylesheet" href="styles/common.css" />
+    <script type="text/javascript" language="javascript" src="scripts/jquery-1.11.1.min.js"></script>
+    <script type="text/javascript" language="javascript" src="scripts/csq.commoms.js"></script>
+    <script type="text/javascript" language="javascript" src="scripts/csq.commons.loader.js"></script>
+    <script type="text/javascript" language="javascript" src="scripts/csq.commons.singlelineinput.js"></script>
+    <script type="text/javascript" language="javascript" src="scripts/csq.commons.tooltips.js"></script>
+    <script type="text/javascript" language="javascript">
+        $(document).ready(function () {
+            Demo.Events.windowResizeHandler($(window));
+            $("#KeywordsInput").singleline().__initialize();
+            $("#CompanyNameInput").singleline().__initialize();
+            $("#IndustryIdInput").singleline().__initialize();
+
+            $("#IndustryIdInput").blur(function () {
+                if (!$(this).singleline().isValid(Demo.RegularExpressions.ValidInnerIds)) {
+                    $("#IndustryIdInput").tooltips("行业标记不符合卓聘网的规则！");
+                }
+            });
+        });
+    </script>
+</head>
+<body>
+    <div id="CtrlsPanel">
+        <div id="LeftCtrlsPanel" class="float-left width-200">
+            <div id="LogoImagePanel" class="width-200">
+                <img src="images/logo.png" />
+            </div>
+            <div class="height-5">
+            </div>
+            <div id="KeywordsPanel" class="width-200 height-40">
+                <input id="KeywordsInput" name="QKeywords" type="text" value="请输入搜索关键词" emptyvalue="请输入搜索关键词" />
+            </div>
+            <div class="height-5">
+            </div>
+            <div id="CorporationPanel" class="other-condition">
+                <input id="CompanyNameInput" name="QCompanyName" type="text" value="公司名称关键词" emptyvalue="公司名称关键词" />
+            </div>
+            <div class="height-5">
+            </div>
+            <div id="RecentlyJobPanel" class="other-condition">
+                <div class="height-5">
+                </div>
+                <input id="RecentyJobCheck" name="QRecentlyJobRequired" type="checkbox" value="最近的一份工作" />
+                <label>
+                    最近的一份工作</label>
+            </div>
+            <div class="height-5">
+            </div>
+            <div id="IndustryPanel" class="other-condition">
+                <input id="IndustryIdInput" name="QIndustry" type="text" value="卓聘网行业代码" emptyvalue="卓聘网行业代码" />
+            </div>
+        </div>
+        <div id="RightCtrlsPanel" class="float-left">
+            <div id="LoaderPanel" class="height-5">
+                <div class="preloader">
+                </div>
+            </div>
+        </div>
+    </div>
+    <div id="Tooltip" class="">
+    </div>
+</body>
+</html>

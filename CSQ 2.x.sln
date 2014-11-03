@@ -14,6 +14,29 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csq.Hosts.WebService", "Csq
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Csq.Demo", "Csq.Demo\Csq.Demo.csproj", "{832073A0-03B4-4D3F-BF6F-D23F469294B3}"
 EndProject
+Project("{E24C65DC-7377-472B-9ABA-BC803B73C61A}") = "Csq.Demosite", "Csq.Demosite\", "{71A42CE9-F376-463F-AD87-4DAD4CACD558}"
+	ProjectSection(WebsiteProperties) = preProject
+		TargetFrameworkMoniker = ".NETFramework,Version%3Dv4.0"
+		Debug.AspNetCompiler.VirtualPath = "/Csq.Demosite"
+		Debug.AspNetCompiler.PhysicalPath = "Csq.Demosite\"
+		Debug.AspNetCompiler.TargetPath = "PrecompiledWeb\Csq.Demosite\"
+		Debug.AspNetCompiler.Updateable = "true"
+		Debug.AspNetCompiler.ForceOverwrite = "true"
+		Debug.AspNetCompiler.FixedNames = "false"
+		Debug.AspNetCompiler.Debug = "True"
+		Release.AspNetCompiler.VirtualPath = "/Csq.Demosite"
+		Release.AspNetCompiler.PhysicalPath = "Csq.Demosite\"
+		Release.AspNetCompiler.TargetPath = "PrecompiledWeb\Csq.Demosite\"
+		Release.AspNetCompiler.Updateable = "true"
+		Release.AspNetCompiler.ForceOverwrite = "true"
+		Release.AspNetCompiler.FixedNames = "false"
+		Release.AspNetCompiler.Debug = "False"
+		VWDPort = "82"
+		VWDDynamicPort = "false"
+		VWDVirtualPath = "/Demo"
+		DefaultWebSiteLanguage = "Visual Basic"
+	EndProjectSection
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -64,6 +87,16 @@ Global
 		{832073A0-03B4-4D3F-BF6F-D23F469294B3}.Release|Mixed Platforms.Build.0 = Release|x86
 		{832073A0-03B4-4D3F-BF6F-D23F469294B3}.Release|x86.ActiveCfg = Release|x86
 		{832073A0-03B4-4D3F-BF6F-D23F469294B3}.Release|x86.Build.0 = Release|x86
+		{71A42CE9-F376-463F-AD87-4DAD4CACD558}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{71A42CE9-F376-463F-AD87-4DAD4CACD558}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{71A42CE9-F376-463F-AD87-4DAD4CACD558}.Debug|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{71A42CE9-F376-463F-AD87-4DAD4CACD558}.Debug|Mixed Platforms.Build.0 = Debug|Any CPU
+		{71A42CE9-F376-463F-AD87-4DAD4CACD558}.Debug|x86.ActiveCfg = Debug|Any CPU
+		{71A42CE9-F376-463F-AD87-4DAD4CACD558}.Release|Any CPU.ActiveCfg = Debug|Any CPU
+		{71A42CE9-F376-463F-AD87-4DAD4CACD558}.Release|Any CPU.Build.0 = Debug|Any CPU
+		{71A42CE9-F376-463F-AD87-4DAD4CACD558}.Release|Mixed Platforms.ActiveCfg = Debug|Any CPU
+		{71A42CE9-F376-463F-AD87-4DAD4CACD558}.Release|Mixed Platforms.Build.0 = Debug|Any CPU
+		{71A42CE9-F376-463F-AD87-4DAD4CACD558}.Release|x86.ActiveCfg = Debug|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
