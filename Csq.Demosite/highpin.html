@@ -8,18 +8,20 @@
     <script type="text/javascript" language="javascript" src="scripts/csq.commons.loader.js"></script>
     <script type="text/javascript" language="javascript" src="scripts/csq.commons.singlelineinput.js"></script>
     <script type="text/javascript" language="javascript" src="scripts/csq.commons.tooltips.js"></script>
+    <script type="text/javascript" language="javascript" src="scripts/csq.commons.dropdown.js"></script>
+    <!--智联卓聘网JavaScript脚本-->
+    <script type="text/javascript" language="javascript" src="scripts/csq.channels.highpin.js"></script>
     <script type="text/javascript" language="javascript">
         $(document).ready(function () {
             Demo.Events.windowResizeHandler($(window));
+            $(document).click(Demo.Events.documentClickHandler);
             $("#KeywordsInput").singleline().__initialize();
             $("#CompanyNameInput").singleline().__initialize();
             $("#IndustryIdInput").singleline().__initialize();
-
-            $("#IndustryIdInput").blur(function () {
-                if (!$(this).singleline().isValid(Demo.RegularExpressions.ValidInnerIds)) {
-                    $("#IndustryIdInput").tooltips("行业标记不符合卓聘网的规则！");
-                }
-            });
+            $("#PositionIdInput").singleline().__initialize();
+            $("#ResidenceIdInput").singleline().__initialize();
+            $("#WorkplaceIdInput").singleline().__initialize();
+            $("#WorkstatusChoise").dropdown();
         });
     </script>
 </head>
@@ -52,6 +54,33 @@
             </div>
             <div id="IndustryPanel" class="other-condition">
                 <input id="IndustryIdInput" name="QIndustry" type="text" value="卓聘网行业代码" emptyvalue="卓聘网行业代码" />
+            </div>
+            <div class="height-5">
+            </div>
+            <div id="PositionPanel" class="other-condition">
+                <input id="PositionIdInput" name="QPosition" type="text" value="卓聘网职位代码" emptyvalue="卓聘网职位代码" />
+            </div>
+            <div class="height-5">
+            </div>
+            <div id="ResidencePanel" class="other-condition">
+                <input id="ResidenceIdInput" name="QResidence" type="text" value="卓聘网居住地代码" emptyvalue="卓聘网居住地代码" />
+            </div>
+            <div class="height-5">
+            </div>
+            <div id="WorkPlacePanel" class="other-condition">
+                <input id="WorkplaceIdInput" name="QWorkplace" type="text" value="卓聘网工作地代码" emptyvalue="卓聘网工作地代码" />
+            </div>
+            <div class="height-5">
+            </div>
+            <div id="WorkStatusPanel" class="other-condition dropdown-panel">
+                <input id="WorkstatusChoise" name="QWorkStatus" type="text" value="不限" selectedvalue="-1" />
+                <div bindid="WorkstatusChoise" class="dropdown-options">
+                    <ul>
+                        <li v="-1">不限</li>
+                        <li v="1">在职</li>
+                        <li v="2">离职</li>
+                    </ul>
+                </div>
             </div>
         </div>
         <div id="RightCtrlsPanel" class="float-left">

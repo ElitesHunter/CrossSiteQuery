@@ -59,6 +59,52 @@ div.preloader{
 	height: 5px;
 }
 
+div.dropdown-panel{
+	background-image: url(../images/droparrow.png);
+	background-repeat: no-repeat;
+	background-position: right;
+}
+
+div.dropdown-panel input{
+	cursor: default;
+}
+
+div.dropdown-options{
+	width: 190px;
+	z-index: 9999;
+	position: absolute;
+	left: 5px;
+	background-color: #00ccff;
+	height: auto;
+	display: none;
+}
+
+div.dropdown-options ul{
+	width: 190px;
+	margin: 0px;
+	padding: 0px;
+	background-color: #00ccff;
+	list-style: none;
+}
+
+div.dropdown-options ul li{
+	width: 190px;
+	text-align: center;
+	margin: 0px;
+	padding: 0px;
+	height: 30px;
+	background-color: #00ccff;
+	line-height: 30px;
+	font-size: 12px;
+	font-family: Arial, "\5FAE\8F6F\96C5\9ED1", serif;
+	color: #FFFFFF;
+	cursor: default;
+}
+
+div.dropdown-panel div ul li:hover{
+	background-color: #343434;
+}
+
 #LogoImagePanel{
 	height: 60px;
 }
@@ -70,7 +116,8 @@ div.preloader{
 }
 
 #LeftCtrlsPanel{
-	overflow: auto;
+	overflow-y: auto;
+	overflow-x: hidden;
 	background-color: #343434;
 }
 

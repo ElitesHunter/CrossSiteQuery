@@ -33,6 +33,19 @@ String.format = function (format, obj) {
 }
 
 Demo = {
+    cancelEventBubble: function (e) {
+    	/// <summary>
+        /// 阻止事件向上冒泡。
+    	/// </summary>
+    	/// <param name="e" type="Object">事件对象。</param>
+
+        try {
+            e.stopPropagation();
+        }
+        catch (err) {
+            window.event.cancelBubble = true;
+        }
+    },
     Events: {
         windowResizeHandler: function ($win) {
             /// <summary>
@@ -66,10 +79,18 @@ Demo = {
                 $("#RightCtrlsPanel").css("height", String.format("{Height}px", { Height: $win.height() })).css("width", String.format("{Width}px", { Width: $win.width() - 200 }));
             }
             resizeSplitPanelEles();
+        },
+        documentClickHandler: function () {
+            /// <summary>
+            /// Document对象单击事件处理函数。
+            /// </summary>
+
+            for (var i = 0; i < Demo.CacheData.HiddenElement.length; i++)
+                Demo.CacheData.HiddenElement[i].hide();
         }
     },
-    RegularExpressions: {
-        ValidInnerIds: /^\d*(,\d*){0,2}$/
+    CacheData: {
+        HiddenElement: new Array()
     }
 }
 
