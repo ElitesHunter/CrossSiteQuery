@@ -22,6 +22,7 @@
             $("#ResidenceIdInput").singleline().__initialize();
             $("#WorkplaceIdInput").singleline().__initialize();
             $("#WorkstatusChoise").dropdown();
+            $("#GenderChoise").dropdown();
         });
     </script>
 </head>
@@ -79,6 +80,18 @@
                         <li v="-1">不限</li>
                         <li v="1">在职</li>
                         <li v="2">离职</li>
+                    </ul>
+                </div>
+            </div>
+            <div class="height-5">
+            </div>
+            <div id="GenderPanel" class="other-condition dropdown-panel">
+                <input id="GenderChoise" name="QGender" type="text" value="不限" selectedvalue="-1" />
+                <div bindid="GenderChoise" class="dropdown-options">
+                    <ul>
+                        <li v="-1">不限</li>
+                        <li v="1">男</li>
+                        <li v="2">女</li>
                     </ul>
                 </div>
             </div>
