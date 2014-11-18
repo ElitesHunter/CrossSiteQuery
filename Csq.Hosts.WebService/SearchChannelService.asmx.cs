@@ -59,5 +59,20 @@ namespace MasterDuner.Cooperations.Csq.Application.WebServices
             return service.Get(sessionID, SearchChannels.HighpinCn, searchParams, paging) as HPSearchResult;
         }
         #endregion
+
+        #region ViewResume
+        /// <summary>
+        /// 查看智联卓聘网的简历详情。
+        /// </summary>
+        /// <param name="detailsUrl">简历详情URL地址。</param>
+        /// <param name="sessionID">会话标识。</param>
+        /// <returns>简历的HTML字符串表达式。</returns>
+        [WebMethod(EnableSession = true, MessageName = "HighpinCnDetails")]
+        public string ViewResume(string detailsUrl, Guid sessionID)
+        {
+            IResumeViewerService service = new HPResumeViewerService();
+            return service.GetResumeHtml(new ResumeDetailViewerArgs() { DetailPageUrl = detailsUrl }, sessionID);
+        }
+        #endregion
     }
 }

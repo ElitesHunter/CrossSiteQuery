@@ -215,6 +215,45 @@ namespace MasterDuner.Cooperations.Csq.TestProjects
             {
                 SearchResultObject[] parsedResult = service.ParseTheSearchResultHtml(html);
                 Trace.Write("解析完毕！");
+                this.DownloadResumeHtml(parsedResult);
+            }
+        }
+        #endregion
+
+        #region DownloadResumeHtml
+        /// <summary>
+        /// 下载简历的HTML。
+        /// </summary>
+        /// <param name="inArray">简历搜索结果。</param>
+        private void DownloadResumeHtml(SearchResultObject[] inArray)
+        {
+            Trace.Write("开始下载简历详情的HTML结果。");
+            string dir = Path.Combine(AppDomain.CurrentDomain.BaseDirectory, string.Format("Session-{0}", this.SessionID));
+            if (!Directory.Exists(dir)) Directory.CreateDirectory(dir);
+            for (int i = 0; i < inArray.Length; i++)
+            {
+                string fileName = inArray[i].ResumeDetailsUrl.GetHashCode().ToString("X") + ".htm";
+                Trace.Write(string.Format("开始下载第{0}个简历{1}", i, fileName));
+                using (SearchChannelService service = new SearchChannelService())
+                {
+                    string html = service.ViewResume(inArray[i].ResumeDetailsUrl, this.SessionID);
+                    using (Stream stream = new FileStream(Path.Combine(dir, fileName), FileMode.Create, FileAccess.Write))
+                    {
+                        using (StreamWriter writer = new StreamWriter(stream, Encoding.UTF8))
+                        {
+                            try
+                            {
+                                writer.Write(html);
+                                Trace.Write("下载完成");
+                            }
+                            finally
+                            {
+                                writer.Close();
+                                stream.Close();
+                            }
+                        }
+                    }
+                }
             }
         }
         #endregion

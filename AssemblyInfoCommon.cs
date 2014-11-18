@@ -8,3 +8,5 @@ using System.Reflection;
 [assembly: AssemblyCopyright("Copyright © Wang Yucai 2014")]
 [assembly: AssemblyTrademark("CSQ")]
 [assembly: AssemblyCulture("")]
+[assembly: AssemblyVersion("2.0.5435.49515")]
+[assembly: AssemblyFileVersion("2.0.5435.49515")]

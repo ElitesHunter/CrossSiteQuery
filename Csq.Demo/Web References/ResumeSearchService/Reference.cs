@@ -40,6 +40,8 @@ namespace MasterDuner.Cooperations.Csq.TestProjects.ResumeSearchService {
         
         private System.Threading.SendOrPostCallback SearchOperationCompleted;
         
+        private System.Threading.SendOrPostCallback ViewResumeOperationCompleted;
+        
         private bool useDefaultCredentialsSetExplicitly;
         
         /// <remarks/>
@@ -86,6 +88,9 @@ namespace MasterDuner.Cooperations.Csq.TestProjects.ResumeSearchService {
         
         /// <remarks/>
         public event SearchCompletedEventHandler SearchCompleted;
+        
+        /// <remarks/>
+        public event ViewResumeCompletedEventHandler ViewResumeCompleted;
         
         /// <remarks/>
         [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:MasterDuner@Yeah.net/CreateSession", RequestNamespace="urn:MasterDuner@Yeah.net", ResponseNamespace="urn:MasterDuner@Yeah.net", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
@@ -177,6 +182,38 @@ namespace MasterDuner.Cooperations.Csq.TestProjects.ResumeSearchService {
             if ((this.SearchCompleted != null)) {
                 System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
                 this.SearchCompleted(this, new SearchCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
+            }
+        }
+        
+        /// <remarks/>
+        [System.Web.Services.Protocols.SoapDocumentMethodAttribute("urn:MasterDuner@Yeah.net/HighpinCnDetails", RequestElementName="HighpinCnDetails", RequestNamespace="urn:MasterDuner@Yeah.net", ResponseElementName="HighpinCnDetailsResponse", ResponseNamespace="urn:MasterDuner@Yeah.net", Use=System.Web.Services.Description.SoapBindingUse.Literal, ParameterStyle=System.Web.Services.Protocols.SoapParameterStyle.Wrapped)]
+        [return: System.Xml.Serialization.XmlElementAttribute("HighpinCnDetailsResult")]
+        public string ViewResume(string detailsUrl, System.Guid sessionID) {
+            object[] results = this.Invoke("ViewResume", new object[] {
+                        detailsUrl,
+                        sessionID});
+            return ((string)(results[0]));
+        }
+        
+        /// <remarks/>
+        public void ViewResumeAsync(string detailsUrl, System.Guid sessionID) {
+            this.ViewResumeAsync(detailsUrl, sessionID, null);
+        }
+        
+        /// <remarks/>
+        public void ViewResumeAsync(string detailsUrl, System.Guid sessionID, object userState) {
+            if ((this.ViewResumeOperationCompleted == null)) {
+                this.ViewResumeOperationCompleted = new System.Threading.SendOrPostCallback(this.OnViewResumeOperationCompleted);
+            }
+            this.InvokeAsync("ViewResume", new object[] {
+                        detailsUrl,
+                        sessionID}, this.ViewResumeOperationCompleted, userState);
+        }
+        
+        private void OnViewResumeOperationCompleted(object arg) {
+            if ((this.ViewResumeCompleted != null)) {
+                System.Web.Services.Protocols.InvokeCompletedEventArgs invokeArgs = ((System.Web.Services.Protocols.InvokeCompletedEventArgs)(arg));
+                this.ViewResumeCompleted(this, new ViewResumeCompletedEventArgs(invokeArgs.Results, invokeArgs.Error, invokeArgs.Cancelled, invokeArgs.UserState));
             }
         }
         
@@ -1184,6 +1221,32 @@ namespace MasterDuner.Cooperations.Csq.TestProjects.ResumeSearchService {
             get {
                 this.RaiseExceptionIfNecessary();
                 return ((HPSearchResult)(this.results[0]));
+            }
+        }
+    }
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    public delegate void ViewResumeCompletedEventHandler(object sender, ViewResumeCompletedEventArgs e);
+    
+    /// <remarks/>
+    [System.CodeDom.Compiler.GeneratedCodeAttribute("System.Web.Services", "4.0.30319.18408")]
+    [System.Diagnostics.DebuggerStepThroughAttribute()]
+    [System.ComponentModel.DesignerCategoryAttribute("code")]
+    public partial class ViewResumeCompletedEventArgs : System.ComponentModel.AsyncCompletedEventArgs {
+        
+        private object[] results;
+        
+        internal ViewResumeCompletedEventArgs(object[] results, System.Exception exception, bool cancelled, object userState) : 
+                base(exception, cancelled, userState) {
+            this.results = results;
+        }
+        
+        /// <remarks/>
+        public string Result {
+            get {
+                this.RaiseExceptionIfNecessary();
+                return ((string)(this.results[0]));
             }
         }
     }

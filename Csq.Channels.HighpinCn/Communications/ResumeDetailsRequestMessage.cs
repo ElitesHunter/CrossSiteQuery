@@ -20,6 +20,7 @@
 
 using System;
 using System.Net;
+using System.Web;
 using MasterDuner.Cooperations.Csq.Commons;
 using MasterDuner.Cooperations.Csq.Commons.Communications;
 
@@ -77,7 +78,7 @@ namespace MasterDuner.Cooperations.Csq.Channels.Communications
             : base(sessionID)
         {
             this.CookieCacheName = new CookieCacheName() { BindSession = sessionID };
-            this._url = detailUrl;
+            this._url = this.UrlDecode(string.Format("http://h.highpin.cn{0}", detailUrl));
             this.Method = CommunicationMethods.HttpGet;
         }
 
@@ -93,6 +94,18 @@ namespace MasterDuner.Cooperations.Csq.Channels.Communications
             {
                 return this._cookieCacheName.ToString();
             }
+        }
+        #endregion
+
+        #region UrlDecode
+        /// <summary>
+        /// 对URL进行解码。
+        /// </summary>
+        /// <param name="url">URL。</param>
+        /// <returns>解码后的URL表达式。</returns>
+        private string UrlDecode(string url)
+        {
+            return HttpUtility.UrlDecode(url).Replace("&amp;", "&").Replace("&lt;", "<").Replace("&gt;", ">");
         }
         #endregion
 
@@ -120,7 +133,7 @@ namespace MasterDuner.Cooperations.Csq.Channels.Communications
         public override TMessage SendAndGet<TMessage>()
         {
             ResumeDetailsResponseMessage message = new ResumeDetailsResponseMessage(
-                base.BindSessionID, 
+                base.BindSessionID,
                 this.CreateHttpRequest().GetResponse() as HttpWebResponse);
             message.Init();
             return message as TMessage;
