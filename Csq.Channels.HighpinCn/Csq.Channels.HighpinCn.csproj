@@ -87,6 +87,7 @@
     <Compile Include="HPRequirement.cs" />
     <Compile Include="HPResultHtmlParser.cs" />
     <Compile Include="HPResumeSearcher.cs" />
+    <Compile Include="HPResumeViewerService.cs" />
     <Compile Include="HPSearchResult.cs" />
     <Compile Include="IHtmlParser.cs" />
     <Compile Include="Industry.cs" />
